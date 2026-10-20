@@ -78,7 +78,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { withBase } from 'vitepress'
-import { data as allSkills } from '../../skills.data.ts'
+import allSkills from '../skills-data.json'
 
 const searchQuery = ref('')
 const selectedCategory = ref('全部')

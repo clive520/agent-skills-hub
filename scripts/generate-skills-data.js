@@ -194,6 +194,7 @@ ${content}
 
 // Write skills-data.json for instant search and index on the homepage
 fs.writeFileSync(path.join(publicDir, "skills-data.json"), JSON.stringify(skills, null, 2), "utf-8");
+fs.writeFileSync(path.join(docsDir, ".vitepress", "theme", "skills-data.json"), JSON.stringify(skills, null, 2), "utf-8");
 
 // Generate sidebar configuration
 const categories = [...new Set(skills.map((s) => s.category))];
