@@ -1,0 +1,56 @@
+[
+  {
+    "text": "動態設計",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "motion-design",
+        "link": "/skills/motion-design"
+      }
+    ]
+  },
+  {
+    "text": "解說動畫",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "motion-explainer",
+        "link": "/skills/motion-explainer"
+      }
+    ]
+  },
+  {
+    "text": "審查機制",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "review-loop",
+        "link": "/skills/review-loop"
+      }
+    ]
+  },
+  {
+    "text": "教學簡報",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "soil-motion-deck",
+        "link": "/skills/soil-motion-deck"
+      },
+      {
+        "text": "soil-teaching-deck",
+        "link": "/skills/soil-teaching-deck"
+      }
+    ]
+  },
+  {
+    "text": "圖像與貼圖",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "visual-line-sticker-production",
+        "link": "/skills/visual-line-sticker-production"
+      }
+    ]
+  }
+]

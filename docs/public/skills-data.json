@@ -1,0 +1,180 @@
+[
+  {
+    "id": "motion-design",
+    "name": "motion-design",
+    "description": "動態設計品味規則（HyperFrames 版）— 時間軸、緩動、彈性、節奏、字體（含繁體中文）、配色、質感與場景連貫，全部附具體數字。只要是製作、調整、重新計時或打磨動畫影片、片頭、轉場、motion graphics、HyperFrames composition，就一定要使用此技能。觸發情境包含：「做一支動畫」、「做動態影片」、「做片頭」、「motion design」、「讓這段字動起來」、「調整動畫節奏」等。",
+    "category": "動態設計",
+    "dependencies": [],
+    "tags": [
+      "HyperFrames",
+      "動態設計",
+      "緩動曲線",
+      "時間軸",
+      "視覺節奏"
+    ],
+    "filesCount": 2,
+    "files": [
+      "LICENSE",
+      "SKILL.md"
+    ],
+    "hasScripts": false,
+    "hasTemplates": false,
+    "hasReferences": false,
+    "updatedAt": "2026-10-20"
+  },
+  {
+    "id": "motion-explainer",
+    "name": "motion-explainer",
+    "description": "用自然語言做「原理解說動畫影片」的端到端流程（HyperFrames + 中文旁白 + 字幕 + 三色主題 + 自我審查），產出可直接上課投影或上傳 YouTube 的 MP4。只要使用者要做解說動畫、科普動畫、原理動畫、教學動畫、explainer video、motion graphics 解說片，或說「上網查資料做一支解說 X 的動畫」，就一定要使用此技能。觸發情境包含：「做一個解說動畫」、「做科普影片」、「把這個原理做成動畫」、「做一支 90 秒的教學動畫」、「explain X as an animated video」。",
+    "category": "解說動畫",
+    "dependencies": [
+      "motion-design",
+      "review-loop"
+    ],
+    "tags": [
+      "HyperFrames",
+      "edge-tts",
+      "原理解說",
+      "科普影片",
+      "繁體中文"
+    ],
+    "filesCount": 22,
+    "files": [
+      "SKILL.md",
+      "references/hardware.md",
+      "references/lessons.md",
+      "references/theme-json.md",
+      "references/tts-setup.md",
+      "scripts/apply_shots.py",
+      "scripts/breeze_voice.py",
+      "scripts/edge_tts_voice.py",
+      "scripts/fetch_fonts.sh",
+      "scripts/fix_voice.py",
+      "scripts/hw_check.py",
+      "scripts/patch_captions.py",
+      "scripts/review_times.py",
+      "scripts/subset_fonts.py",
+      "scripts/theme.py",
+      "scripts/tts_jobs.py",
+      "scripts/unify_frames.py",
+      "scripts/voice_meta.py",
+      "templates/dispatch_context.md",
+      "templates/shared-asset.example.svg",
+      "templates/shots.example.json",
+      "templates/theme.example.json"
+    ],
+    "hasScripts": true,
+    "hasTemplates": true,
+    "hasReferences": true,
+    "updatedAt": "2026-10-20"
+  },
+  {
+    "id": "review-loop",
+    "name": "review-loop",
+    "description": "動畫影片的視覺自我審查循環（HyperFrames 版）— 輸出草稿、在每個時間軸節拍截圖拼成 contact sheet、逐張對照檢查表、修正、重來。只要動畫的畫面或時間有任何修改，以及在宣告影片完成之前，都一定要使用此技能。",
+    "category": "審查機制",
+    "dependencies": [],
+    "tags": [
+      "HyperFrames",
+      "Contact Sheet",
+      "多影格審查",
+      "品質驗證"
+    ],
+    "filesCount": 3,
+    "files": [
+      "LICENSE",
+      "SKILL.md",
+      "scripts/sheet.py"
+    ],
+    "hasScripts": true,
+    "hasTemplates": false,
+    "hasReferences": false,
+    "updatedAt": "2026-10-20"
+  },
+  {
+    "id": "soil-motion-deck",
+    "name": "soil-motion-deck",
+    "description": "動畫教學簡報：把 SOIL Teaching Deck（教學簡報六引擎）和 motion-explainer（解說動畫）接在一起，一次做出兩樣東西。A 是一份 .pptx 教學簡報，關鍵頁嵌入會動的解說動畫；B 是同一份內容的配音字幕解說影片（MP4）。使用者說「做有動畫的教學簡報」、「簡報的關鍵頁加動畫」、「SOIL 簡報加解說動畫」、「把這個單元做成簡報和動畫影片」、「投影片裡放動畫講解」，或手上已有 SOIL 簡報想把某幾頁換成動畫時，就要使用此技能。",
+    "category": "教學簡報",
+    "dependencies": [
+      "soil-teaching-deck",
+      "motion-explainer"
+    ],
+    "tags": [
+      "SOIL教學法",
+      "PptxGenJS",
+      "HyperFrames",
+      "解說動畫",
+      "簡報嵌入"
+    ],
+    "filesCount": 9,
+    "files": [
+      "SKILL.md",
+      "references/lessons.md",
+      "scripts/cut_clips.py",
+      "scripts/export_thumbs.ps1",
+      "scripts/make_silent.py",
+      "scripts/thumbs.py",
+      "templates/deck_helpers.js",
+      "templates/example_pythagoras.js",
+      "templates/package.json"
+    ],
+    "hasScripts": true,
+    "hasTemplates": true,
+    "hasReferences": true,
+    "updatedAt": "2026-10-20"
+  },
+  {
+    "id": "soil-teaching-deck",
+    "name": "soil-teaching-deck",
+    "description": ">",
+    "category": "教學簡報",
+    "dependencies": [],
+    "tags": [
+      "SOIL教學法",
+      "PptxGenJS",
+      "教學簡報",
+      "六引擎",
+      "通科適用"
+    ],
+    "filesCount": 1,
+    "files": [
+      "SKILL.md"
+    ],
+    "hasScripts": false,
+    "hasTemplates": false,
+    "hasReferences": false,
+    "updatedAt": "2026-10-20"
+  },
+  {
+    "id": "visual-line-sticker-production",
+    "name": "visual-line-sticker-production",
+    "description": "Create, iterate, validate, and package upload-ready static LINE sticker sets with customizable character style and on-sticker text. Use when a user asks for LINE stickers, LINE貼圖, a reusable sticker character, Creators Market assets, or a follow-up sticker collection that must retain an approved character style.",
+    "category": "圖像與貼圖",
+    "dependencies": [],
+    "tags": [
+      "LINE貼圖",
+      "角色設計",
+      "貼圖打包",
+      "Creators Market"
+    ],
+    "filesCount": 11,
+    "files": [
+      "LICENSE",
+      "README.md",
+      "SKILL.md",
+      "visual-line-sticker-production.zip",
+      "使用說明.md",
+      "agents/openai.yaml",
+      "references/line-static-spec.md",
+      "references/manifests.md",
+      "references/workflow-and-prompts.md",
+      "scripts/prepare_line_assets.py",
+      "scripts/verify_line_static_stickers.py"
+    ],
+    "hasScripts": true,
+    "hasTemplates": false,
+    "hasReferences": true,
+    "updatedAt": "2026-10-20"
+  }
+]

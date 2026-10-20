@@ -1,0 +1,23 @@
+{
+  "name": "agent-skills-hub",
+  "version": "1.0.0",
+  "description": "Personal Agent Skills Hub & Index Database",
+  "scripts": {
+    "prepare-data": "node scripts/generate-skills-data.js",
+    "docs:dev": "node scripts/generate-skills-data.js && vitepress dev docs",
+    "docs:build": "node scripts/generate-skills-data.js && vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "agent-skills",
+    "antigravity",
+    "claude-code",
+    "skills-database"
+  ],
+  "author": "clive520",
+  "license": "MIT",
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "vitepress": "^1.6.3"
+  }
+}
