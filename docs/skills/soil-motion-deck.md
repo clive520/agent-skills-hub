@@ -1,16 +1,31 @@
 ---
-title: "soil-motion-deck"
-description: "動畫教學簡報：把 SOIL Teaching Deck（教學簡報六引擎）和 motion-explainer（解說動畫）接在一起，一次做出兩樣東西。A 是一份 .pptx 教學簡報，關鍵頁嵌入會動的解說動畫；B 是同一份內容的配音字幕解說影片（MP4）。使用者說「做有動畫的教學簡報」、「簡報的關鍵頁加動畫」、「SOIL 簡報加解說動畫」、「把這個單元做成簡報和動畫影片」、「投影片裡放動畫講解」，或手上已有 SOIL 簡報想把某幾頁換成動畫時，就要使用此技能。"
+title: "動畫教學簡報 (SOIL + HyperFrames) (soil-motion-deck)"
+description: "動畫教學簡報：結合 SOIL 六引擎與 HyperFrames 解說動畫，一次產出 PPTX 簡報與 MP4 影片，關鍵頁面無縫嵌入靜音循環動畫片段。"
 ---
 
-# soil-motion-deck
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>目前顯示版本：<strong>🇹🇼 繁體中文</strong></span>
+  </div>
+  <a href="/agent-skills-hub/en/skills/soil-motion-deck" class="lang-switch-link">
+    🇬🇧 點此切換至英文版本 (Switch to English Version) →
+  </a>
+</div>
+
+# soil-motion-deck · 動畫教學簡報 (SOIL + HyperFrames)
+
+<div class="skill-subtitle-bar">Animated Teaching Deck (SOIL + HyperFrames)</div>
 
 <div class="skill-meta-bar">
   <span class="badge category">教學簡報</span>
+  <span class="badge lang-tag">🇹🇼 繁體中文</span>
   <span class="badge tag">#SOIL教學法</span> <span class="badge tag">#PptxGenJS</span> <span class="badge tag">#HyperFrames</span> <span class="badge tag">#解說動畫</span> <span class="badge tag">#簡報嵌入</span>
 </div>
 
-> **簡介**：動畫教學簡報：把 SOIL Teaching Deck（教學簡報六引擎）和 motion-explainer（解說動畫）接在一起，一次做出兩樣東西。A 是一份 .pptx 教學簡報，關鍵頁嵌入會動的解說動畫；B 是同一份內容的配音字幕解說影片（MP4）。使用者說「做有動畫的教學簡報」、「簡報的關鍵頁加動畫」、「SOIL 簡報加解說動畫」、「把這個單元做成簡報和動畫影片」、「投影片裡放動畫講解」，或手上已有 SOIL 簡報想把某幾頁換成動畫時，就要使用此技能。
+> **簡介**：動畫教學簡報：結合 SOIL 六引擎與 HyperFrames 解說動畫，一次產出 PPTX 簡報與 MP4 影片，關鍵頁面無縫嵌入靜音循環動畫片段。
+>
+> **English Summary**: Animated teaching deck: combines SOIL 6 engines with HyperFrames explainer motion to generate both PPTX and MP4 with embedded silent animation clips.
 
 ::: details 快速安裝指令（點擊複製）
 ::: code-group
@@ -51,13 +66,15 @@ git clone https://github.com/clive520/agent-skills-hub.git
 - [motion-explainer](./motion-explainer.md)
 :::
 
-::: info 包含的檔案 (9 個檔案)
+::: info 包含的檔案 (11 個檔案)
 - `references/lessons.md`
 - `scripts/cut_clips.py`
 - `scripts/export_thumbs.ps1`
 - `scripts/make_silent.py`
 - `scripts/thumbs.py`
 - `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
 - `templates/deck_helpers.js`
 - `templates/example_pythagoras.js`
 - `templates/package.json`
@@ -65,7 +82,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 ---
 
-## 技能完整說明檔 (SKILL.md)
+## 繁體中文完整說明檔 (SKILL.md)
 
 
 # SOIL 動畫教學簡報：一次製作，兩份成品

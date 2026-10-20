@@ -1,0 +1,205 @@
+---
+title: "Studio Collaboration & Timeline Specs (hyperframes-studio)"
+description: "HyperFrames Studio collaboration guidelines, communication principles, timeline track hierarchy, and safe zones."
+---
+
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>Current Version: <strong>🇬🇧 English</strong></span>
+  </div>
+  <a href="/agent-skills-hub/skills/hyperframes-studio" class="lang-switch-link">
+    🇹🇼 點此切換至中文版本 (Switch to Traditional Chinese) →
+  </a>
+</div>
+
+# hyperframes-studio · Studio Collaboration & Timeline Specs
+
+<div class="skill-subtitle-bar">Studio 介面協同與時間軸排版規範</div>
+
+<div class="skill-meta-bar">
+  <span class="badge category">Workflow Routing</span>
+  <span class="badge lang-tag">🇬🇧 English</span>
+  <span class="badge tag">#HyperFrames</span> <span class="badge tag">#Studio</span> <span class="badge tag">#Timeline Specs</span> <span class="badge tag">#Safe Zones</span> <span class="badge tag">#Collaboration</span>
+</div>
+
+> **Description**: HyperFrames Studio collaboration guidelines, communication principles, timeline track hierarchy, and safe zones.
+>
+> **中文簡介**: Studio 介面協同規範：影片規劃階段、意圖溝通原則、時間軸軌道階層與內容安全框規範。
+
+::: details Quick Install Commands (Click to Copy)
+::: code-group
+
+```bash [Antigravity]
+# Install into Antigravity global skills directory
+mkdir -p ~/.gemini/config/skills/hyperframes-studio
+git clone https://github.com/clive520/agent-skills-hub.git /tmp/skills-hub
+cp -r /tmp/skills-hub/skills/hyperframes-studio/* ~/.gemini/config/skills/hyperframes-studio/
+rm -rf /tmp/skills-hub
+```
+
+```bash [Claude Code]
+# Install into Claude Code skills directory
+mkdir -p ~/.claude/skills/hyperframes-studio
+git clone https://github.com/clive520/agent-skills-hub.git /tmp/skills-hub
+cp -r /tmp/skills-hub/skills/hyperframes-studio/* ~/.claude/skills/hyperframes-studio/
+rm -rf /tmp/skills-hub
+```
+
+```bash [Codex]
+# Install into Codex skills directory
+mkdir -p ~/.agents/skills/hyperframes-studio
+git clone https://github.com/clive520/agent-skills-hub.git /tmp/skills-hub
+cp -r /tmp/skills-hub/skills/hyperframes-studio/* ~/.agents/skills/hyperframes-studio/
+rm -rf /tmp/skills-hub
+```
+
+```bash [Git Clone]
+git clone https://github.com/clive520/agent-skills-hub.git
+```
+
+:::
+
+::: tip Skill Dependencies
+This skill depends on the following upstream skills. We recommend installing them together:
+- [hyperframes-core](./hyperframes-core.md)
+:::
+
+::: info Included Files (3 files)
+- `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
+:::
+
+---
+
+## Full Skill Documentation (SKILL.md)
+
+
+**Plugin installs:** Before setup or freshness commands, follow [plugin execution rules](../hyperframes/references/plugin-installation.md) when this skill is inside a HyperFrames plugin. Standalone installs keep the update instructions below.
+
+# HyperFrames Studio conventions
+
+Studio draws one timeline row per top-level element. A project that follows the
+rules below opens as a short, readable timeline; one that does not opens as a wall
+of unlabeled rows the user cannot edit. These are conventions for what to build.
+For how to change a clip, follow `/hyperframes-core` `references/creator-editing-recipes.md`
+and never invent a different form of the same edit.
+
+## 0. Talk before you build
+
+Read the message before you open a file. Decide what it asks for:
+
+| The person                                                                                 | You                                                                                                                  |
+| ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| names a change, however politely ("make the title bigger", "can you cut the third scene?") | Make it.                                                                                                             |
+| gives a felt note on the built film ("the intro feels jolty", "it doesn't go long enough") | Find the cause, change the measurable thing, say what the note meant and what moved, and record it in STORYBOARD.md. |
+| asks a question and names no change ("why does the title jump?")                           | Answer it. Change nothing.                                                                                           |
+| says don't change anything, hold, "just thinking", "let's talk"                            | Change no file, not even a fix you noticed. Offer it in words.                                                       |
+| brings an idea for this film with no concrete change ("I want the ending to feel bigger")  | Propose the change and add it to the plan (below). Change no composition file.                                       |
+| asks for a new film                                                                        | Plan it (§ 5).                                                                                                       |
+| approves a plan ("build it", "go")                                                         | Build what was approved.                                                                                             |
+
+A message that asks a question and names a change gets the answer and the change. Only when you
+cannot tell whether it asks for anything is it a conversation: a wrong answer costs one message; a
+wrong build costs a long run and a round of notes.
+
+A conversation reply:
+
+- Answer first, in plain words, in a few sentences.
+- Ask only questions whose answer changes the film, each with a recommended answer and its
+  trade-off ("30 seconds fits a feed; 60 leaves room for the demo").
+- When there is an idea to shape: for a new film, directions per `/hyperframes`
+  `references/pitch-round.md`; for an idea about this film, two or three options for the part named.
+  Recommend one.
+- End with the next step and the word that starts it ("Say build and I'll start").
+
+Keep the plan in the project, not only in the chat: the next message may start a new session that
+cannot see this one. Add it to STORYBOARD.md the way `/hyperframes-creative`
+`references/storyboard-recipe.md` § 1 records notes on frames; never overwrite locked frames. If the person
+asked you to change nothing at all, write nothing: put the plan in the reply and offer to save it.
+
+## 1. Every scene is a sub-composition
+
+The root composition holds only timed hosts, media and audio. Any scene with nested
+structure (a div containing children, a title with a subtitle, a chart) is its own
+file loaded with `data-composition-src`, wiring in `/hyperframes-core`
+`references/sub-compositions.md`.
+
+Nested markup left inside the root does not become a row of its own. It hides inside
+one opaque row that cannot be trimmed or moved part by part.
+
+Author as if a structure lint rejects any violation.
+
+## 2. One caption track
+
+- All captions live on one track: a single sub-composition host (one `data-track-index`)
+  marked `data-track-kind="captions"` that carries every caption group in order.
+- Never one row per caption group, and never captions mixed onto a track with
+  another kind.
+- Word-timing rules are unchanged: see `/embedded-captions` and the `caption_*` lint rules.
+
+## 3. One element kind per track
+
+Group by kind so each row is one thing the user can select, mute or drag as a set.
+
+| Kind                                    | `data-track-kind`      |
+| --------------------------------------- | ---------------------- |
+| Base video / A-roll                     | `video` (from the tag) |
+| Scenes, overlays, graphics              | `graphics`             |
+| Captions                                | `captions`             |
+| Audio (voiceover, music, sound effects) | `audio` (from the tag) |
+
+Put `data-track-kind` on sub-composition hosts. Video and audio kinds come from the tag, so
+`<video>` and `<audio>` need no attribute. Give each kind its own `data-track-index`; the number
+is display only; it never changes what renders on top. Use CSS for
+layering.
+
+## 4. Safe zones
+
+Any ruler or safe-box overlay lives in the preview pane, never inside the composition, so
+do not add guide elements to the HTML.
+Both framings (wide and vertical) use the same two safe boxes, Premiere's defaults. The preview
+toggle draws them with a tick at the midpoint of every edge. Source:
+`ACTION_SAFE_PERCENT` and `TITLE_SAFE_PERCENT` in `packages/studio/src/utils/previewSafeMargins.ts`.
+
+| Box         | Share of the frame | Inset on every edge |
+| ----------- | ------------------ | ------------------- |
+| Action-safe | 90%                | 5%                  |
+| Title-safe  | 80%                | 10%                 |
+
+- Safe margins: everything visible stays inside the action-safe box (90%), and captions and key content stay inside the title-safe box (80%).
+- Two-up and 50/50 layouts keep each half's content inside the title-safe box.
+
+## 5. A new film: plan, storyboard, build
+
+The [hyperframes-launches](https://github.com/heygen-com/hyperframes-launches) films were made in
+this order. Each step has an owner; follow it and do not restate it here.
+
+| Step          | Owner                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1. Brief      | `/hyperframes` `references/intent-interview.md`. Inside an existing project, only a follow-on to the same film stays: a new version or a cutdown, same workflow and aspect. Ask its must-have questions, skip `hyperframes init`, never overwrite BRIEF.md or STORYBOARD.md, add a new dated section to each, and say so in the reply. A film with a different workflow or aspect starts a new project, and the reply says so. |
+| 2. Directions | `/hyperframes` `references/pitch-round.md`                                                                                                                                                                                                                                                                                                                                                                                     |
+| 3. Storyboard | `/hyperframes-creative` `references/storyboard-recipe.md`                                                                                                                                                                                                                                                                                                                                                                      |
+| 4. Build      | The workflow the brief routes to (`/hyperframes` § 2) and its own references                                                                                                                                                                                                                                                                                                                                                   |
+| 5. Notes      | `/hyperframes` `references/review-loop.md`                                                                                                                                                                                                                                                                                                                                                                                     |
+
+What the launch films add, for a product launch. Where the workflow's chosen arc says otherwise,
+the arc wins.
+
+- **Real footage for the launched product.** Ask for a screen recording in the brief unless the workflow captures it itself (a site from its URL), and hold its
+  slot with a labelled placeholder until it arrives. Never approximate the launched product's UI. A
+  third-party tool shown as context (a chat app, an editor) is rebuilt faithfully from a capture.
+- **One world.** The same window or canvas continues across beats. Scrub every cut: whatever
+  persists must not jump.
+- **Cursors and scrolled content.** A cursor, or content the window itself scrolls out, leaves
+  through the window or frame edge, not by fading mid-frame. Element and text swaps follow the
+  workflow's `cut-catalog.md` where it has one.
+- **Close on the command or the address,** with the logo landing in footage that is still moving.
+- **State the runtime at every version.** Running past the target is the person's call, not yours.
+
+## Checking your work
+
+Run `hyperframes check` (it runs lint) and fix every finding. Then open the project in Studio and
+check that the timeline shows a base row, one row per scene host, one caption row and the audio rows.
+

@@ -1,16 +1,31 @@
 ---
-title: "soil-teaching-deck"
-description: "SOIL 全科教學簡報工作流技能（各科通用、零金鑰）。以李俊儀教授的 SOIL Teaching Deck Workflow 六顆引擎為核心，引導各科老師從教材或主題出發，經過概念定位、脈絡定位、頁面架構、 認知編修、風格建構，最終產出一份有教學力的 .pptx 簡報。各科適用：內建概念對照表、 結構拆解卡、問答雙欄、術語表、修正前後對照、文本重點標注、概念關係圖等通用教學版型。 視覺一律用 PptxGenJS 原生（色塊、表格、形狀、emoji），不需要任何 AI 生圖或 API 金鑰。 當使用者說「幫我做教學簡報」、「把這課教材做成投影片」、「用 SOIL 做簡報」、 「幫我設計某單元的教學投影片」、「這份教學簡報哪裡可以改」，或提供教材 並要求轉成簡報時，請一定要使用此技能。"
+title: "SOIL 全科教學簡報六引擎 (soil-teaching-deck)"
+description: "SOIL 全科教學簡報六引擎工作流（各科通用、零金鑰原生 PptxGenJS）。從教材定位、認知編修到代碼輸出，打造高學習成效的教學投影片。"
 ---
 
-# soil-teaching-deck
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>目前顯示版本：<strong>🇹🇼 繁體中文</strong></span>
+  </div>
+  <a href="/agent-skills-hub/en/skills/soil-teaching-deck" class="lang-switch-link">
+    🇬🇧 點此切換至英文版本 (Switch to English Version) →
+  </a>
+</div>
+
+# soil-teaching-deck · SOIL 全科教學簡報六引擎
+
+<div class="skill-subtitle-bar">SOIL Universal Teaching Deck (6 Engines)</div>
 
 <div class="skill-meta-bar">
   <span class="badge category">教學簡報</span>
+  <span class="badge lang-tag">🇹🇼 繁體中文</span>
   <span class="badge tag">#SOIL教學法</span> <span class="badge tag">#PptxGenJS</span> <span class="badge tag">#教學簡報</span> <span class="badge tag">#六引擎</span> <span class="badge tag">#通科適用</span>
 </div>
 
-> **簡介**：SOIL 全科教學簡報工作流技能（各科通用、零金鑰）。以李俊儀教授的 SOIL Teaching Deck Workflow 六顆引擎為核心，引導各科老師從教材或主題出發，經過概念定位、脈絡定位、頁面架構、 認知編修、風格建構，最終產出一份有教學力的 .pptx 簡報。各科適用：內建概念對照表、 結構拆解卡、問答雙欄、術語表、修正前後對照、文本重點標注、概念關係圖等通用教學版型。 視覺一律用 PptxGenJS 原生（色塊、表格、形狀、emoji），不需要任何 AI 生圖或 API 金鑰。 當使用者說「幫我做教學簡報」、「把這課教材做成投影片」、「用 SOIL 做簡報」、 「幫我設計某單元的教學投影片」、「這份教學簡報哪裡可以改」，或提供教材 並要求轉成簡報時，請一定要使用此技能。
+> **簡介**：SOIL 全科教學簡報六引擎工作流（各科通用、零金鑰原生 PptxGenJS）。從教材定位、認知編修到代碼輸出，打造高學習成效的教學投影片。
+>
+> **English Summary**: SOIL universal teaching deck workflow with 6 layout engines (subject-agnostic, zero-API-key native PptxGenJS). Guides teachers from curriculum planning to high-impact slides.
 
 ::: details 快速安裝指令（點擊複製）
 ::: code-group
@@ -47,13 +62,15 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 
 
-::: info 包含的檔案 (1 個檔案)
+::: info 包含的檔案 (3 個檔案)
 - `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
 :::
 
 ---
 
-## 技能完整說明檔 (SKILL.md)
+## 繁體中文完整說明檔 (SKILL.md)
 
 
 # SOIL Teaching Deck Workflow（各科通用）

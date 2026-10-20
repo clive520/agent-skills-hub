@@ -1,16 +1,31 @@
 ---
-title: "hyperframes-keyframes"
-description: "Use when a HyperFrames composition needs a punch-in, punch-out, zoom, reframe, Ken Burns treatment, camera move, visual match/whip handoff, or other seek-safe 2D/3D keyframes; also for GSAP, CSS keyframes, Anime.js, WAAPI, FLIP, paths, masks, SVG morph/draw, text trails, 3D depth, or `hyperframes keyframes` diagnostics. Don't use for broad scene strategy, brand design, media sourcing, captions, or general video planning."
+title: "2D/3D 關鍵影格與運鏡鏡頭手法 (hyperframes-keyframes)"
+description: "2D/3D 關鍵影格、運鏡縮放（Punch-in/out）、Ken Burns 效果、相機平移、遮罩路徑與 SVG 動態變換。"
 ---
 
-# hyperframes-keyframes
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>目前顯示版本：<strong>🇹🇼 繁體中文</strong></span>
+  </div>
+  <a href="/agent-skills-hub/en/skills/hyperframes-keyframes" class="lang-switch-link">
+    🇬🇧 點此切換至英文版本 (Switch to English Version) →
+  </a>
+</div>
+
+# hyperframes-keyframes · 2D/3D 關鍵影格與運鏡鏡頭手法
+
+<div class="skill-subtitle-bar">2D/3D Keyframing & Camera Moves</div>
 
 <div class="skill-meta-bar">
   <span class="badge category">動態設計</span>
+  <span class="badge lang-tag">🇹🇼 繁體中文</span>
   <span class="badge tag">#HyperFrames</span> <span class="badge tag">#關鍵影格</span> <span class="badge tag">#運鏡鏡頭</span> <span class="badge tag">#Ken Burns</span> <span class="badge tag">#SVG動畫</span>
 </div>
 
-> **簡介**：Use when a HyperFrames composition needs a punch-in, punch-out, zoom, reframe, Ken Burns treatment, camera move, visual match/whip handoff, or other seek-safe 2D/3D keyframes; also for GSAP, CSS keyframes, Anime.js, WAAPI, FLIP, paths, masks, SVG morph/draw, text trails, 3D depth, or `hyperframes keyframes` diagnostics. Don't use for broad scene strategy, brand design, media sourcing, captions, or general video planning.
+> **簡介**：2D/3D 關鍵影格、運鏡縮放（Punch-in/out）、Ken Burns 效果、相機平移、遮罩路徑與 SVG 動態變換。
+>
+> **English Summary**: 2D/3D keyframing, punch-in/out, zoom, reframe, Ken Burns treatment, camera moves, and SVG morph/draw.
 
 ::: details 快速安裝指令（點擊複製）
 ::: code-group
@@ -50,267 +65,46 @@ git clone https://github.com/clive520/agent-skills-hub.git
 - [hyperframes-animation](./hyperframes-animation.md)
 :::
 
-::: info 包含的檔案 (3 個檔案)
+::: info 包含的檔案 (5 個檔案)
 - `agents/openai.yaml`
 - `references/keyframe-patterns.md`
 - `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
 :::
 
 ---
 
-## 技能完整說明檔 (SKILL.md)
+## 繁體中文完整說明檔 (SKILL.md)
 
 
-**Plugin installs:** Before setup or freshness commands, follow [plugin execution rules](../hyperframes/references/plugin-installation.md) when this skill is inside a HyperFrames plugin. Standalone installs keep the update instructions below.
+# HyperFrames 關鍵影格與運鏡手法
 
-# HyperFrames Keyframes
+關鍵影格是一種姿態合約（Pose Contract）：宣告視覺可見狀態、主體身份連貫性、尋軌安全（seek-safe）的執行期，並確保像素級的正確呈現。
 
-Keyframes are a pose contract: visible states, continuous subject identity, seek-safe runtime, verified pixels.
+---
 
-Use `hyperframes-animation` for broad scene recipes. Use `hyperframes-cli` for full command docs. Use `references/keyframe-patterns.md` only when choosing implementation mechanisms, not visual style.
+## 創作者常見運鏡需求與機制對照
 
-## Creator editing boundary
+| 需求 | 實作機制 |
+|---|---|
+| **特寫切入 / 拉遠 (Punch-in / Punch-out)** | 對 clip 內部的包裝層使用 `scale` 配合 `x`/`y` 進行關鍵影格動畫。硬切使用 `set` 或極短補間，滑動縮放使用平滑 tween。 |
+| **平滑多段縮放 (Smooth Zoom / Reframe)** | 保持單一主體包裝層處於活躍狀態，將多個縮放狀態組織為階梯式姿態序列，各段指定獨立緩動曲線。 |
+| **Ken Burns 平移與相機運動** | 同時對包裝層的位移（translation）與縮放（scale）進行關鍵影格補間。 |
+| **匹配剪輯 / 快速搖攝 (Match cut / Whip pan)** | 由 `/hyperframes-animation` 提供銜接邏輯，關鍵影格確保位移方向與加速度曲線連貫。 |
+| **遮罩動態重構 (Crop & Mask Reframe)** | 對內部視覺包裝層的 `clip-path` 或遮罩進行關鍵影格插值，不改動原始素材播放時間。 |
+| **速度曲線 (Speed Ramps)** | 在 `<video>`/`<audio>` 上使用 `data-automation` 的 `rate` 軌道，實現對數曲線插值的加速與減速。 |
+| **定格畫面 (Freeze / Hold)** | 將靜態畫面或最後影格獨立置放為單獨的 clip，隨後再恢復原始影片區段播放。 |
 
-Keyframes own visual motion, not clip assembly. Source-range hard cuts, trim,
-splice, and reorder belong to `/hyperframes-core`: author one media element per
-kept range, place it with `data-start` and `data-duration`, and select its source
-offset with `data-media-start`. Adjacent ranges make a hard cut. A crossfade
-uses overlapping clips on different tracks plus visual opacity keyframes; sound
-fades use `/hyperframes-audio`.
+---
 
-| Creator request                         | Truthful mechanism                                                                                                                                                                                                          |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Punch-in / punch-out                    | Keyframe `scale` with `x`/`y` or percentage translation on a non-timed visual/crop wrapper inside the clip. Use a set/short tween for a hard punch and a tween for a smooth move.                                           |
-| Smooth multi-state zoom or reframe      | Keep one subject wrapper alive and author multiple zoom/reframe states as a pose ladder with per-segment easing.                                                                                                            |
-| Pan, reframe, or Ken Burns camera move  | Animate wrapper translation plus scale. Geometry is authored; this is not face tracking or automatic semantic reframing.                                                                                                    |
-| Chained camera moves                    | Chain labeled transform beats on one registered seek-safe timeline.                                                                                                                                                         |
-| Match cut or whip pan                   | `/hyperframes-animation` owns the visual handoff; `/hyperframes-registry` supplies primitives; keyframes preserve authored geometry, direction, and velocity. There is no automatic matching-frame discovery.               |
-| Crop and mask reframe                   | Interpolate `clip-path` or a mask on an inner visual wrapper to crop/reframe without changing source time. Polygon keyframes can form a polygon/mask transition.                                                            |
-| Directional wipe cut or iris/reveal cut | Animate a mask/clip boundary across overlapping visual clips; `/hyperframes-animation` owns the handoff choreography.                                                                                                       |
-| Split-screen handoff                    | Keep both visual clips placed by core, then keyframe their inner crop/mask wrappers and divider geometry.                                                                                                                   |
-| Constant source retime                  | `/hyperframes-core` owns normalized `data-playback-rate` (`0.1..10`) for render-safe picture and pitch-preserved sound. It is constant for the whole media element.                                                         |
-| Source speed ramps                      | A `rate` lane in `data-automation` on the `<video>`/`<audio>` (`t` in clip seconds, `v` 0.1..10, log interpolation); it wins over the constant rate.                                                                        |
-| Freeze / hold                           | A visual pose, final source frame, or finished sub-composition can hold. Arbitrary mid-source freeze is not supported; preprocess a still/derived segment, place it as its own clip, then resume with another source range. |
+## 製作步驟 (Procedure)
 
-When editing picture and sound together, load `/hyperframes-core`, this skill for
-visual motion, and `/hyperframes-audio` for fades, crossfades, volume automation,
-ducking/carve, or effects on the placed tracks.
-
-A visual transition or cropping treatment is not a temporal source trim or
-splice. `/hyperframes-core` owns the timeline, clip timing, and source ranges;
-keyframes only animate the visible handoff or crop on wrappers inside those clips.
-For copyable combined picture/sound recipes, use `/hyperframes-core` → `references/creator-editing-recipes.md`.
-
-## Procedure
-
-1. Identify the animated subject, visible states, final state, and runtime.
-2. Choose the smallest mechanism that proves the prompt. Read `references/keyframe-patterns.md` only if the mechanism is unclear.
-3. Author seek-safe keyframes in the declared runtime. Register the runtime instance only after the build completes; building inside `document.fonts.ready` is fine.
-4. Verify with `hyperframes check` (it runs lint), `hyperframes keyframes`, one focused `--shot`, and snapshots at proof times.
-5. If proof fails, fix the source keyframes and rerun the smallest failing diagnostic before rendering.
-
-## Contract
-
-- Name the moving subject.
-- Name the poses needed to prove the intended motion, including the final state.
-- Keyframe visible channels, not hidden helper state.
-- Preserve object identity when continuity matters.
-- Crossfade only when the intended motion is replacement or dissolve.
-- Hold readable or semantic states long enough to see.
-- Final frame is part of the animation, not cleanup.
-- Do not reset to rest unless requested.
-- Do not end on black unless requested.
-- If editing a starter scene, preserve layout, copy, assets, colors, and final state unless asked to redesign.
-
-## Runtime Rules
-
-GSAP:
-
-- build at page load or inside `document.fonts.ready`, and register only after the build completes
-- use `gsap.timeline({ paused: true })`
-- register as `window.__timelines[compositionId]`
-- registry key must match `data-composition-id`
-- do not call `tl.play()` for render-critical motion
-- keep repeats finite
-
-CSS keyframes:
-
-- finite duration and iteration count
-- deterministic delay
-- `animation-fill-mode: both`
-- use `data-start` when timing belongs to a clip
-
-Anime.js:
-
-- create synchronously
-- `autoplay: false`
-- finite duration and loops
-- push every instance to `window.__hfAnime`
-
-WAAPI:
-
-- finite `duration`
-- `fill: "both"`
-- deterministic construction
-- the text surface does not list WAAPI; verify with `--shot` (it seeks WAAPI) and snapshots
-
-Never use for render-critical motion:
-
-- `Date.now()`
-- `performance.now()`
-- unseeded `Math.random()`
-- hover/scroll triggers
-- timers
-- a timeline registered before its async build finishes
-- unregistered `requestAnimationFrame`
-- infinite loops
-
-## GSAP Skeleton
-
-```js
-const root = document.querySelector("[data-composition-id]");
-const compositionId = root.dataset.compositionId;
-const tl = gsap.timeline({ paused: true });
-
-tl.addLabel("state-a", 0);
-tl.to(".subject", {
-  keyframes: [
-    { x: 0, opacity: 1, duration: 0.2 },
-    { x: 120, opacity: 1, duration: 0.4, ease: "power2.out" },
-    { x: 100, opacity: 1, duration: 0.2, ease: "power2.inOut" },
-  ],
-  ease: "none",
-});
-
-window.__timelines = window.__timelines || {};
-window.__timelines[compositionId] = tl;
-```
-
-Use labels for semantic states. Use position parameters instead of chained delays. Use `immediateRender: false` for later `from()`/`fromTo()` tweens touching the same property.
-
-## Keyframe Forms
-
-- Array keyframes: pose ladder with per-step duration/ease.
-- Percentage keyframes: exact timing inside one tween.
-- Property arrays: compact multi-stop changes.
-- `ease: "none"` on the parent when each stop carries its own easing.
-- `easeEach` when every segment should share the same feel.
-
-Do not copy numeric distances or timing from examples. Derive them from the actual composition geometry and duration.
-
-For one subject moving between two boxes, prefer one continuous transform tween or FLIP. Split `x/y/scale` into multiple eased keyframes only when the viewer should feel distinct beats; every segment changes velocity and can read as a hitch.
-
-## Channels
-
-Prefer compositor/visual channels: `x/y/z`, `xPercent/yPercent`, `scale`, `rotationX/Y/Z`, `skew`, `transformOrigin`, `svgOrigin`, `opacity`, `autoAlpha`, `clip-path`, masks, CSS vars, SVG path/dash values, camera transforms, shader uniforms.
-
-Avoid layout/lifecycle channels: `top/left/right/bottom`, `width/height`, `margin/padding`, `display`, `visibility`, late DOM creation, helper overlays doing subject motion.
-
-For visibility changes, use `autoAlpha` on the registered seekable GSAP timeline, or a zero-duration `tl.set()` at an explicit boundary. Target only a non-clip element or a wrapper inside the clip; never target `.clip` itself. Never duration-tween raw `visibility`, and never tween `display`.
-
-## Mechanism Choice
-
-Choose the smallest mechanism that proves the prompt:
-
-| Need                                  | Mechanism                                          |
-| ------------------------------------- | -------------------------------------------------- |
-| Same subject changes box or hierarchy | shared element / FLIP                              |
-| Subject travels a visible route       | path travel                                        |
-| Stroke grows or traces                | stroke draw                                        |
-| Shape becomes another shape           | shape interpolation                                |
-| Reveal boundary is visible            | clip, mask, or shader uniform                      |
-| Many items move with order            | stagger / indexed delay                            |
-| Text itself moves                     | line, word, character, or band subdivision         |
-| Surface bends, stretches, or crops    | parent/child counter-transform                     |
-| UI has states                         | explicit state machine                             |
-| Scene has depth                       | DOM 3D, Three.js, or WebGL camera/object keyframes |
-
-Mechanisms can combine, but each one must clarify the idea. Decoration is not proof.
-
-## Timing
-
-- Anticipation only when it clarifies cause or direction.
-- Acceleration leaves rest.
-- Peak proof shows the mechanism unmistakably.
-- Follow-through sells energy and direction.
-- Overshoot only when the subject should feel elastic or tactile.
-- Constant-speed path travel usually needs `ease: "none"`.
-- Discrete UI states usually need a sharp ease-out.
-- Repeated elements need ordered offsets, not identical timing.
-- Final lockups need longer holds than transition poses.
-- Smoothness means continuous velocity on the same subject.
-- Do not overlap tweens that write the same transform property unless the overlap is intentional and verified.
-- Avoid animating large `clip-path`/mask changes while the same hero surface is also scaling or traveling; use nested reveals after the main move settles.
-
-## Text
-
-Preserve line boxes, word spacing, readability, and final fit. If text moves internally, move the glyphs or masked bands, not only decorations around the text. Snapshot readable frames.
-
-## SVG
-
-For stroke growth prefer `DrawSVGPlugin`, then `stroke-dasharray`/`stroke-dashoffset`. For shape interpolation prefer `MorphSVGPlugin`; convert primitives to paths when needed and split complex silhouettes into simpler parts.
-
-## 3D
-
-Scale alone is fake depth. Use perspective on a stable parent, `transform-style: preserve-3d`, z travel, rotation, camera/world motion, occlusion, and layer order when objects cross.
-
-Use one or two diagnostic angles that expose the depth relationship. If angled proof shows no depth crossing, improve z/camera/occlusion.
-
-## Canvas / WebGL
-
-Keyframe camera position, camera target, object transform, material opacity, shader uniforms, and postprocess intensity through deterministic state. Render from HyperFrames time. Use `--ghost` because marker boxes cannot see internal canvas motion.
-
-## CLI Proof
-
-```bash
-npx hyperframes check
-npx hyperframes keyframes .
-npx hyperframes keyframes . --json
-npx hyperframes keyframes . --runtime all
-npx hyperframes keyframes . --selector "<selector>" --shot "<file>" --samples <n>
-npx hyperframes keyframes . --selector "<selector>" --shot "<file>" --layout strip --from <t0> --to <t1>
-npx hyperframes keyframes . --shot "<file>" --ghost --angle <angle>
-npx hyperframes snapshot . --at <times>
-```
-
-Choose `<selector>` for the real animated subject. Choose `<times>` for first frame, proof poses, final-minus-hold, and exact final. Choose `<angle>` only when depth must be proven.
-
-| Tool             | Proves                                                                                              |
-| ---------------- | --------------------------------------------------------------------------------------------------- |
-| `keyframes`      | targets, explicit stops, paths, traces, composed parent/child motion, CSS stops, Anime registration |
-| `--shot`         | ghosts, route shape, time spacing, DOM 3D projection, focused selector proof                        |
-| `--layout strip` | in-place motion, overlaps, contact, subtle scale/opacity, text waves                                |
-| `--ghost`        | canvas, WebGL, shader motion, rendered 3D                                                           |
-| `snapshot --at`  | masks, text readability, full state, final lockup, black/reset tails                                |
-
-If selector proof looks wrong:
-
-1. rerun `--json`
-2. find the actual animated target
-3. shoot that target
-4. snapshot full frames
-5. trust painted pixels over logs
-
-## Diagnostic Reading
-
-`flat` means no explicit middle poses. `keyframes` means explicit stops exist. `motionPath` means a route exists. `trace` means multi-stroke drawing. `composed with` means child motion inherits parent motion.
-
-Even ghost spacing means constant speed. Clustered ghosts mean slow-in or settle. Large gaps mean fast travel.
-
-A helper-selector shot is not proof. An onion shot over a broken full frame is not proof.
-
-## Error Handling
-
-| Failure            | Fix                                                                                |
-| ------------------ | ---------------------------------------------------------------------------------- |
-| endpoint-only      | add middle poses, hold peak proof, rerun `--shot`                                  |
-| identity break     | keep one element alive, use shared source/final boxes, remove substitute crossfade |
-| fake 3D            | add z/camera travel, occlusion, angled proof                                       |
-| wrong final        | add final hold, snapshot final-minus-hold and exact final                          |
-| unseekable runtime | pause autoplay, remove timers, register the instance after the build completes     |
-| unreadable text    | preserve line boxes, reduce displacement, add final hold, snapshot text frames     |
-
-## Done
-
-Run `hyperframes check` (it runs lint), `hyperframes keyframes`, one focused `--shot`, and snapshots. Confirm first frame, proof poses, final-minus-hold, exact final, subject-owned motion, and no debug overlays.
+1. **鎖定動畫主體**：識別運動目標、起點狀態、終點狀態與所選用的執行期。
+2. **選用最簡可行機制**：參閱 `references/keyframe-patterns.md`。
+3. **編寫尋軌安全 (Seek-safe) 的關鍵影格**：確保在任何時間戳記皆能正確反推各物件位置與透明度。
+4. **驗證與診斷**：
+   - 執行 `npx hyperframes check`
+   - 執行 `npx hyperframes keyframes` 檢視運動軌跡
+   - 針對關鍵時間點輸出 snapshot 進行像素確認
 

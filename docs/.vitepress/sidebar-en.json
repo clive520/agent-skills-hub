@@ -1,0 +1,142 @@
+[
+  {
+    "text": "Explainer Videos",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "faceless-explainer · Text-to-Faceless Explainer Video",
+        "link": "/en/skills/faceless-explainer"
+      },
+      {
+        "text": "motion-explainer · HyperFrames Motion Explainer Video",
+        "link": "/en/skills/motion-explainer"
+      }
+    ]
+  },
+  {
+    "text": "Workflow Routing",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes · HyperFrames Master Video Router & Entrypoint",
+        "link": "/en/skills/hyperframes"
+      },
+      {
+        "text": "hyperframes-studio · Studio Collaboration & Timeline Specs",
+        "link": "/en/skills/hyperframes-studio"
+      }
+    ]
+  },
+  {
+    "text": "Motion Design",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes-animation · HyperFrames Animation Knowledge & Adapters",
+        "link": "/en/skills/hyperframes-animation"
+      },
+      {
+        "text": "hyperframes-keyframes · 2D/3D Keyframing & Camera Moves",
+        "link": "/en/skills/hyperframes-keyframes"
+      },
+      {
+        "text": "motion-design · Motion Design Principles & Pacing",
+        "link": "/en/skills/motion-design"
+      }
+    ]
+  },
+  {
+    "text": "Audio Engineering",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes-audio · Audio Mixing & Sound Engineering",
+        "link": "/en/skills/hyperframes-audio"
+      }
+    ]
+  },
+  {
+    "text": "Developer Tools",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes-cli · HyperFrames CLI Development & Render Loop",
+        "link": "/en/skills/hyperframes-cli"
+      }
+    ]
+  },
+  {
+    "text": "Core Architecture",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes-core · HyperFrames Core Architecture & Contracts",
+        "link": "/en/skills/hyperframes-core"
+      }
+    ]
+  },
+  {
+    "text": "Visual & Creative",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes-creative · Visual Creative & Brand Style Guide",
+        "link": "/en/skills/hyperframes-creative"
+      }
+    ]
+  },
+  {
+    "text": "Components & Blocks",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes-registry · Registry Blocks & Components Library",
+        "link": "/en/skills/hyperframes-registry"
+      }
+    ]
+  },
+  {
+    "text": "Media Assets",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "media-use · Agent Media OS (TTS / SFX / Images / Logos)",
+        "link": "/en/skills/media-use"
+      }
+    ]
+  },
+  {
+    "text": "Review & QA",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "review-loop · Animation Visual Self-Review Loop",
+        "link": "/en/skills/review-loop"
+      }
+    ]
+  },
+  {
+    "text": "Teaching Decks",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "soil-motion-deck · Animated Teaching Deck (SOIL + HyperFrames)",
+        "link": "/en/skills/soil-motion-deck"
+      },
+      {
+        "text": "soil-teaching-deck · SOIL Universal Teaching Deck (6 Engines)",
+        "link": "/en/skills/soil-teaching-deck"
+      }
+    ]
+  },
+  {
+    "text": "Graphics & Stickers",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "visual-line-sticker-production · LINE Static Sticker Production & Packaging",
+        "link": "/en/skills/visual-line-sticker-production"
+      }
+    ]
+  }
+]

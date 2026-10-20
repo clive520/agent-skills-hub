@@ -1,16 +1,31 @@
 ---
-title: "motion-explainer"
-description: "用自然語言做「原理解說動畫影片」的端到端流程（HyperFrames + 中文旁白 + 字幕 + 三色主題 + 自我審查），產出可直接上課投影或上傳 YouTube 的 MP4。只要使用者要做解說動畫、科普動畫、原理動畫、教學動畫、explainer video、motion graphics 解說片，或說「上網查資料做一支解說 X 的動畫」，就一定要使用此技能。觸發情境包含：「做一個解說動畫」、「做科普影片」、「把這個原理做成動畫」、「做一支 90 秒的教學動畫」、「explain X as an animated video」。"
+title: "HyperFrames 原理解說動畫影片 (motion-explainer)"
+description: "HyperFrames 原理解說動畫影片端到端生成流程：中文旁白配音 + 精確時間軸字幕 + 三色品牌主題 + 視覺自我審查循環。"
 ---
 
-# motion-explainer
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>目前顯示版本：<strong>🇹🇼 繁體中文</strong></span>
+  </div>
+  <a href="/agent-skills-hub/en/skills/motion-explainer" class="lang-switch-link">
+    🇬🇧 點此切換至英文版本 (Switch to English Version) →
+  </a>
+</div>
+
+# motion-explainer · HyperFrames 原理解說動畫影片
+
+<div class="skill-subtitle-bar">HyperFrames Motion Explainer Video</div>
 
 <div class="skill-meta-bar">
   <span class="badge category">解說動畫</span>
+  <span class="badge lang-tag">🇹🇼 繁體中文</span>
   <span class="badge tag">#HyperFrames</span> <span class="badge tag">#edge-tts</span> <span class="badge tag">#原理解說</span> <span class="badge tag">#科普影片</span> <span class="badge tag">#繁體中文</span>
 </div>
 
-> **簡介**：用自然語言做「原理解說動畫影片」的端到端流程（HyperFrames + 中文旁白 + 字幕 + 三色主題 + 自我審查），產出可直接上課投影或上傳 YouTube 的 MP4。只要使用者要做解說動畫、科普動畫、原理動畫、教學動畫、explainer video、motion graphics 解說片，或說「上網查資料做一支解說 X 的動畫」，就一定要使用此技能。觸發情境包含：「做一個解說動畫」、「做科普影片」、「把這個原理做成動畫」、「做一支 90 秒的教學動畫」、「explain X as an animated video」。
+> **簡介**：HyperFrames 原理解說動畫影片端到端生成流程：中文旁白配音 + 精確時間軸字幕 + 三色品牌主題 + 視覺自我審查循環。
+>
+> **English Summary**: HyperFrames animated explainer video production workflow: Chinese voiceover + synced captions + 3-color theme + visual self-review loop.
 
 ::: details 快速安裝指令（點擊複製）
 ::: code-group
@@ -51,7 +66,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 - [review-loop](./review-loop.md)
 :::
 
-::: info 包含的檔案 (22 個檔案)
+::: info 包含的檔案 (24 個檔案)
 - `references/hardware.md`
 - `references/lessons.md`
 - `references/theme-json.md`
@@ -70,6 +85,8 @@ git clone https://github.com/clive520/agent-skills-hub.git
 - `scripts/unify_frames.py`
 - `scripts/voice_meta.py`
 - `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
 - `templates/dispatch_context.md`
 - `templates/shared-asset.example.svg`
 - `templates/shots.example.json`
@@ -78,7 +95,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 ---
 
-## 技能完整說明檔 (SKILL.md)
+## 繁體中文完整說明檔 (SKILL.md)
 
 
 # Motion explainer — 從一句話到一支解說動畫

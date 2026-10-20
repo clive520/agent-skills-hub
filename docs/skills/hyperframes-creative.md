@@ -1,16 +1,31 @@
 ---
-title: "hyperframes-creative"
-description: "Non-animation creative direction for HyperFrames videos. Use for design spec (frame.md / design.md) handling, palettes, typography, narration, beat planning, audio-reactive visuals, composition patterns, and brand / style decisions. For atomic motion patterns and scene blueprints, use `hyperframes-animation`."
+title: "視覺創意風格與色彩字型指南 (hyperframes-creative)"
+description: "視覺創意風格指南：品牌規範、色板調色盤、字型排版階層、版面構圖與高質感影片防平庸原則。"
 ---
 
-# hyperframes-creative
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>目前顯示版本：<strong>🇹🇼 繁體中文</strong></span>
+  </div>
+  <a href="/agent-skills-hub/en/skills/hyperframes-creative" class="lang-switch-link">
+    🇬🇧 點此切換至英文版本 (Switch to English Version) →
+  </a>
+</div>
+
+# hyperframes-creative · 視覺創意風格與色彩字型指南
+
+<div class="skill-subtitle-bar">Visual Creative & Brand Style Guide</div>
 
 <div class="skill-meta-bar">
   <span class="badge category">視覺創意</span>
+  <span class="badge lang-tag">🇹🇼 繁體中文</span>
   <span class="badge tag">#HyperFrames</span> <span class="badge tag">#視覺風格</span> <span class="badge tag">#色彩搭配</span> <span class="badge tag">#字體設計</span> <span class="badge tag">#創意指引</span>
 </div>
 
-> **簡介**：Non-animation creative direction for HyperFrames videos. Use for design spec (frame.md / design.md) handling, palettes, typography, narration, beat planning, audio-reactive visuals, composition patterns, and brand / style decisions. For atomic motion patterns and scene blueprints, use `hyperframes-animation`.
+> **簡介**：視覺創意風格指南：品牌規範、色板調色盤、字型排版階層、版面構圖與高質感影片防平庸原則。
+>
+> **English Summary**: Visual creative direction: brand guidelines, palettes, font pairings, visual density, and anti-generic video aesthetics.
 
 ::: details 快速安裝指令（點擊複製）
 ::: code-group
@@ -47,7 +62,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 
 
-::: info 包含的檔案 (79 個檔案)
+::: info 包含的檔案 (81 個檔案)
 - `frame-presets/biennale-yellow/caption-skin.html`
 - `frame-presets/biennale-yellow/frame-showcase.html`
 - `frame-presets/biennale-yellow/FRAME.md`
@@ -126,80 +141,50 @@ git clone https://github.com/clive520/agent-skills-hub.git
 - `scripts/package-loader.mjs`
 - `scripts/package-loader.test.mjs`
 - `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
 - `templates/design-picker.html`
 :::
 
 ---
 
-## 技能完整說明檔 (SKILL.md)
+## 繁體中文完整說明檔 (SKILL.md)
 
 
-**Plugin installs:** Before setup or freshness commands, follow [plugin execution rules](../hyperframes/references/plugin-installation.md) when this skill is inside a HyperFrames plugin. Standalone installs keep the update instructions below.
+# HyperFrames 視覺創意與風格指南
 
-# HyperFrames Creative
+專注於品牌調性、視覺節奏、藝術風格、旁白語調與版面構圖方向。在完成 `hyperframes-core` 的技術合約後使用本技能。
 
-Brand, pacing, style, narration, and composition direction. Use after the technical contract from `hyperframes-core` is in place.
+> **必讀篇章（超越一般網頁設計思維）：**
+> - `references/house-style.md` — 深入解讀需求，避免廉價平庸預設，背景與前景階層公式。將簡單的版面美化昇華為具備深度的「概念設計」。
+> - `references/video-composition.md` — 影片媒介的比例感、景深與前景細節。避免影片看起來像空洞的死板網頁。
 
-For motion patterns, scene blueprints, transitions, and CSS marker effects, use `hyperframes-animation` — this skill is intentionally non-animation.
+---
 
-> **Read these two FIRST for any non-trivial composition — they override web instincts:**
->
-> - `references/house-style.md` — "interpret the prompt, generate real content," the lazy-default list, and the background/foreground layer recipe. This is what turns a literal restyle into a _concept_.
-> - `references/video-composition.md` — video-medium scale, depth, and foreground detail. It explains how to avoid empty web-page layouts without imposing a universal element count.
->
-> Skipping these is the single biggest cause of generic, web-page-looking output. They are not optional rows in the routing table below — for anything beyond a one-line edit, open both before you choose colors or write HTML.
+## 創意工作流 (Creative Workflow)
 
-## Workflow
+1. **優先讀取設計規範**：若專案已有 `frame.md`（或 `design.md`），將其 frontmatter 中的 tokens 視為品牌最高準則（顏色、字體、間距、語調）。
+2. **視覺風格選型**：
+   - 預設主題方案 → `frame-presets/`
+   - 特定情緒或美學風格 → `references/visual-styles.md`
+   - 快速高質感預設 → `references/house-style.md`
+3. **節奏與節拍規劃 (Beats & Rhythm)**：在編寫 HTML 前，先依據 `references/beat-direction.md` 規劃每一拍的節奏與轉場時機。
+4. **設計驗證**：產出後對照 `references/design-adherence.md` 檢查色票、字型、圓角、間距與景深。
 
-1. If a project has a design spec, **read it first** and treat its frontmatter tokens as brand truth (colors, fonts, spacing, tone, constraints). Which file to read (precedence `frame.md` → `design.md` → `DESIGN.md`) and how to parse it (frontmatter = normative, prose = context) are defined once in [`references/design-spec.md`](references/design-spec.md) — resolve and load per that doc.
-2. If no design spec exists and the user asks for visual direction, choose a route:
-   - Ready-made frame-preset (optional) → `frame-presets/` (adopt a `FRAME.md` as `frame.md`; see `references/design-spec.md`)
-   - Named style or mood → `references/visual-styles.md`
-   - Fast defaults → `references/house-style.md`
-   - Interactive selection → `references/design-picker.md`
-3. For multi-scene work, plan beats and rhythm before writing HTML → `references/beat-direction.md`. For scene transitions, jump to `hyperframes-animation/transitions/`.
-4. For motion-heavy work, read `references/motion-principles.md` (high-level guardrails), then go to `hyperframes-animation` for atomic rules.
+---
 
-## Routing
+## 創意主題速查表
 
-| Topic                                                                                                   | Read                                           |
-| ------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| Adopt a ready-made frame-preset as `frame.md` (optional)                                                | `frame-presets/` · `references/design-spec.md` |
-| Default palettes, motion, typography, lazy defaults to question                                         | `references/house-style.md`                    |
-| Named style presets, mood-to-style routing                                                              | `references/visual-styles.md`                  |
-| Palette-specific color tokens                                                                           | `palettes/*.md`                                |
-| Composition patterns — PiP, text-behind-subject, title card, slide show                                 | `references/composition-patterns.md`           |
-| Stats / infographic presentation                                                                        | `references/data-in-motion.md`                 |
-| Structured expansion for open-ended prompts                                                             | `references/prompt-expansion.md`               |
-| Video-medium density, scale, color, frame composition                                                   | `references/video-composition.md`              |
-| Per-beat direction, rhythm planning, transition timing                                                  | `references/beat-direction.md`                 |
-| Post-authoring spec verification (colors, type, corners, spacing, depth)                                | `references/design-adherence.md`               |
-| High-level motion guardrails and GSAP-quality rules                                                     | `references/motion-principles.md`              |
-| Font selection, pairings, rendered-video type guardrails                                                | `references/typography.md`                     |
-| Story doctrine — hook language, value-before-evidence, storyboard-as-proposal, source-traceable visuals | `references/story-spine.md`                    |
-| Script pacing, tone, openings, number pronunciation                                                     | `references/narration.md`                      |
-| Precomputed audio bands mapped to motion                                                                | `references/audio-reactive.md`                 |
-
-## Scripts
-
-- `scripts/contrast-report.mjs` — inspect contrast warnings from rendered frames.
-- `scripts/extract-audio-data.py` — pre-extract audio bands for audio-reactive compositions.
-- `scripts/package-loader.mjs` — support script for bundled creative tooling.
-
-`contrast-report.mjs` resolves helper packages from the current project first, then can bootstrap the bundled HyperFrames package version. Set `HYPERFRAMES_SKILL_PKG_VERSION=<version>` only when running the skill outside the bundled CLI/skill install and you need to pin that bootstrap version explicitly.
-
-Run with explicit paths, for example:
-
-```bash
-python <SKILL_DIR>/scripts/extract-audio-data.py <audio-file>
-```
-
-Animation analysis (`animation-map.mjs`) lives in `hyperframes-animation/scripts/`.
-
-## Boundaries
-
-- Do not override `hyperframes-core` technical rules.
-- Do not require a design system for a minimal technical composition.
-- Do not add extra scenes, narration, music, captions, or transitions unless the request calls for them or you first propose the expansion.
-- Keep recipe references task-specific; do not read every reference for simple edits.
+| 主題 | 查閱指引 |
+|---|---|
+| 快速套用現成預設風格 | `frame-presets/` · `references/design-spec.md` |
+| 預設高質感色板與避免平庸設計 | `references/house-style.md` |
+| 情緒風格路由（科技感、溫暖手繪、簡約極致等） | `references/visual-styles.md` |
+| 版面合成模式（畫中畫、文字襯底、大字卡、幻燈片） | `references/composition-patterns.md` |
+| 統計數據與資訊圖表動態化 | `references/data-in-motion.md` |
+| 影片排版、景深層次與視覺密度 | `references/video-composition.md` |
+| 字體挑選、配對與影片文字大小底線 | `references/typography.md` |
+| 故事結構法則（鉤子、價值先行、分鏡提案） | `references/story-spine.md` |
+| 腳本語速、語調與數字唸法 | `references/narration.md` |
+| 音訊波形與頻段響應視覺 | `references/audio-reactive.md` |
 

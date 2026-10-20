@@ -1,16 +1,31 @@
 ---
-title: "hyperframes-core"
-description: "The HyperFrames composition contract — build one renderable project. Use for composition structure, the `data-*` timing attributes, `class=\"clip\"`, tracks, sub-compositions, variables, framework-owned media playback, deterministic-render rules, and validation. Read before writing composition HTML."
+title: "HyperFrames 核心架構與合約規範 (hyperframes-core)"
+description: "HyperFrames 核心合約：確定性時間軸、DOM data-* 屬性、子合成架構、seek-safe 任意尋軌與媒體播放規範。"
 ---
 
-# hyperframes-core
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>目前顯示版本：<strong>🇹🇼 繁體中文</strong></span>
+  </div>
+  <a href="/agent-skills-hub/en/skills/hyperframes-core" class="lang-switch-link">
+    🇬🇧 點此切換至英文版本 (Switch to English Version) →
+  </a>
+</div>
+
+# hyperframes-core · HyperFrames 核心架構與合約規範
+
+<div class="skill-subtitle-bar">HyperFrames Core Architecture & Contracts</div>
 
 <div class="skill-meta-bar">
   <span class="badge category">核心架構</span>
+  <span class="badge lang-tag">🇹🇼 繁體中文</span>
   <span class="badge tag">#HyperFrames</span> <span class="badge tag">#核心合約</span> <span class="badge tag">#確定性時間軸</span> <span class="badge tag">#子合成</span> <span class="badge tag">#DOM架構</span>
 </div>
 
-> **簡介**：The HyperFrames composition contract — build one renderable project. Use for composition structure, the `data-*` timing attributes, `class="clip"`, tracks, sub-compositions, variables, framework-owned media playback, deterministic-render rules, and validation. Read before writing composition HTML.
+> **簡介**：HyperFrames 核心合約：確定性時間軸、DOM data-* 屬性、子合成架構、seek-safe 任意尋軌與媒體播放規範。
+>
+> **English Summary**: Core architecture: data attributes, sub-compositions, determinism, seek-safe paused timeline, and composition contracts.
 
 ::: details 快速安裝指令（點擊複製）
 ::: code-group
@@ -47,7 +62,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 
 
-::: info 包含的檔案 (11 個檔案)
+::: info 包含的檔案 (13 個檔案)
 - `references/composition-patterns.md`
 - `references/creator-editing-recipes.md`
 - `references/data-attributes.md`
@@ -59,109 +74,58 @@ git clone https://github.com/clive520/agent-skills-hub.git
 - `references/tracks-and-clips.md`
 - `references/variables-and-media.md`
 - `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
 :::
 
 ---
 
-## 技能完整說明檔 (SKILL.md)
+## 繁體中文完整說明檔 (SKILL.md)
 
 
-**Plugin installs:** Before setup or freshness commands, follow [plugin execution rules](../hyperframes/references/plugin-installation.md) when this skill is inside a HyperFrames plugin. Standalone installs keep the update instructions below.
+# HyperFrames 核心架構與合約規範
 
-# HyperFrames Core
+**常見陷阱（必讀）：**
+- 置中請使用 Flexbox 或 CSS `inset`，切勿對後續要用 GSAP 驅動 `x`/`y` 的節點使用 `transform: translate(-50%, -50%)`（會觸發 `gsap_css_transform_conflict` 警告）。請改用 `fromTo` 或 `xPercent`/`yPercent`。
+- 場景退場時，不要加上 `tl.set(..., {visibility:"hidden"})`，執行時期引擎已會自動依據時間軸隱藏過期 clip。
+- `window.__timelines["id"]` 的鍵名必須嚴格等於根元素宣告的 `data-composition-id`。
+- 渲染完成後注意摘要輸出：確認 GPU 模式與 stage timings。
 
-**Agent pitfalls (read first):**
+HyperFrames 從 HTML 渲染影片。每個合成（composition）皆為 HTML 檔案，透過 DOM 的 `data-*` 屬性宣告時間軸，動畫引擎保證任意時間戳記可精確尋軌（seekable），媒體播放由框架全面接管。
 
-- Center with flex/`inset`, not CSS `transform: translate(-50%,-50%)` on a node you then GSAP `x`/`y`. Lint: `gsap_css_transform_conflict`. Use `fromTo` or `xPercent`/`yPercent`.
-- Do not add a scene-exit `tl.set(..., {visibility:"hidden"})`. The runtime already hides timed clips. Opacity fades on inner nodes (or `opacity` on `.clip`) are enough. Caption hard-kills are a different rule.
-- `window.__timelines["id"]` must match the root `data-composition-id`.
-- After `render`, read the summary's second line: `beginframe` vs `screenshot`, GPU mode, stage timings. `screenshot` + `software gpu` on Linux is the slow path.
+---
 
-HyperFrames renders video from HTML. A composition is an HTML file whose DOM declares timing with `data-*` attributes, whose animation runtime is seekable, and whose media playback is owned by the framework.
+## 核心參考手冊
 
-This skill is the **technical contract** — how to build one hyperframes project. The body below is the build guide; per-topic detail lives in `references/` (index next), read on demand. Process docs (brief, storyboard, review, production, dispatch, frame-worker) live in `/hyperframes` → `references/`. Other concerns live in the sibling domain skills — `hyperframes-animation`, `hyperframes-creative`, `media-use`, `hyperframes-cli`, `hyperframes-registry`. The capability map in `/hyperframes` says what each one covers.
+| 手冊檔案 | 用途 |
+|---|---|
+| `references/minimal-composition.md` | 最小可行可渲染合成骨架 |
+| `references/composition-patterns.md` | 單體式 vs 模組化架構選型、子合成原型 |
+| `references/data-attributes.md` | 完整 `data-*` 屬性速查表與 `class="clip"` 規範 |
+| `references/tracks-and-clips.md` | 軌道階層 `data-track-index`、z-index 與片段時間軸排版 |
+| `references/creator-editing-recipes.md` | 剪切、修整、定格、相機運鏡、遮罩、交叉淡入淡出實戰代碼 |
+| `references/sub-compositions.md` | 子合成串接（宿主屬性、`<template>`、實例變數） |
+| `references/variables-and-media.md` | 變數宣告、`<video>`/`<audio>` 媒體嵌入與音量控制 |
+| `references/determinism-rules.md` | 確定性渲染禁令（禁止計時器、非種子隨機、動態遠端請求） |
+| `references/full-screen-motion.md` | 全螢幕動態與共用背景編排 |
+| `references/tailwind.md` | Tailwind CSS v4 整合模式 |
 
-## References
+---
 
-| File                                    | Read it to…                                                                                                                                                         |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `references/minimal-composition.md`     | start from the smallest renderable composition skeleton                                                                                                             |
-| `references/composition-patterns.md`    | choose monolithic vs modular; structure a modular `index.html`; pick a sub-comp archetype                                                                           |
-| `references/data-attributes.md`         | look up any `data-*` (root / clip / sub-comp host / legacy aliases); use `class="clip"`                                                                             |
-| `references/tracks-and-clips.md`        | understand what `data-track-index` does (and does not) control, z-index, time a clip relative to another; list every track and clip with `npx hyperframes timeline` |
-| `references/creator-editing-recipes.md` | copy truthful cut/trim/reorder/retime/freeze/camera/mask/crossfade/audio editing recipes and their limits                                                           |
-| `references/sub-compositions.md`        | wire a sub-composition (host attrs, `<template>`, per-instance vars) and animate inside it                                                                          |
-| `references/variables-and-media.md`     | declare variables; place `<video>`/`<audio>`, set volume, trim                                                                                                      |
-| `references/determinism-rules.md`       | build a seekable timeline; determinism bans; layout / text fit                                                                                                      |
-| `references/full-screen-motion.md`      | author full-frame motion with shared backgrounds                                                                                                                    |
-| `references/tailwind.md`                | work in a Tailwind v4 project (`init --tailwind`; runtime contract differs from Studio's v3)                                                                        |
+## 建構合成的關鍵法則
 
-For animation runtime specifics (GSAP API, Lottie, Three.js, etc.) go to `hyperframes-animation` → `adapters/<runtime>.md`.
+### 1. 兩種根節點形態（不可混用）
+- **獨立頂層合成 (Standalone `index.html`)**：根節點 `<div data-composition-id="...">` 直接放置於 `<body>` 內，**嚴禁包覆 `<template>`**。
+- **子合成 (Sub-composition)**：根節點必須包覆在 `<template>` 標籤內，供外部透過 `data-composition-src` 載入。
 
-## Building a composition
+### 2. 根節點尺寸規格
+獨立根節點樣式應設為 `width: 100%; height: 100%`，畫布實體尺寸透過 `data-width` 與 `data-height` 指定，由執行期引擎自動映射，不要在 CSS 寫死固定像素。
 
-### Two root forms (not interchangeable)
+### 3. 單一暫停時間軸 (One Paused Timeline)
+每個合成註冊**恰好一條** `gsap.timeline({ paused: true })` 到 `window.__timelines["<id>"]`。
+渲染總長度以根節點的 `data-duration` 屬性為準。
 
-- **Standalone** (top-level `index.html`): root `<div data-composition-id="…">` sits directly in `<body>`, **no `<template>` wrapper**. Wrapping a standalone root hides all content and `lint` rejects it (`standalone_composition_wrapped_in_template`, error).
-- **Sub-composition** (loaded via `data-composition-src`): wrap the root in `<template>`. This is the shape to write: the loader also accepts a plain full document and falls back to its `<body>`, but the templated form is what the examples and tooling assume.
-
-> ⚠ Transport rule: for a **templated** sub-composition the assembler drops the file's own `<head>` `<style>`/`<script>` (`packages/core/src/compiler/compositionAssembly.ts`, the `hasTemplate` gate), so put `<style>`/`<script>` **inside** the template. `<link>` is hoisted either way.
-> ⚠ Host-id convention: give the host slot, the inner template, and the `window.__timelines["<id>"]` key the **same** id. A different local id is supported (the assembler falls back to the first root in the file) but the mismatch is silent, so match them unless you have a reason not to.
-
-File shape, host wiring, and the pre-render checklist → `references/sub-compositions.md`.
-
-### Root must be sized (silent layout bug)
-
-The standalone root authors `width`/`height: 100%`. Canvas size is `data-width`/`data-height`. The runtime stamps those pixels onto the composition root. Do not hardcode `1920px`/`1080px` on `#root`. Skeleton → `references/minimal-composition.md`.
-
-### One paused timeline
-
-Each composition registers **exactly one** `gsap.timeline({ paused: true })` at `window.__timelines["<id>"]` (key = root `data-composition-id`). Building it inside an async callback (`document.fonts.ready`) is supported; what matters is that you **register only after the build completes**. Render length is the root's `data-duration`, **not** the timeline's length: a timeline that runs past it is cut off, and one that ends early holds its last frame. Omit the root `data-duration` and the length is inferred instead (timeline, media window, or adapter). You do not need `window.__timelines = window.__timelines || {}`: the runtime creates the registry before your inline scripts run, and `lint` no longer asks for it. Don't manually nest sub-timelines into the host; the runtime auto-nests registered child timelines. Full contract (incl. non-GSAP runtimes) → `references/determinism-rules.md` + `hyperframes-animation/adapters/`.
-
-### First-pass lint gotchas (a guaranteed first build failure)
-
-Rules that `lint` **does** catch, but only after the fact. Write them right the first time:
-
-- Never pair a CSS initial `transform` with a GSAP tween on the **same** property — the CSS value and the tween's start fight and `lint` rejects it with `gsap_css_transform_conflict`. Set the initial state inside the tween with `gsap.fromTo(el, { x: -40 }, { x: 0 })` instead of a CSS `transform: translateX(-40px)`.
-- Never put `crossorigin` on `<video>`/`<audio>`. `lint` rejects it unconditionally with `media_crossorigin_breaks_preview` (error), including for canvas/WebGL/WebAudio readback. There is no suppression.
-- Never give a `<video data-start>` an ancestor that also carries `data-start`. `lint` rejects it with `video_nested_in_timed_element` (error). Time the wrapper **or** the video, not both.
-- Every `<audio>` needs an `id`. `lint` rejects it with `media_missing_id`, and an id-less `<audio>` is never picked up by the mixer, so the render is **silent**.
-- Never tween a `.clip` with `autoAlpha` or `visibility` — `lint` rejects it with `gsap_animates_clip_element`. Animate a child instead.
-- A named CSS `font-family` needs an in-file `@font-face` to a shipped local file, or `lint` fires `font_family_without_font_face`.
-- Sub-composition `#root` uses `width`/`height: 100%` (or `inset: 0`), not hardcoded `1920px`/`1080px`. Canvas size is `data-width`/`data-height`.
-
-A lint **error** also switches off the layout and contrast audits: `check` then reports `0 sample(s)` and `0/0 text checks`, which reads like a clean file but means nothing ran. Clear lint errors before you trust those numbers.
-
-### Non-negotiable rules (silent bugs automated gates may miss)
-
-Surfaced here; full rationale in the linked reference. Do not violate:
-
-- No render-time clocks / unseeded `Math.random` / network / input-state; `repeat: -1` only under a finite root `data-duration` (export clips to it — otherwise use a finite count). → `determinism-rules.md`
-- Never tween `display`, `visibility`, or `autoAlpha` on a `.clip` element. The framework owns clip visibility, and `lint` rejects it (`gsap_animates_clip_element`). Animate a child instead. → `determinism-rules.md`
-- No `<br>` in body text; transformed elements must be block-level + sized; pulsing absolute decoratives need peak clearance. → `determinism-rules.md`
-- `<video>`/`<audio>` are found by a flat document query, so the framework seeks and decodes them at **any nesting depth** (including inside a sub-comp `<template>` or wrapper). One hard limit: `lint` errors if a `<video data-start>` sits inside another **plain** element that also has `data-start`, and the failure is real (wrong source frames, then the clip vanishes mid-slot), so put the timing on the wrapper or on the video, never both. Sub-composition hosts are exempt: media inside a sub-composition renders correctly. The other caveat is timelines, not placement: a sub-comp timeline can't animate host-root elements. → `variables-and-media.md`
-- Keep every `id` unique across the **assembled** page (prefix sub-comp ids with the composition id, `#<id>-hero`) so your own `#id` CSS and `getElementById` calls resolve. Frame injection no longer depends on it: the compiler stamps a document-unique `data-hf-render-id` on every `video[src]`/`audio[src]`/`img[src]`. Media that uses `<source>` children instead of a `src` attribute is **not** stamped, so unique ids still matter there. → `composition-patterns.md`
-- A full-screen fill on the composition **root** is fine on a normal render. It is dropped only on the layered-composite path (HDR content, or a composition using shader transitions), where the engine forces every composition root transparent so the layer beneath shows through. If your composition uses shader transitions or HDR media, put the fill on a full-bleed **child** (`position:absolute; inset:0`). → `composition-patterns.md`
-
-## Editing existing compositions
-
-- Read the files first. Preserve unrelated timing, tracks, IDs, variables, media paths.
-- To know what is on a project's timeline (tracks, clips, starts, ends, what plays), run `npx hyperframes timeline [--json]` instead of reading `index.html` and every sub-composition file.
-- Match existing composition IDs and timeline keys.
-- Adding a clip: set its `data-start`/`data-duration` intentionally against the clips around it. `data-track-index` is a Studio display lane, not a timing constraint, so it does not need to be free.
-- A clip that ends past the root `data-duration` is cut off: extend the root `data-duration` to the clip's end in the same edit (`lint` warns `clip_ends_past_root_duration`).
-- A clip nested inside another timed element counts its `data-start` from the composition, not from that
-  element, and shows only while that element shows. `timeline` lists it under its parent and warns
-  `never visible` when the windows miss (`lint` reports `nested_clip_never_visible`).
-- `data-hidden` on any composition element hides it in BOTH preview and render, overriding its time window; it is non-destructive/reversible and toggled by Studio's timeline eye icon.
-- Adding a sub-composition: verify its internal `data-composition-id` before wiring the host.
-
-## Validation
-
-Use `hyperframes-cli` for command details
-
-- [ ] `npx hyperframes check` passes (0 findings across lint, runtime, layout, motion, and contrast)
-- [ ] Projects with sub-compositions: `npx hyperframes snapshot --at <midpoints>` and eyeball each frame
-- [ ] `npx hyperframes preview --background` for review (the user can edit anything in Studio's timeline, and the server survives the invoking command)
-- [ ] `npx hyperframes render` only after the user approves
+### 4. 確定性渲染規範 (Determinism)
+- 嚴禁使用：`setTimeout`、`setInterval`、`requestAnimationFrame`、`Date.now()`、原生 CSS `@keyframes` 動畫。
+- 隨機數一律使用有固定種子的偽隨機函式。
 

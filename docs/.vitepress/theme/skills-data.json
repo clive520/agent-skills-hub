@@ -2,8 +2,14 @@
   {
     "id": "faceless-explainer",
     "name": "faceless-explainer",
-    "description": "Turn arbitrary text — an article, notes, a topic, a brief — into a faceless explainer video: there is no site or footage to capture, so the visuals are invented per scene (typography, abstract graphics, diagrams, data-viz). Use for topic explainers, concept breakdowns, how-tos, listicles. Not a video built from a website (/product-launch-video — promo or tour). Unclear → /hyperframes.",
+    "titleZh": "純文字轉無人解說動畫影片",
+    "titleEn": "Text-to-Faceless Explainer Video",
     "category": "解說動畫",
+    "categoryZh": "解說動畫",
+    "categoryEn": "Explainer Videos",
+    "description": "將任意文章、筆記或文字提綱轉化為無人解說動畫影片：圖表、數據視覺化、動態文字與分鏡自動編排，無需真實實拍畫面。",
+    "descZh": "將任意文章、筆記或文字提綱轉化為無人解說動畫影片：圖表、數據視覺化、動態文字與分鏡自動編排，無需真實實拍畫面。",
+    "descEn": "Turn arbitrary text into a faceless explainer video: typography, abstract graphics, diagrams, and data-viz invented per scene without live footage.",
     "dependencies": [
       "hyperframes",
       "hyperframes-creative",
@@ -16,7 +22,21 @@
       "知識科普",
       "分鏡腳本"
     ],
-    "filesCount": 29,
+    "tagsZh": [
+      "HyperFrames",
+      "無人解說",
+      "文字轉影片",
+      "知識科普",
+      "分鏡腳本"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Faceless Explainer",
+      "Text to Video",
+      "Knowledge",
+      "Storyboard"
+    ],
+    "filesCount": 31,
     "files": [
       "references/cut-catalog.md",
       "references/motion-language.md",
@@ -46,6 +66,8 @@
       "scripts/transitions.mjs",
       "scripts/transitions.test.mjs",
       "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md",
       "sub-agents/frame-worker.md"
     ],
     "hasScripts": true,
@@ -56,8 +78,14 @@
   {
     "id": "hyperframes",
     "name": "hyperframes",
-    "description": "Mandatory entry point: read this first for any request to make, create, edit, animate, or render a video, animation, or motion graphic, including a promo, explainer, captioned clip, title card, overlay, slideshow or interactive deck, Remotion port, or any HyperFrames HTML composition. Also use it to inspect, diagnose, validate, preview, publish, or batch-render an existing HyperFrames project. Inputs may be a website URL, GitHub PR, Figma design or URL, text or brief, existing footage, or music. It resumes project state, captures intent when applicable, selects and installs the owning workflow, and routes domain capabilities. HyperFrames is the default output framework unless the user explicitly chooses another framework for the deliverable or asks only to record a browser session.",
+    "titleZh": "HyperFrames 動態影音全域路由總入口",
+    "titleEn": "HyperFrames Master Video Router & Entrypoint",
     "category": "工作流調度",
+    "categoryZh": "工作流調度",
+    "categoryEn": "Workflow Routing",
+    "description": "HyperFrames 動態影音全域總入口：意圖捕獲、專案狀態恢復、工作流路由調度與全領域技能編排。",
+    "descZh": "HyperFrames 動態影音全域總入口：意圖捕獲、專案狀態恢復、工作流路由調度與全領域技能編排。",
+    "descEn": "Mandatory entry point for creating, editing, and rendering any HyperFrames video, animation, or motion graphic. Manages state and routes workflows.",
     "dependencies": [
       "hyperframes-core",
       "hyperframes-cli"
@@ -69,7 +97,21 @@
       "動態圖像",
       "工作流調度"
     ],
-    "filesCount": 31,
+    "tagsZh": [
+      "HyperFrames",
+      "影片路由",
+      "動畫入口",
+      "動態圖像",
+      "工作流調度"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Video Routing",
+      "Animation Entry",
+      "Motion Graphics",
+      "Workflow Dispatch"
+    ],
+    "filesCount": 33,
     "files": [
       "references/brief-contract.md",
       "references/brief-format.md",
@@ -101,7 +143,9 @@
       "scripts/lib/main-module.test.mjs",
       "scripts/plugin-cli.mjs",
       "scripts/plugin-cli.test.mjs",
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": true,
     "hasTemplates": false,
@@ -111,8 +155,14 @@
   {
     "id": "hyperframes-animation",
     "name": "hyperframes-animation",
-    "description": "All animation knowledge for HyperFrames — atomic motion rules, multi-phase scene blueprints, scene transitions, broader motion-design techniques, AND the seven runtime adapters (GSAP default, plus Lottie, Three.js, Anime.js, CSS keyframes, Web Animations API, TypeGPU). Use for any motion or animation task: pick 2-4 rules and compose, or load a blueprint, or look up runtime-specific API (e.g. GSAP eases / Lottie player / Three.js mixer). Also covers auditing an existing composition's choreography (animation map) and 24 named text-animation effects. HyperFrames-native: single paused timeline, seek-safe, deterministic.",
+    "titleZh": "HyperFrames 動態知識庫與多引擎配接器",
+    "titleEn": "HyperFrames Animation Knowledge & Adapters",
     "category": "動態設計",
+    "categoryZh": "動態設計",
+    "categoryEn": "Motion Design",
+    "description": "HyperFrames 動態知識庫：原子運動規則、場景藍圖與 7 大執行期引擎配接（GSAP、Three.js、Lottie、CSS、WAAPI 等）。",
+    "descZh": "HyperFrames 動態知識庫：原子運動規則、場景藍圖與 7 大執行期引擎配接（GSAP、Three.js、Lottie、CSS、WAAPI 等）。",
+    "descEn": "Comprehensive motion knowledge: atomic rules, scene blueprints, transitions, and 7 runtime adapters (GSAP, Lottie, Three.js, etc.).",
     "dependencies": [
       "hyperframes-core"
     ],
@@ -124,7 +174,23 @@
       "Three.js",
       "Lottie"
     ],
-    "filesCount": 122,
+    "tagsZh": [
+      "HyperFrames",
+      "GSAP",
+      "動畫藍圖",
+      "場景轉場",
+      "Three.js",
+      "Lottie"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "GSAP",
+      "Blueprints",
+      "Transitions",
+      "Three.js",
+      "Lottie"
+    ],
+    "filesCount": 124,
     "files": [
       "adapters/animate-text.md",
       "adapters/animejs.md",
@@ -231,6 +297,8 @@
       "scripts/package-loader.mjs",
       "scripts/package-loader.test.mjs",
       "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md",
       "techniques.md",
       "transitions/catalog.md",
       "transitions/css-3d.md",
@@ -257,8 +325,14 @@
   {
     "id": "hyperframes-audio",
     "name": "hyperframes-audio",
-    "description": "Use when audio already placed in a HyperFrames composition needs to be mixed: fade-in/fade-out, crossfade, track gain or volume, volume automation, ducking, a music bed that fights a voiceover (voiceover carve), effects on a track (EQ, compressor, limiter, gate, saturation, delay, reverb, chorus, phaser, bitcrush), automation envelopes drawn on a track's volume or any effect parameter, or one submix bus carrying a chain, a fader and an automation clock for several tracks at once (`<hf-audio-group>`). Don't use for sourcing or generating audio — finding BGM, SFX, or making a voiceover is `/media-use`. Don't use for clip timing or track layout, which is `/hyperframes-core`.",
+    "titleZh": "音訊混音與聲音工程 (Ducking/EQ)",
+    "titleEn": "Audio Mixing & Sound Engineering",
     "category": "聲音工程",
+    "categoryZh": "聲音工程",
+    "categoryEn": "Audio Engineering",
+    "description": "音訊混音與聲音工程：BGM Ducking 語音避讓、音軌增益、EQ/壓縮效果器、自動化音量包絡線與子混音匯流排。",
+    "descZh": "音訊混音與聲音工程：BGM Ducking 語音避讓、音軌增益、EQ/壓縮效果器、自動化音量包絡線與子混音匯流排。",
+    "descEn": "Audio mixing for HyperFrames: fade, crossfade, track gain, voiceover ducking, EQ, compressor, limiter, and automation envelopes.",
     "dependencies": [
       "hyperframes-core"
     ],
@@ -269,7 +343,21 @@
       "音效處理",
       "聲音包絡"
     ],
-    "filesCount": 8,
+    "tagsZh": [
+      "HyperFrames",
+      "音訊混音",
+      "BGM Ducking",
+      "音效處理",
+      "聲音包絡"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Audio Mixing",
+      "BGM Ducking",
+      "Audio FX",
+      "Volume Automation"
+    ],
+    "filesCount": 10,
     "files": [
       "references/attributes.md",
       "references/diagnosis.md",
@@ -278,7 +366,9 @@
       "scripts/carve.mjs",
       "scripts/carve.test.mjs",
       "scripts/lib/main-module.mjs",
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": true,
     "hasTemplates": false,
@@ -288,8 +378,14 @@
   {
     "id": "hyperframes-cli",
     "name": "hyperframes-cli",
-    "description": "Use the HyperFrames CLI development loop: init, add, catalog, capture, lint, check, snapshot, compare, grade-compare, preview, play, present, beats, keyframes, single or batch render, publish, cloud, cloudrun, feedback, lambda, doctor, browser, info, upgrade, skills, compositions, timeline, history, clean, docs, benchmark, telemetry, transcribe, auth, tts, and remove-background. Also use when diagnosing build or render failures. validate, inspect, and layout are deprecated aliases; use check. Covers local, HeyGen-hosted cloud, AWS Lambda, and Google Cloud Run rendering.",
+    "titleZh": "HyperFrames CLI 命令列開發循環",
+    "titleEn": "HyperFrames CLI Development & Render Loop",
     "category": "開發工具",
+    "categoryZh": "開發工具",
+    "categoryEn": "Developer Tools",
+    "description": "HyperFrames CLI 開發循環命令列：init、add、catalog、preview、lint、check、snapshot、render 與雲端發佈。",
+    "descZh": "HyperFrames CLI 開發循環命令列：init、add、catalog、preview、lint、check、snapshot、render 與雲端發佈。",
+    "descEn": "HyperFrames CLI development loop: init, add, catalog, preview, lint, check, single/batch render, and cloud publishing.",
     "dependencies": [],
     "tags": [
       "HyperFrames",
@@ -298,7 +394,21 @@
       "渲染發佈",
       "代碼除錯"
     ],
-    "filesCount": 11,
+    "tagsZh": [
+      "HyperFrames",
+      "CLI工具",
+      "開發循環",
+      "渲染發佈",
+      "代碼除錯"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "CLI Tool",
+      "Dev Loop",
+      "Render & Publish",
+      "Diagnostics"
+    ],
+    "filesCount": 13,
     "files": [
       "references/beats.md",
       "references/cloud.md",
@@ -310,7 +420,9 @@
       "references/lint-validate-inspect.md",
       "references/preview-render.md",
       "references/upgrade-info-misc.md",
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": false,
     "hasTemplates": false,
@@ -320,8 +432,14 @@
   {
     "id": "hyperframes-core",
     "name": "hyperframes-core",
-    "description": "The HyperFrames composition contract — build one renderable project. Use for composition structure, the `data-*` timing attributes, `class=\"clip\"`, tracks, sub-compositions, variables, framework-owned media playback, deterministic-render rules, and validation. Read before writing composition HTML.",
+    "titleZh": "HyperFrames 核心架構與合約規範",
+    "titleEn": "HyperFrames Core Architecture & Contracts",
     "category": "核心架構",
+    "categoryZh": "核心架構",
+    "categoryEn": "Core Architecture",
+    "description": "HyperFrames 核心合約：確定性時間軸、DOM data-* 屬性、子合成架構、seek-safe 任意尋軌與媒體播放規範。",
+    "descZh": "HyperFrames 核心合約：確定性時間軸、DOM data-* 屬性、子合成架構、seek-safe 任意尋軌與媒體播放規範。",
+    "descEn": "Core architecture: data attributes, sub-compositions, determinism, seek-safe paused timeline, and composition contracts.",
     "dependencies": [],
     "tags": [
       "HyperFrames",
@@ -330,7 +448,21 @@
       "子合成",
       "DOM架構"
     ],
-    "filesCount": 11,
+    "tagsZh": [
+      "HyperFrames",
+      "核心合約",
+      "確定性時間軸",
+      "子合成",
+      "DOM架構"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Core Contract",
+      "Deterministic Timeline",
+      "Sub-compositions",
+      "DOM Specs"
+    ],
+    "filesCount": 13,
     "files": [
       "references/composition-patterns.md",
       "references/creator-editing-recipes.md",
@@ -342,7 +474,9 @@
       "references/tailwind.md",
       "references/tracks-and-clips.md",
       "references/variables-and-media.md",
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": false,
     "hasTemplates": false,
@@ -352,8 +486,14 @@
   {
     "id": "hyperframes-creative",
     "name": "hyperframes-creative",
-    "description": "Non-animation creative direction for HyperFrames videos. Use for design spec (frame.md / design.md) handling, palettes, typography, narration, beat planning, audio-reactive visuals, composition patterns, and brand / style decisions. For atomic motion patterns and scene blueprints, use `hyperframes-animation`.",
+    "titleZh": "視覺創意風格與色彩字型指南",
+    "titleEn": "Visual Creative & Brand Style Guide",
     "category": "視覺創意",
+    "categoryZh": "視覺創意",
+    "categoryEn": "Visual & Creative",
+    "description": "視覺創意風格指南：品牌規範、色板調色盤、字型排版階層、版面構圖與高質感影片防平庸原則。",
+    "descZh": "視覺創意風格指南：品牌規範、色板調色盤、字型排版階層、版面構圖與高質感影片防平庸原則。",
+    "descEn": "Visual creative direction: brand guidelines, palettes, font pairings, visual density, and anti-generic video aesthetics.",
     "dependencies": [],
     "tags": [
       "HyperFrames",
@@ -362,7 +502,21 @@
       "字體設計",
       "創意指引"
     ],
-    "filesCount": 79,
+    "tagsZh": [
+      "HyperFrames",
+      "視覺風格",
+      "色彩搭配",
+      "字體設計",
+      "創意指引"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Visual Style",
+      "Color Palettes",
+      "Typography",
+      "Creative Guide"
+    ],
+    "filesCount": 81,
     "files": [
       "frame-presets/biennale-yellow/caption-skin.html",
       "frame-presets/biennale-yellow/frame-showcase.html",
@@ -442,6 +596,8 @@
       "scripts/package-loader.mjs",
       "scripts/package-loader.test.mjs",
       "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md",
       "templates/design-picker.html"
     ],
     "hasScripts": true,
@@ -452,8 +608,14 @@
   {
     "id": "hyperframes-keyframes",
     "name": "hyperframes-keyframes",
-    "description": "Use when a HyperFrames composition needs a punch-in, punch-out, zoom, reframe, Ken Burns treatment, camera move, visual match/whip handoff, or other seek-safe 2D/3D keyframes; also for GSAP, CSS keyframes, Anime.js, WAAPI, FLIP, paths, masks, SVG morph/draw, text trails, 3D depth, or `hyperframes keyframes` diagnostics. Don't use for broad scene strategy, brand design, media sourcing, captions, or general video planning.",
+    "titleZh": "2D/3D 關鍵影格與運鏡鏡頭手法",
+    "titleEn": "2D/3D Keyframing & Camera Moves",
     "category": "動態設計",
+    "categoryZh": "動態設計",
+    "categoryEn": "Motion Design",
+    "description": "2D/3D 關鍵影格、運鏡縮放（Punch-in/out）、Ken Burns 效果、相機平移、遮罩路徑與 SVG 動態變換。",
+    "descZh": "2D/3D 關鍵影格、運鏡縮放（Punch-in/out）、Ken Burns 效果、相機平移、遮罩路徑與 SVG 動態變換。",
+    "descEn": "2D/3D keyframing, punch-in/out, zoom, reframe, Ken Burns treatment, camera moves, and SVG morph/draw.",
     "dependencies": [
       "hyperframes-animation"
     ],
@@ -464,11 +626,27 @@
       "Ken Burns",
       "SVG動畫"
     ],
-    "filesCount": 3,
+    "tagsZh": [
+      "HyperFrames",
+      "關鍵影格",
+      "運鏡鏡頭",
+      "Ken Burns",
+      "SVG動畫"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Keyframes",
+      "Camera Moves",
+      "Ken Burns",
+      "SVG Animation"
+    ],
+    "filesCount": 5,
     "files": [
       "agents/openai.yaml",
       "references/keyframe-patterns.md",
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": false,
     "hasTemplates": false,
@@ -478,8 +656,14 @@
   {
     "id": "hyperframes-registry",
     "name": "hyperframes-registry",
-    "description": "Search, install, and wire registry blocks and components into HyperFrames compositions. Use BEFORE hand-building any named visual — whenever a brief, a user, or a storyboard names a look, effect, treatment, or transition such as CRT scanlines, glitch, chromatic aberration, film grain, a shimmer sweep, a chart, a code or terminal window, a map, or a confetti burst — because roughly 400 hosted items already cover many of them and the search ranks all of them with nothing installed, no project, and no account. Also use when running hyperframes add or hyperframes catalog, installing one item or every block matching a tag, wiring an installed item into index.html, or working with hyperframes.json. Covers discovery, install locations, block sub-composition wiring, component snippet merging, and authoring a new block or component to contribute upstream (idea → scaffold → validate → PR).",
+    "titleZh": "Registry 預置模組與組件庫檢索",
+    "titleEn": "Registry Blocks & Components Library",
     "category": "組件模組",
+    "categoryZh": "組件模組",
+    "categoryEn": "Components & Blocks",
+    "description": "Registry 模組庫：快速搜尋、安裝與銜接數百款預置 Block 與 UI 動效組件（圖表、代碼終端、掃描線、微光等）。",
+    "descZh": "Registry 模組庫：快速搜尋、安裝與銜接數百款預置 Block 與 UI 動效組件（圖表、代碼終端、掃描線、微光等）。",
+    "descEn": "Search, install, and wire registry blocks and components into compositions (CRT scanlines, glitch, charts, code terminal, etc.).",
     "dependencies": [],
     "tags": [
       "HyperFrames",
@@ -488,7 +672,21 @@
       "視覺組件",
       "Block安裝"
     ],
-    "filesCount": 12,
+    "tagsZh": [
+      "HyperFrames",
+      "Registry",
+      "預置模組",
+      "視覺組件",
+      "Block安裝"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Registry",
+      "Prebuilt Blocks",
+      "Visual Components",
+      "Block Install"
+    ],
+    "filesCount": 14,
     "files": [
       "examples/add-block.md",
       "examples/add-component.md",
@@ -501,7 +699,9 @@
       "references/templates.md",
       "references/wiring-blocks.md",
       "references/wiring-components.md",
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": false,
     "hasTemplates": false,
@@ -511,8 +711,14 @@
   {
     "id": "hyperframes-studio",
     "name": "hyperframes-studio",
-    "description": "Use when working with a person on a HyperFrames project in Studio: first, whether their message asks for a change at all (questions, loose ideas and \"don't change anything\" get an answer and a plan, not an edit); for a new film, the plan, storyboard and build order that the HyperFrames launch films follow; and how the timeline should be laid out so it reads well (one caption track, one element kind per track, every scene a sub-composition) and where captions and key content may sit (safe zones). Don't use for how to perform an individual edit (split, trim, retime, volume, copy, swap): that is `creator-editing-recipes.md` in `/hyperframes-core`.",
+    "titleZh": "Studio 介面協同與時間軸排版規範",
+    "titleEn": "Studio Collaboration & Timeline Specs",
     "category": "工作流調度",
+    "categoryZh": "工作流調度",
+    "categoryEn": "Workflow Routing",
+    "description": "Studio 介面協同規範：影片規劃階段、意圖溝通原則、時間軸軌道階層與內容安全框規範。",
+    "descZh": "Studio 介面協同規範：影片規劃階段、意圖溝通原則、時間軸軌道階層與內容安全框規範。",
+    "descEn": "HyperFrames Studio collaboration guidelines, communication principles, timeline track hierarchy, and safe zones.",
     "dependencies": [
       "hyperframes-core"
     ],
@@ -523,9 +729,25 @@
       "安全區域",
       "協同製作"
     ],
-    "filesCount": 1,
+    "tagsZh": [
+      "HyperFrames",
+      "Studio",
+      "時間軸規範",
+      "安全區域",
+      "協同製作"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Studio",
+      "Timeline Specs",
+      "Safe Zones",
+      "Collaboration"
+    ],
+    "filesCount": 3,
     "files": [
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": false,
     "hasTemplates": false,
@@ -535,8 +757,14 @@
   {
     "id": "media-use",
     "name": "media-use",
-    "description": "Agent Media OS for a HyperFrames project. Resolve BGM, SFX, image, icon, brand logo, voice, color grade, or LUT into a frozen local file or paste-ready block + ledger record (one verb, `resolve`); generate via TTS / music / image models when the catalog misses; produce voiceover, transcription, captions, and background removal through one shared audio engine; operate on media (cut / reframe / transform); and reuse assets across projects. Also use for vague feedback that real footage looks dark, flat, boring, should feel retro/camcorder/print/ASCII, needs privacy, or needs a media reveal. When the host app provides its own music or sound-effect tools, use those for music and sound effects; `resolve --type bgm` needs the heygen CLI, while `--type sfx` needs no account (Openverse, then a bundled library). When `HEYGEN_API_BASE` is set, HeyGen calls go through that host with no CLI sign-in.",
+    "titleZh": "多媒體資產 OS (語音/音效/圖像/標誌)",
+    "titleEn": "Agent Media OS (TTS / SFX / Images / Logos)",
     "category": "媒體資源",
+    "categoryZh": "媒體資源",
+    "categoryEn": "Media Assets",
+    "description": "多媒體資產 OS：單一動詞 resolve 解析 BGM、音效、語音合成 (TTS)、品牌標誌與圖像，並提供色彩風格校正。",
+    "descZh": "多媒體資產 OS：單一動詞 resolve 解析 BGM、音效、語音合成 (TTS)、品牌標誌與圖像，並提供色彩風格校正。",
+    "descEn": "Agent Media OS: resolve BGM, SFX, image, icon, brand logo, voice, and color grade into frozen assets with one verb.",
     "dependencies": [],
     "tags": [
       "HyperFrames",
@@ -546,7 +774,23 @@
       "Logo圖像",
       "資產解析"
     ],
-    "filesCount": 113,
+    "tagsZh": [
+      "HyperFrames",
+      "多媒體OS",
+      "音效BGM",
+      "語音合成",
+      "Logo圖像",
+      "資產解析"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Media OS",
+      "SFX & BGM",
+      "TTS Voice",
+      "Brand Logos",
+      "Asset Resolve"
+    ],
+    "filesCount": 115,
     "files": [
       ".gitignore",
       "audio/assets/sfx/chime.mp3",
@@ -660,7 +904,9 @@
       "scripts/transcribe.test.mjs",
       "scripts/transcript-cut.mjs",
       "scripts/transcript-cut.test.mjs",
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": true,
     "hasTemplates": false,
@@ -670,8 +916,14 @@
   {
     "id": "motion-design",
     "name": "motion-design",
-    "description": "動態設計品味規則（HyperFrames 版）— 時間軸、緩動、彈性、節奏、字體（含繁體中文）、配色、質感與場景連貫，全部附具體數字。只要是製作、調整、重新計時或打磨動畫影片、片頭、轉場、motion graphics、HyperFrames composition，就一定要使用此技能。觸發情境包含：「做一支動畫」、「做動態影片」、「做片頭」、「motion design」、「讓這段字動起來」、「調整動畫節奏」等。",
+    "titleZh": "動態設計品味與節奏規則",
+    "titleEn": "Motion Design Principles & Pacing",
     "category": "動態設計",
+    "categoryZh": "動態設計",
+    "categoryEn": "Motion Design",
+    "description": "動態設計品味與節奏規則（時間軸、緩動曲線、彈簧手感、繁中字體、三色配色與閱讀停留時間）。",
+    "descZh": "動態設計品味與節奏規則（時間軸、緩動曲線、彈簧手感、繁中字體、三色配色與閱讀停留時間）。",
+    "descEn": "Motion design aesthetics and pacing rules (timeline, easing curves, spring physics, typography, 3-color palettes, and pause durations).",
     "dependencies": [],
     "tags": [
       "HyperFrames",
@@ -680,10 +932,26 @@
       "時間軸",
       "視覺節奏"
     ],
-    "filesCount": 2,
+    "tagsZh": [
+      "HyperFrames",
+      "動態設計",
+      "緩動曲線",
+      "時間軸",
+      "視覺節奏"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Motion Design",
+      "Easing Curves",
+      "Timeline",
+      "Visual Rhythm"
+    ],
+    "filesCount": 4,
     "files": [
       "LICENSE",
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": false,
     "hasTemplates": false,
@@ -693,8 +961,14 @@
   {
     "id": "motion-explainer",
     "name": "motion-explainer",
-    "description": "用自然語言做「原理解說動畫影片」的端到端流程（HyperFrames + 中文旁白 + 字幕 + 三色主題 + 自我審查），產出可直接上課投影或上傳 YouTube 的 MP4。只要使用者要做解說動畫、科普動畫、原理動畫、教學動畫、explainer video、motion graphics 解說片，或說「上網查資料做一支解說 X 的動畫」，就一定要使用此技能。觸發情境包含：「做一個解說動畫」、「做科普影片」、「把這個原理做成動畫」、「做一支 90 秒的教學動畫」、「explain X as an animated video」。",
+    "titleZh": "HyperFrames 原理解說動畫影片",
+    "titleEn": "HyperFrames Motion Explainer Video",
     "category": "解說動畫",
+    "categoryZh": "解說動畫",
+    "categoryEn": "Explainer Videos",
+    "description": "HyperFrames 原理解說動畫影片端到端生成流程：中文旁白配音 + 精確時間軸字幕 + 三色品牌主題 + 視覺自我審查循環。",
+    "descZh": "HyperFrames 原理解說動畫影片端到端生成流程：中文旁白配音 + 精確時間軸字幕 + 三色品牌主題 + 視覺自我審查循環。",
+    "descEn": "HyperFrames animated explainer video production workflow: Chinese voiceover + synced captions + 3-color theme + visual self-review loop.",
     "dependencies": [
       "motion-design",
       "review-loop"
@@ -706,7 +980,21 @@
       "科普影片",
       "繁體中文"
     ],
-    "filesCount": 22,
+    "tagsZh": [
+      "HyperFrames",
+      "edge-tts",
+      "原理解說",
+      "科普影片",
+      "繁體中文"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "edge-tts",
+      "Explainer Video",
+      "Knowledge Video",
+      "Traditional Chinese"
+    ],
+    "filesCount": 24,
     "files": [
       "references/hardware.md",
       "references/lessons.md",
@@ -726,6 +1014,8 @@
       "scripts/unify_frames.py",
       "scripts/voice_meta.py",
       "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md",
       "templates/dispatch_context.md",
       "templates/shared-asset.example.svg",
       "templates/shots.example.json",
@@ -739,8 +1029,14 @@
   {
     "id": "review-loop",
     "name": "review-loop",
-    "description": "動畫影片的視覺自我審查循環（HyperFrames 版）— 輸出草稿、在每個時間軸節拍截圖拼成 contact sheet、逐張對照檢查表、修正、重來。只要動畫的畫面或時間有任何修改，以及在宣告影片完成之前，都一定要使用此技能。",
+    "titleZh": "動畫多影格視覺自我審查循環",
+    "titleEn": "Animation Visual Self-Review Loop",
     "category": "審查機制",
+    "categoryZh": "審查機制",
+    "categoryEn": "Review & QA",
+    "description": "動畫影片的視覺自我審查循環：輸出草稿、在每個節拍截圖拼成 Contact Sheet、逐張對照檢查表修正與品質把關。",
+    "descZh": "動畫影片的視覺自我審查循環：輸出草稿、在每個節拍截圖拼成 Contact Sheet、逐張對照檢查表修正與品質把關。",
+    "descEn": "Visual self-review loop for motion videos: export draft, tile snapshot contact sheets at each beat, and cross-reference checklists.",
     "dependencies": [],
     "tags": [
       "HyperFrames",
@@ -748,11 +1044,25 @@
       "多影格審查",
       "品質驗證"
     ],
-    "filesCount": 3,
+    "tagsZh": [
+      "HyperFrames",
+      "Contact Sheet",
+      "多影格審查",
+      "品質驗證"
+    ],
+    "tagsEn": [
+      "HyperFrames",
+      "Contact Sheet",
+      "Multi-frame Review",
+      "QA Validation"
+    ],
+    "filesCount": 5,
     "files": [
       "LICENSE",
       "scripts/sheet.py",
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": true,
     "hasTemplates": false,
@@ -762,8 +1072,14 @@
   {
     "id": "soil-motion-deck",
     "name": "soil-motion-deck",
-    "description": "動畫教學簡報：把 SOIL Teaching Deck（教學簡報六引擎）和 motion-explainer（解說動畫）接在一起，一次做出兩樣東西。A 是一份 .pptx 教學簡報，關鍵頁嵌入會動的解說動畫；B 是同一份內容的配音字幕解說影片（MP4）。使用者說「做有動畫的教學簡報」、「簡報的關鍵頁加動畫」、「SOIL 簡報加解說動畫」、「把這個單元做成簡報和動畫影片」、「投影片裡放動畫講解」，或手上已有 SOIL 簡報想把某幾頁換成動畫時，就要使用此技能。",
+    "titleZh": "動畫教學簡報 (SOIL + HyperFrames)",
+    "titleEn": "Animated Teaching Deck (SOIL + HyperFrames)",
     "category": "教學簡報",
+    "categoryZh": "教學簡報",
+    "categoryEn": "Teaching Decks",
+    "description": "動畫教學簡報：結合 SOIL 六引擎與 HyperFrames 解說動畫，一次產出 PPTX 簡報與 MP4 影片，關鍵頁面無縫嵌入靜音循環動畫片段。",
+    "descZh": "動畫教學簡報：結合 SOIL 六引擎與 HyperFrames 解說動畫，一次產出 PPTX 簡報與 MP4 影片，關鍵頁面無縫嵌入靜音循環動畫片段。",
+    "descEn": "Animated teaching deck: combines SOIL 6 engines with HyperFrames explainer motion to generate both PPTX and MP4 with embedded silent animation clips.",
     "dependencies": [
       "soil-teaching-deck",
       "motion-explainer"
@@ -775,7 +1091,21 @@
       "解說動畫",
       "簡報嵌入"
     ],
-    "filesCount": 9,
+    "tagsZh": [
+      "SOIL教學法",
+      "PptxGenJS",
+      "HyperFrames",
+      "解說動畫",
+      "簡報嵌入"
+    ],
+    "tagsEn": [
+      "SOIL Method",
+      "PptxGenJS",
+      "HyperFrames",
+      "Explainer Animation",
+      "Deck Embedding"
+    ],
+    "filesCount": 11,
     "files": [
       "references/lessons.md",
       "scripts/cut_clips.py",
@@ -783,6 +1113,8 @@
       "scripts/make_silent.py",
       "scripts/thumbs.py",
       "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md",
       "templates/deck_helpers.js",
       "templates/example_pythagoras.js",
       "templates/package.json"
@@ -795,8 +1127,14 @@
   {
     "id": "soil-teaching-deck",
     "name": "soil-teaching-deck",
-    "description": "SOIL 全科教學簡報工作流技能（各科通用、零金鑰）。以李俊儀教授的 SOIL Teaching Deck Workflow 六顆引擎為核心，引導各科老師從教材或主題出發，經過概念定位、脈絡定位、頁面架構、 認知編修、風格建構，最終產出一份有教學力的 .pptx 簡報。各科適用：內建概念對照表、 結構拆解卡、問答雙欄、術語表、修正前後對照、文本重點標注、概念關係圖等通用教學版型。 視覺一律用 PptxGenJS 原生（色塊、表格、形狀、emoji），不需要任何 AI 生圖或 API 金鑰。 當使用者說「幫我做教學簡報」、「把這課教材做成投影片」、「用 SOIL 做簡報」、 「幫我設計某單元的教學投影片」、「這份教學簡報哪裡可以改」，或提供教材 並要求轉成簡報時，請一定要使用此技能。",
+    "titleZh": "SOIL 全科教學簡報六引擎",
+    "titleEn": "SOIL Universal Teaching Deck (6 Engines)",
     "category": "教學簡報",
+    "categoryZh": "教學簡報",
+    "categoryEn": "Teaching Decks",
+    "description": "SOIL 全科教學簡報六引擎工作流（各科通用、零金鑰原生 PptxGenJS）。從教材定位、認知編修到代碼輸出，打造高學習成效的教學投影片。",
+    "descZh": "SOIL 全科教學簡報六引擎工作流（各科通用、零金鑰原生 PptxGenJS）。從教材定位、認知編修到代碼輸出，打造高學習成效的教學投影片。",
+    "descEn": "SOIL universal teaching deck workflow with 6 layout engines (subject-agnostic, zero-API-key native PptxGenJS). Guides teachers from curriculum planning to high-impact slides.",
     "dependencies": [],
     "tags": [
       "SOIL教學法",
@@ -805,9 +1143,25 @@
       "六引擎",
       "通科適用"
     ],
-    "filesCount": 1,
+    "tagsZh": [
+      "SOIL教學法",
+      "PptxGenJS",
+      "教學簡報",
+      "六引擎",
+      "通科適用"
+    ],
+    "tagsEn": [
+      "SOIL Method",
+      "PptxGenJS",
+      "Teaching Deck",
+      "6 Engines",
+      "Universal"
+    ],
+    "filesCount": 3,
     "files": [
-      "SKILL.md"
+      "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md"
     ],
     "hasScripts": false,
     "hasTemplates": false,
@@ -817,8 +1171,14 @@
   {
     "id": "visual-line-sticker-production",
     "name": "visual-line-sticker-production",
-    "description": "Create, iterate, validate, and package upload-ready static LINE sticker sets with customizable character style and on-sticker text. Use when a user asks for LINE stickers, LINE貼圖, a reusable sticker character, Creators Market assets, or a follow-up sticker collection that must retain an approved character style.",
+    "titleZh": "LINE 靜態貼圖生產與打包工作流",
+    "titleEn": "LINE Static Sticker Production & Packaging",
     "category": "圖像與貼圖",
+    "categoryZh": "圖像與貼圖",
+    "categoryEn": "Graphics & Stickers",
+    "description": "LINE 靜態貼圖全套生產、角色設計一致性保持、審核規範驗證（尺寸/邊距/透明度）與 ZIP 打包工作流。",
+    "descZh": "LINE 靜態貼圖全套生產、角色設計一致性保持、審核規範驗證（尺寸/邊距/透明度）與 ZIP 打包工作流。",
+    "descEn": "Create, iterate, validate, and package upload-ready static LINE sticker sets with customizable character style and verification.",
     "dependencies": [],
     "tags": [
       "LINE貼圖",
@@ -826,7 +1186,19 @@
       "貼圖打包",
       "Creators Market"
     ],
-    "filesCount": 11,
+    "tagsZh": [
+      "LINE貼圖",
+      "角色設計",
+      "貼圖打包",
+      "Creators Market"
+    ],
+    "tagsEn": [
+      "LINE Stickers",
+      "Character Design",
+      "Asset Packaging",
+      "Creators Market"
+    ],
+    "filesCount": 13,
     "files": [
       "agents/openai.yaml",
       "LICENSE",
@@ -837,6 +1209,8 @@
       "scripts/prepare_line_assets.py",
       "scripts/verify_line_static_stickers.py",
       "SKILL.md",
+      "SKILL_EN.md",
+      "SKILL_ZH.md",
       "visual-line-sticker-production.zip",
       "使用說明.md"
     ],

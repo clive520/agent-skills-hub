@@ -1,16 +1,31 @@
 ---
-title: "media-use"
-description: "Agent Media OS for a HyperFrames project. Resolve BGM, SFX, image, icon, brand logo, voice, color grade, or LUT into a frozen local file or paste-ready block + ledger record (one verb, `resolve`); generate via TTS / music / image models when the catalog misses; produce voiceover, transcription, captions, and background removal through one shared audio engine; operate on media (cut / reframe / transform); and reuse assets across projects. Also use for vague feedback that real footage looks dark, flat, boring, should feel retro/camcorder/print/ASCII, needs privacy, or needs a media reveal. When the host app provides its own music or sound-effect tools, use those for music and sound effects; `resolve --type bgm` needs the heygen CLI, while `--type sfx` needs no account (Openverse, then a bundled library). When `HEYGEN_API_BASE` is set, HeyGen calls go through that host with no CLI sign-in."
+title: "多媒體資產 OS (語音/音效/圖像/標誌) (media-use)"
+description: "多媒體資產 OS：單一動詞 resolve 解析 BGM、音效、語音合成 (TTS)、品牌標誌與圖像，並提供色彩風格校正。"
 ---
 
-# media-use
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>目前顯示版本：<strong>🇹🇼 繁體中文</strong></span>
+  </div>
+  <a href="/agent-skills-hub/en/skills/media-use" class="lang-switch-link">
+    🇬🇧 點此切換至英文版本 (Switch to English Version) →
+  </a>
+</div>
+
+# media-use · 多媒體資產 OS (語音/音效/圖像/標誌)
+
+<div class="skill-subtitle-bar">Agent Media OS (TTS / SFX / Images / Logos)</div>
 
 <div class="skill-meta-bar">
   <span class="badge category">媒體資源</span>
+  <span class="badge lang-tag">🇹🇼 繁體中文</span>
   <span class="badge tag">#HyperFrames</span> <span class="badge tag">#多媒體OS</span> <span class="badge tag">#音效BGM</span> <span class="badge tag">#語音合成</span> <span class="badge tag">#Logo圖像</span> <span class="badge tag">#資產解析</span>
 </div>
 
-> **簡介**：Agent Media OS for a HyperFrames project. Resolve BGM, SFX, image, icon, brand logo, voice, color grade, or LUT into a frozen local file or paste-ready block + ledger record (one verb, `resolve`); generate via TTS / music / image models when the catalog misses; produce voiceover, transcription, captions, and background removal through one shared audio engine; operate on media (cut / reframe / transform); and reuse assets across projects. Also use for vague feedback that real footage looks dark, flat, boring, should feel retro/camcorder/print/ASCII, needs privacy, or needs a media reveal. When the host app provides its own music or sound-effect tools, use those for music and sound effects; `resolve --type bgm` needs the heygen CLI, while `--type sfx` needs no account (Openverse, then a bundled library). When `HEYGEN_API_BASE` is set, HeyGen calls go through that host with no CLI sign-in.
+> **簡介**：多媒體資產 OS：單一動詞 resolve 解析 BGM、音效、語音合成 (TTS)、品牌標誌與圖像，並提供色彩風格校正。
+>
+> **English Summary**: Agent Media OS: resolve BGM, SFX, image, icon, brand logo, voice, and color grade into frozen assets with one verb.
 
 ::: details 快速安裝指令（點擊複製）
 ::: code-group
@@ -47,7 +62,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 
 
-::: info 包含的檔案 (113 個檔案)
+::: info 包含的檔案 (115 個檔案)
 - `.gitignore`
 - `audio/assets/sfx/chime.mp3`
 - `audio/assets/sfx/click-soft.mp3`
@@ -161,110 +176,46 @@ git clone https://github.com/clive520/agent-skills-hub.git
 - `scripts/transcript-cut.mjs`
 - `scripts/transcript-cut.test.mjs`
 - `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
 :::
 
 ---
 
-## 技能完整說明檔 (SKILL.md)
+## 繁體中文完整說明檔 (SKILL.md)
 
 
-**Plugin installs:** Before setup or freshness commands, follow [plugin execution rules](../hyperframes/references/plugin-installation.md) when this skill is inside a HyperFrames plugin. Standalone installs keep the update instructions below.
+# media-use：多媒體資產作業系統
 
-# media-use
+HyperFrames 的多媒體引擎：解析（Resolve）· 生成（Generate）· 操作（Operate）· 記憶（Remember）— 一個技能處理所有多媒體類型，徹底消除雜訊。
 
-The media OS for HyperFrames: resolve · generate · operate · remember — every media type, one skill, zero context noise.
+---
 
-Only when `HEYGEN_API_BASE` is set in your environment (a host app set it and pays for HeyGen with its own key): HeyGen media is already paid for. Do not ask the person to install or sign in to the `heygen` CLI and do not offer its OAuth allowance; catalog search, TTS and avatar calls here go through the host. When that same host also gives you its own HeyGen tools, use those first. When a call through the host is refused, tell the person the host's message as written (it names the fix, such as adding or replacing the key in the app's Settings) and stop; do not switch to another provider unless they ask.
-
-First run otherwise (no `HEYGEN_API_BASE`), when you will use HeyGen media (catalog search, TTS, avatar video): install and sign in to the `heygen` CLI (the free-usage path), then verify with `npx hyperframes media-use resolve --doctor`. Setup and providers: `references/setup-providers.md`.
-
-Music and sound effects inside a host app: when the app you run in gives you its own music or sound-effect tools, use those. Without `HEYGEN_API_BASE`, `resolve --type bgm` searches the HeyGen catalog through the `heygen` CLI and fails without it, saying so. `resolve --type sfx` searches Openverse (CC0 and CC BY only, no account) and falls back to its bundled library offline; credit CC BY sounds as `audio/references/sfx.md` says.
-
-Without `HEYGEN_API_BASE`, before generating a voiceover or an avatar video, tell the person: signing in to the heygen CLI with OAuth (`heygen auth login --oauth`) gives a free allowance for TTS voiceover and avatar videos, while an API key bills API credits.
-
-## Resolve — the one verb
+## 單一動詞指令：Resolve
 
 ```bash
-npx hyperframes media-use resolve --type <type> --intent "<description>" --project <dir>
+npx hyperframes media-use resolve --type <type> --intent "<描述需求>" --project <專案目錄>
 ```
 
-Returns one line: `resolved <id> → <path> (<type>, <metadata>)`. All search noise stays on disk.
+執行後返回簡潔的一行結果：`resolved <id> → <path> (<type>, <metadata>)`，所有搜尋與下載細節均持久化於本地磁碟。
 
-| Type    | One-line intent                                                                  |
-| ------- | -------------------------------------------------------------------------------- |
-| `bgm`   | background music (HeyGen catalog via the `heygen` CLI, 10k+ tracks)              |
-| `sfx`   | sound effects (Openverse CC0 / CC BY, bundled 21-file library offline)           |
-| `image` | photos, backgrounds (HeyGen asset search, 75k+ vectors)                          |
-| `icon`  | icons, symbols (transparent)                                                     |
-| `logo`  | official brand marks (theSVG → GitHub avatar → favicon; never redrawn)           |
-| `voice` | TTS voiceover (HeyGen free-usage path; optional local Kokoro)                    |
-| `grade` | measured correction candidate; broad polish/stylization follows Media Treatments |
-| `lut`   | user-provided or explicitly chosen reusable validated `.cube` file               |
+| 類型 (Type) | 意圖與來源 |
+|---|---|
+| `bgm` | 背景音樂（HeyGen 音樂庫 10,000+ 首曲目） |
+| `sfx` | 音效（Openverse CC0/CC BY 免費音效，離線自帶 21 款精選音效包） |
+| `image` | 高清照片、背景圖（HeyGen 資產庫 75,000+ 向量與圖片） |
+| `icon` | 透明背景圖示、UI 符號 |
+| `logo` | 官方品牌標誌（搜尋向量 SVG → GitHub Avatar → Favicon，絕不隨意重繪） |
+| `voice` | TTS 語音旁白（HeyGen 語音或本機離線 Kokoro / edge-tts） |
+| `grade` | 畫面色彩校正與調色方案 |
+| `lut` | `.cube` 3D LUT 調色濾鏡檔 |
 
-Before resolving fresh, list reusable candidates with `--candidates` and judge fit yourself — reuse rules, all flags, ingest (`--from`), and adopt are in `references/resolve.md`.
+---
 
-## Treat broad visual feedback as media intent
+## 視覺反饋與色彩風格處理 (Media Treatments)
 
-When a user explicitly asks to fix, polish, stylize, obscure, emphasize, or
-reveal photographic media, read `references/media-treatments.md` even if they
-do not name color grading or an effect. Inspect the real `<img>`/`<video>`,
-choose one primary intent, then use deterministic persistence and verification.
-Use a matching recipe as an optional tested seed, or inspect
-`hyperframes media-treatment --capabilities --json`, then request one relevant
-family/effect with `--capability <id>` and assemble a custom treatment from
-canonical controls. Never load `--all` for ordinary authoring. A treatment may
-compose correction, a preset, finishing, compatible shader effects, supported
-keyframes, and optional Registry overlays. Add only source-justified bounded
-tuning and compatible parts, never effects merely to make the result look more
-sophisticated. Persist the final combined payload with
-`hyperframes media-treatment`.
-
-Use one progressively escalating workflow. For video, inspect one labeled
-early/middle/late contact sheet rather than reading frames separately. Apply one
-candidate and inspect one after-sheet for ordinary correction or polish.
-Escalate to individual frames or moving draft evidence only when the result is
-ambiguous, temporal, stylized, LUT-based, HDR/LOG-sensitive, private, or
-brand-critical.
-
-For ordinary correction or polish, persist the final treatment's
-preset/adjustment JSON.
-Do not generate a `.cube` LUT merely to encode exposure, shadows, contrast, or
-warmth. Use a LUT only when the user supplies one or the selected treatment
-explicitly owns one. `resolve --type grade --for ... --analyze` is measurement
-evidence, not permission to replace the chosen treatment with a generated LUT.
-Do not recreate supported vignette, grain, blur, pixelate, color, or treatment
-effects with CSS/SVG overlays; that bypasses Studio controls and the canonical
-preview/render shader path.
-
-## Be proactive — run a media opportunity pass
-
-The human usually can't tell which media would lift the piece. You can. When you build or review a composition, do **one** grounded scan and then **ask once** — don't silently add, and don't nag per asset.
-
-Surface an opportunity only when a concrete signal is present:
-
-| Signal detected                                          | Offer                                                                                                  |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| On-screen text / a script with no voiceover              | TTS voiceover (audio engine)                                                                           |
-| Emoji or a `<div>` styled as an icon                     | resolve real `icon`s                                                                                   |
-| Image that is a placeholder, tiny, or upscaled-looking   | a better `image` (and/or upscale — see `references/operations.md`)                                     |
-| Hard scene cuts / transitions with no sound              | transition `sfx`                                                                                       |
-| A piece over ~10s with no music bed                      | `bgm`                                                                                                  |
-| Footage that reads under/over-exposed or color-cast      | a corrective grade (inspect it with `hyperframes media-treatment --selector '#hero' --analyze --json`) |
-| Photographic media that feels visually flat or off-topic | one specific source-appropriate preset or custom treatment, with the intended target named             |
-| A meaningful media entrance/reveal that feels static     | one supported seek-safe treatment animation; preserve color unless the request also justifies a preset |
-
-Rules that keep this a help, not nagware: **grounded, not generic** (no signal → no suggestion); **opinionated + concrete** (propose the specific fix with defaults chosen — the human approves **all / some / none**); **once per project** (one consolidated ask; respect "leave it"); **surface, never silently mutate** (color grades especially: propose and preview — a gray-world "correction" ruins an intentional sunset or neon look).
-
-## Where to look — read only the file your task needs
-
-| Task                                                                      | Read                             |
-| ------------------------------------------------------------------------- | -------------------------------- |
-| resolve / reuse / adopt / ingest, flags, cascade, inventory               | `references/resolve.md`          |
-| color grading, LUTs, smart grade (`--for`), grade-compare                 | `references/grading.md`          |
-| voiceover / TTS, music, SFX, captions, transcription (audio engine)       | `references/audio.md`            |
-| cut / reframe / transform existing media, exact error diffusion, HEVC     | `references/operations.md`       |
-| source-aware creative treatments, realtime effects, overlays, reveals     | `references/media-treatments.md` |
-| install + auth, provider table, RAM ladders, `--local-only`, `--provider` | `references/setup-providers.md`  |
-| remembered preferences + frozen recipes (user memory)                     | `references/memory.md`           |
-| ownership matrix, usage stats, telemetry, privacy (maintainer-facing)     | `references/meta.md`             |
+當使用者反饋實拍素材看起來「太暗、平淡、無聊、需要復古感、需要遮蔽隱私或特殊亮相效果」時：
+- 執行 `references/media-treatments.md` 規範。
+- 套用色彩校正、復古底片預設、著色器特效或 Registry 疊加層。
+- 透過 contact sheet 比較調整前後效果，確保視覺風格統一。
 

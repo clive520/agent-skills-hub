@@ -1,16 +1,31 @@
 ---
-title: "review-loop"
-description: "動畫影片的視覺自我審查循環（HyperFrames 版）— 輸出草稿、在每個時間軸節拍截圖拼成 contact sheet、逐張對照檢查表、修正、重來。只要動畫的畫面或時間有任何修改，以及在宣告影片完成之前，都一定要使用此技能。"
+title: "動畫多影格視覺自我審查循環 (review-loop)"
+description: "動畫影片的視覺自我審查循環：輸出草稿、在每個節拍截圖拼成 Contact Sheet、逐張對照檢查表修正與品質把關。"
 ---
 
-# review-loop
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>目前顯示版本：<strong>🇹🇼 繁體中文</strong></span>
+  </div>
+  <a href="/agent-skills-hub/en/skills/review-loop" class="lang-switch-link">
+    🇬🇧 點此切換至英文版本 (Switch to English Version) →
+  </a>
+</div>
+
+# review-loop · 動畫多影格視覺自我審查循環
+
+<div class="skill-subtitle-bar">Animation Visual Self-Review Loop</div>
 
 <div class="skill-meta-bar">
   <span class="badge category">審查機制</span>
+  <span class="badge lang-tag">🇹🇼 繁體中文</span>
   <span class="badge tag">#HyperFrames</span> <span class="badge tag">#Contact Sheet</span> <span class="badge tag">#多影格審查</span> <span class="badge tag">#品質驗證</span>
 </div>
 
-> **簡介**：動畫影片的視覺自我審查循環（HyperFrames 版）— 輸出草稿、在每個時間軸節拍截圖拼成 contact sheet、逐張對照檢查表、修正、重來。只要動畫的畫面或時間有任何修改，以及在宣告影片完成之前，都一定要使用此技能。
+> **簡介**：動畫影片的視覺自我審查循環：輸出草稿、在每個節拍截圖拼成 Contact Sheet、逐張對照檢查表修正與品質把關。
+>
+> **English Summary**: Visual self-review loop for motion videos: export draft, tile snapshot contact sheets at each beat, and cross-reference checklists.
 
 ::: details 快速安裝指令（點擊複製）
 ::: code-group
@@ -47,15 +62,17 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 
 
-::: info 包含的檔案 (3 個檔案)
+::: info 包含的檔案 (5 個檔案)
 - `LICENSE`
 - `scripts/sheet.py`
 - `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
 :::
 
 ---
 
-## 技能完整說明檔 (SKILL.md)
+## 繁體中文完整說明檔 (SKILL.md)
 
 
 # Review loop（HyperFrames 版）

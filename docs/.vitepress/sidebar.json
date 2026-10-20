@@ -4,11 +4,11 @@
     "collapsed": false,
     "items": [
       {
-        "text": "faceless-explainer",
+        "text": "faceless-explainer · 純文字轉無人解說動畫影片",
         "link": "/skills/faceless-explainer"
       },
       {
-        "text": "motion-explainer",
+        "text": "motion-explainer · HyperFrames 原理解說動畫影片",
         "link": "/skills/motion-explainer"
       }
     ]
@@ -18,11 +18,11 @@
     "collapsed": false,
     "items": [
       {
-        "text": "hyperframes",
+        "text": "hyperframes · HyperFrames 動態影音全域路由總入口",
         "link": "/skills/hyperframes"
       },
       {
-        "text": "hyperframes-studio",
+        "text": "hyperframes-studio · Studio 介面協同與時間軸排版規範",
         "link": "/skills/hyperframes-studio"
       }
     ]
@@ -32,15 +32,15 @@
     "collapsed": false,
     "items": [
       {
-        "text": "hyperframes-animation",
+        "text": "hyperframes-animation · HyperFrames 動態知識庫與多引擎配接器",
         "link": "/skills/hyperframes-animation"
       },
       {
-        "text": "hyperframes-keyframes",
+        "text": "hyperframes-keyframes · 2D/3D 關鍵影格與運鏡鏡頭手法",
         "link": "/skills/hyperframes-keyframes"
       },
       {
-        "text": "motion-design",
+        "text": "motion-design · 動態設計品味與節奏規則",
         "link": "/skills/motion-design"
       }
     ]
@@ -50,7 +50,7 @@
     "collapsed": false,
     "items": [
       {
-        "text": "hyperframes-audio",
+        "text": "hyperframes-audio · 音訊混音與聲音工程 (Ducking/EQ)",
         "link": "/skills/hyperframes-audio"
       }
     ]
@@ -60,7 +60,7 @@
     "collapsed": false,
     "items": [
       {
-        "text": "hyperframes-cli",
+        "text": "hyperframes-cli · HyperFrames CLI 命令列開發循環",
         "link": "/skills/hyperframes-cli"
       }
     ]
@@ -70,7 +70,7 @@
     "collapsed": false,
     "items": [
       {
-        "text": "hyperframes-core",
+        "text": "hyperframes-core · HyperFrames 核心架構與合約規範",
         "link": "/skills/hyperframes-core"
       }
     ]
@@ -80,7 +80,7 @@
     "collapsed": false,
     "items": [
       {
-        "text": "hyperframes-creative",
+        "text": "hyperframes-creative · 視覺創意風格與色彩字型指南",
         "link": "/skills/hyperframes-creative"
       }
     ]
@@ -90,7 +90,7 @@
     "collapsed": false,
     "items": [
       {
-        "text": "hyperframes-registry",
+        "text": "hyperframes-registry · Registry 預置模組與組件庫檢索",
         "link": "/skills/hyperframes-registry"
       }
     ]
@@ -100,7 +100,7 @@
     "collapsed": false,
     "items": [
       {
-        "text": "media-use",
+        "text": "media-use · 多媒體資產 OS (語音/音效/圖像/標誌)",
         "link": "/skills/media-use"
       }
     ]
@@ -110,7 +110,7 @@
     "collapsed": false,
     "items": [
       {
-        "text": "review-loop",
+        "text": "review-loop · 動畫多影格視覺自我審查循環",
         "link": "/skills/review-loop"
       }
     ]
@@ -120,11 +120,11 @@
     "collapsed": false,
     "items": [
       {
-        "text": "soil-motion-deck",
+        "text": "soil-motion-deck · 動畫教學簡報 (SOIL + HyperFrames)",
         "link": "/skills/soil-motion-deck"
       },
       {
-        "text": "soil-teaching-deck",
+        "text": "soil-teaching-deck · SOIL 全科教學簡報六引擎",
         "link": "/skills/soil-teaching-deck"
       }
     ]
@@ -134,7 +134,7 @@
     "collapsed": false,
     "items": [
       {
-        "text": "visual-line-sticker-production",
+        "text": "visual-line-sticker-production · LINE 靜態貼圖生產與打包工作流",
         "link": "/skills/visual-line-sticker-production"
       }
     ]

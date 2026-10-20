@@ -259,3 +259,111 @@
   border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
 }
+
+/* Bilingual switchers and subtitles */
+.lang-switch-toggle-bar {
+  display: inline-flex;
+  background: var(--vp-c-bg-mute);
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid var(--vp-c-divider);
+  margin-bottom: 20px;
+}
+
+.lang-pill-btn {
+  padding: 6px 18px;
+  border-radius: 24px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--vp-c-text-2);
+  transition: all 0.2s ease;
+}
+
+.lang-pill-btn.active {
+  background: var(--vp-c-brand-1);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.35);
+}
+
+.lang-pill-btn:hover:not(.active) {
+  color: var(--vp-c-text-1);
+}
+
+.card-subtitle {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
+.card-alt-title {
+  font-size: 0.78rem;
+  font-weight: normal;
+  color: var(--vp-c-text-3);
+  margin-left: 4px;
+}
+
+.card-deps {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #f59e0b;
+}
+
+.badge.lang-tag {
+  background-color: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-1);
+  border: 1px solid var(--vp-c-divider);
+  font-weight: 600;
+}
+
+.skill-subtitle-bar {
+  font-size: 1.1rem;
+  color: var(--vp-c-text-2);
+  margin-top: -8px;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.lang-switch-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-left: 4px solid var(--vp-c-brand-1);
+  border-radius: 8px;
+  margin: 16px 0 24px;
+}
+
+.lang-switch-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-1);
+}
+
+.lang-switch-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.lang-switch-link:hover {
+  background: var(--vp-c-brand-1);
+  color: #fff;
+}

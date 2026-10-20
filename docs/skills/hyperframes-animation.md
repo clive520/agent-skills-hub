@@ -1,16 +1,31 @@
 ---
-title: "hyperframes-animation"
-description: "All animation knowledge for HyperFrames — atomic motion rules, multi-phase scene blueprints, scene transitions, broader motion-design techniques, AND the seven runtime adapters (GSAP default, plus Lottie, Three.js, Anime.js, CSS keyframes, Web Animations API, TypeGPU). Use for any motion or animation task: pick 2-4 rules and compose, or load a blueprint, or look up runtime-specific API (e.g. GSAP eases / Lottie player / Three.js mixer). Also covers auditing an existing composition's choreography (animation map) and 24 named text-animation effects. HyperFrames-native: single paused timeline, seek-safe, deterministic."
+title: "HyperFrames 動態知識庫與多引擎配接器 (hyperframes-animation)"
+description: "HyperFrames 動態知識庫：原子運動規則、場景藍圖與 7 大執行期引擎配接（GSAP、Three.js、Lottie、CSS、WAAPI 等）。"
 ---
 
-# hyperframes-animation
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>目前顯示版本：<strong>🇹🇼 繁體中文</strong></span>
+  </div>
+  <a href="/agent-skills-hub/en/skills/hyperframes-animation" class="lang-switch-link">
+    🇬🇧 點此切換至英文版本 (Switch to English Version) →
+  </a>
+</div>
+
+# hyperframes-animation · HyperFrames 動態知識庫與多引擎配接器
+
+<div class="skill-subtitle-bar">HyperFrames Animation Knowledge & Adapters</div>
 
 <div class="skill-meta-bar">
   <span class="badge category">動態設計</span>
+  <span class="badge lang-tag">🇹🇼 繁體中文</span>
   <span class="badge tag">#HyperFrames</span> <span class="badge tag">#GSAP</span> <span class="badge tag">#動畫藍圖</span> <span class="badge tag">#場景轉場</span> <span class="badge tag">#Three.js</span> <span class="badge tag">#Lottie</span>
 </div>
 
-> **簡介**：All animation knowledge for HyperFrames — atomic motion rules, multi-phase scene blueprints, scene transitions, broader motion-design techniques, AND the seven runtime adapters (GSAP default, plus Lottie, Three.js, Anime.js, CSS keyframes, Web Animations API, TypeGPU). Use for any motion or animation task: pick 2-4 rules and compose, or load a blueprint, or look up runtime-specific API (e.g. GSAP eases / Lottie player / Three.js mixer). Also covers auditing an existing composition's choreography (animation map) and 24 named text-animation effects. HyperFrames-native: single paused timeline, seek-safe, deterministic.
+> **簡介**：HyperFrames 動態知識庫：原子運動規則、場景藍圖與 7 大執行期引擎配接（GSAP、Three.js、Lottie、CSS、WAAPI 等）。
+>
+> **English Summary**: Comprehensive motion knowledge: atomic rules, scene blueprints, transitions, and 7 runtime adapters (GSAP, Lottie, Three.js, etc.).
 
 ::: details 快速安裝指令（點擊複製）
 ::: code-group
@@ -50,7 +65,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 - [hyperframes-core](./hyperframes-core.md)
 :::
 
-::: info 包含的檔案 (122 個檔案)
+::: info 包含的檔案 (124 個檔案)
 - `adapters/animate-text.md`
 - `adapters/animejs.md`
 - `adapters/css-animations.md`
@@ -156,6 +171,8 @@ git clone https://github.com/clive520/agent-skills-hub.git
 - `scripts/package-loader.mjs`
 - `scripts/package-loader.test.mjs`
 - `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
 - `techniques.md`
 - `transitions/catalog.md`
 - `transitions/css-3d.md`
@@ -177,90 +194,51 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 ---
 
-## 技能完整說明檔 (SKILL.md)
+## 繁體中文完整說明檔 (SKILL.md)
 
 
-**Plugin installs:** Before setup or freshness commands, follow [plugin execution rules](../hyperframes/references/plugin-installation.md) when this skill is inside a HyperFrames plugin. Standalone installs keep the update instructions below.
+# HyperFrames 動態知識庫與引擎配接器
 
-# HyperFrames Animation
+整合所有動態設計核心知識：**原子規則**（Atomic Rules）、**場景藍圖**（Blueprints）、**場景轉場**（Transitions）、**動態設計技法**（Techniques）以及 **執行期配接器**（Runtime Adapters）。
 
-All motion knowledge in one skill: **rules** (atomic recipes), **blueprints** (multi-phase scene templates), **transitions** (scene-to-scene), **techniques** (broader motion-design patterns), and **adapters** (per-runtime APIs).
+---
 
-For the composition contract (data attributes, sub-compositions, determinism) see `hyperframes-core`.
+## 預設策略：組合原子規則 (Atomic Rules)
 
-## Default: compose atomic rules
+從 `rules-index.md` 挑選 2 至 4 個原子規則，並在單一暫停的 GSAP 時間軸上串接。相較於直接搬用複雜藍圖，這種方式更輕量、速度更快、代碼更簡潔。
 
-Pick 2-4 rules from `rules-index.md`, glue them together with a single paused GSAP timeline, done. This is faster and produces less code than starting from a blueprint.
+---
 
-## Load a blueprint when
+## 何時載入場景藍圖 (Blueprints)？
 
-- The scene matches an existing pre-designed multi-phase template (brand-reveal, social-proof, etc.) and reusing its phase pipeline saves real authoring time
-- You want runnable ground-truth code for a complex 4-5 phase choreography
+- 當場景符合現成的多階段模板（例如品牌揭示、社群背書、數據圖表成長等），直接複用其分期管線能大幅節省製作時間。
+- 當你需要複雜的 4 至 5 階段編排的真實參考代碼。
 
-Blueprints live in `blueprints-index.md`. Each entry points to `blueprints/<id>.md` (recipe). Do not read it speculatively; load it when you've already decided you need scene-level orchestration.
+---
 
-## Routing
+## 執行期引擎選擇 (Picking a Runtime)
 
-| Want to…                                                                       | Read                                                |
-| ------------------------------------------------------------------------------ | --------------------------------------------------- |
-| Pick an atomic motion pattern by trigger / tag                                 | `rules-index.md`                                    |
-| Read one rule's full HTML / CSS / GSAP recipe                                  | `rules/<name>.md`                                   |
-| Pick a multi-phase scene template                                              | `blueprints-index.md`                               |
-| Read one blueprint's full recipe                                               | `blueprints/<id>.md`                                |
-| Author a scene transition (CSS-driven, between two clips)                      | `transitions/overview.md`, `transitions/catalog.md` |
-| Look up a broader motion-design technique                                      | `techniques.md`                                     |
-| Motion blur — shutter smear on an element, and when not to use it              | `references/motion-blur.md`                         |
-| Analyze an existing composition's animation map                                | `scripts/animation-map.mjs`                         |
-| GSAP API — timeline / tweens / position parameters                             | `adapters/gsap.md`                                  |
-| GSAP — drop-in effect recipes                                                  | `rules/gsap-effects.md`                             |
-| GSAP — transforms / perf                                                       | `adapters/gsap-transforms-and-perf.md`              |
-| GSAP — eases / stagger                                                         | `adapters/gsap-easing-and-stagger.md`               |
-| GSAP — timeline / labels                                                       | `adapters/gsap-timeline-and-labels.md`              |
-| Lottie / dotLottie (After Effects exports, `window.__hfLottie`)                | `adapters/lottie.md`                                |
-| Character animation (walk cycle, mascot, jointed puppet, gestures)             | `adapters/lottie.md` → Characters                   |
-| Three.js / WebGL (3D scenes, `AnimationMixer`, `hf-seek`)                      | `adapters/three.md`                                 |
-| Anime.js (`window.__hfAnime`)                                                  | `adapters/animejs.md`                               |
-| CSS keyframes (`animation-delay` / `play-state` / `fill-mode`)                 | `adapters/css-animations.md`                        |
-| Web Animations API (`element.animate()`, `currentTime` seek)                   | `adapters/waapi.md`                                 |
-| TypeGPU / WebGPU (`navigator.gpu`, WGSL, compute pipelines)                    | `adapters/typegpu.md`                               |
-| HTML-as-texture + WebGL/GLSL post-fx (capture live DOM via `drawElementImage`) | `adapters/html-in-canvas-patterns.md`               |
-| Named text-animation effects (24 IDs via external `animate-text` skill)        | `adapters/animate-text.md`                          |
+- **GSAP（預設）**：涵蓋 95% 的動態需求 — 時間軸編排、變形 (transforms)、緩動 (easing) 與交錯 (stagger)。本技能中的所有原子規則皆以 GSAP 為基底。
+- **Lottie / dotLottie**：適用於 After Effects 匯出的預製動畫、角色走動、表情手勢。
+- **Three.js / WebGL**：適用於 3D 空間場景、相機運鏡與著色器視覺。
+- **Anime.js**：輕量化補間動畫。
+- **CSS Keyframes**：適用於裝飾性循環、光澤微動 (shimmer)，無額外 JavaScript 負擔。
+- **Web Animations API (WAAPI)**：瀏覽器原生關鍵影格。
+- **TypeGPU / WebGPU**：高負載 GPU 粒子、液態玻璃與自訂著色器。
 
-## Picking a runtime
+---
 
-- **GSAP** is the default for 95% of motion work — covers timeline orchestration, transforms, easing, stagger. All atomic rules in this skill are GSAP-based.
-- **Lottie** when an asset has its own pre-baked timeline (typically After Effects exports), including characters that walk, gesture or react.
-- **Three.js** for 3D scenes, camera motion, shader-driven visuals.
-- **Anime.js** for lightweight tweening when GSAP is overkill.
-- **CSS** for simple repeated motifs, decoration, shimmer — no JavaScript animation cost.
-- **WAAPI** for native browser keyframes without a GSAP dependency.
-- **TypeGPU / WebGPU** for GPU-rendered canvases (particles, liquid glass, custom shaders).
+## 知識索引導覽
 
-Multiple runtimes can coexist in one composition. Each registers its instances on the runtime-specific global so HyperFrames can seek all of them in one pass.
-
-## Critical Constraints
-
-**Prerequisite: `hyperframes-core` → One paused timeline + Non-negotiable rules** (single paused timeline, `data-duration` governs length, no `Math.random` / `Date.now` / `performance.now`, no `repeat: -1` without a finite root `data-duration`, no page-load `gsap.set` on later-scene clips, no `display` or raw `visibility` tweens, and register the timeline only after it is fully built, including when the build runs inside an async callback such as `document.fonts.ready`). GSAP `autoAlpha` and zero-duration visibility sets at explicit timeline boundaries remain allowed by core. Use those exceptions only on non-clip elements or wrappers inside a clip; the framework owns `.clip` lifecycle. Don't restate the full contract here.
-
-Animation-craft additions on top of core's contract:
-
-- **Pre-calculated layout constants** — never derive positions from `getBoundingClientRect()` at tween time. Tween-time DOM measurements desync because the renderer samples in parallel; compute coordinates once at composition setup and reuse.
-- **Spatial motion uses GSAP transform aliases only** (`x`, `y`, `scale`, `rotation`). Core's allowlist also permits `opacity` / `color` / `backgroundColor` / `borderRadius` for non-spatial property tweens — but never `width` / `height` / `top` / `left` for layout changes.
-
-## Scripts
-
-```bash
-node <SKILL_DIR>/scripts/animation-map.mjs <composition-dir> \
-  --out <composition-dir>/.hyperframes/anim-map
-```
-
-Reads every GSAP timeline registered on `window.__timelines`, enumerates tweens, samples bboxes, computes flags, outputs `animation-map.json`. Use it to audit choreography (dead zones, stagger consistency, lifecycle warnings) after authoring.
-
-`animation-map.mjs` resolves helper packages from the current project first, then can bootstrap the bundled HyperFrames package version. Set `HYPERFRAMES_SKILL_PKG_VERSION=<version>` only when running the skill outside the bundled CLI/skill install and you need to pin that bootstrap version explicitly.
-
-## See Also
-
-- `hyperframes-core` — composition structure, data attributes, sub-compositions, deterministic render contract
-- `hyperframes-creative` — palettes, typography, narration, beat planning (non-animation creative direction)
-- `hyperframes-cli` — `npx hyperframes lint / check / snapshot / preview / render`
+| 需求 | 查閱檔案 |
+|---|---|
+| 依觸發標籤挑選原子運動規則 | `rules-index.md` |
+| 查閱單一規則完整 HTML / CSS / GSAP 寫法 | `rules/<name>.md` |
+| 挑選多階段場景模板 | `blueprints-index.md` |
+| 場景與場景之間的轉場效果 | `transitions/overview.md` 與 `transitions/catalog.md` |
+| 動態模糊（Motion Blur）規範 | `references/motion-blur.md` |
+| 24 款文字動效樣式 | `adapters/animate-text.md` |
+| GSAP 緩動曲線與交錯時間速查 | `adapters/gsap-easing-and-stagger.md` |
+| Lottie 動畫整合與角色動作 | `adapters/lottie.md` |
+| Three.js 3D 場景與混音器 | `adapters/three.md` |
 

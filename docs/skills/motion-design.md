@@ -1,16 +1,31 @@
 ---
-title: "motion-design"
-description: "動態設計品味規則（HyperFrames 版）— 時間軸、緩動、彈性、節奏、字體（含繁體中文）、配色、質感與場景連貫，全部附具體數字。只要是製作、調整、重新計時或打磨動畫影片、片頭、轉場、motion graphics、HyperFrames composition，就一定要使用此技能。觸發情境包含：「做一支動畫」、「做動態影片」、「做片頭」、「motion design」、「讓這段字動起來」、「調整動畫節奏」等。"
+title: "動態設計品味與節奏規則 (motion-design)"
+description: "動態設計品味與節奏規則（時間軸、緩動曲線、彈簧手感、繁中字體、三色配色與閱讀停留時間）。"
 ---
 
-# motion-design
+<div class="lang-switch-banner">
+  <div class="lang-switch-info">
+    <span class="lang-icon">🌐</span>
+    <span>目前顯示版本：<strong>🇹🇼 繁體中文</strong></span>
+  </div>
+  <a href="/agent-skills-hub/en/skills/motion-design" class="lang-switch-link">
+    🇬🇧 點此切換至英文版本 (Switch to English Version) →
+  </a>
+</div>
+
+# motion-design · 動態設計品味與節奏規則
+
+<div class="skill-subtitle-bar">Motion Design Principles & Pacing</div>
 
 <div class="skill-meta-bar">
   <span class="badge category">動態設計</span>
+  <span class="badge lang-tag">🇹🇼 繁體中文</span>
   <span class="badge tag">#HyperFrames</span> <span class="badge tag">#動態設計</span> <span class="badge tag">#緩動曲線</span> <span class="badge tag">#時間軸</span> <span class="badge tag">#視覺節奏</span>
 </div>
 
-> **簡介**：動態設計品味規則（HyperFrames 版）— 時間軸、緩動、彈性、節奏、字體（含繁體中文）、配色、質感與場景連貫，全部附具體數字。只要是製作、調整、重新計時或打磨動畫影片、片頭、轉場、motion graphics、HyperFrames composition，就一定要使用此技能。觸發情境包含：「做一支動畫」、「做動態影片」、「做片頭」、「motion design」、「讓這段字動起來」、「調整動畫節奏」等。
+> **簡介**：動態設計品味與節奏規則（時間軸、緩動曲線、彈簧手感、繁中字體、三色配色與閱讀停留時間）。
+>
+> **English Summary**: Motion design aesthetics and pacing rules (timeline, easing curves, spring physics, typography, 3-color palettes, and pause durations).
 
 ::: details 快速安裝指令（點擊複製）
 ::: code-group
@@ -47,14 +62,16 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 
 
-::: info 包含的檔案 (2 個檔案)
+::: info 包含的檔案 (4 個檔案)
 - `LICENSE`
 - `SKILL.md`
+- `SKILL_EN.md`
+- `SKILL_ZH.md`
 :::
 
 ---
 
-## 技能完整說明檔 (SKILL.md)
+## 繁體中文完整說明檔 (SKILL.md)
 
 
 # Motion design（HyperFrames 版）
