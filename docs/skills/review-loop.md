@@ -49,13 +49,14 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 ::: info 包含的檔案 (3 個檔案)
 - `LICENSE`
-- `SKILL.md`
 - `scripts/sheet.py`
+- `SKILL.md`
 :::
 
 ---
 
 ## 技能完整說明檔 (SKILL.md)
+
 
 # Review loop（HyperFrames 版）
 
@@ -117,3 +118,4 @@ git clone https://github.com/clive520/agent-skills-hub.git
 ## 回報
 
 完成時要說清楚：檢查了什麼、修了什麼、哪一張 sheet 可以看到結果。沒有重新輸出並親眼看過的修正，不要宣稱已經修好。
+

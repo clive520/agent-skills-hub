@@ -18,6 +18,7 @@ export default defineConfig({
   description: '個人 Agent 技能資料庫與索引導覽系統',
   base: '/agent-skills-hub/',
   cleanUrls: true,
+  ignoreDeadLinks: true,
   themeConfig: {
     logo: '⚡',
     siteTitle: 'Agent Skills Hub',

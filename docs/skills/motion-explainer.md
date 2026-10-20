@@ -52,7 +52,6 @@ git clone https://github.com/clive520/agent-skills-hub.git
 :::
 
 ::: info 包含的檔案 (22 個檔案)
-- `SKILL.md`
 - `references/hardware.md`
 - `references/lessons.md`
 - `references/theme-json.md`
@@ -70,6 +69,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 - `scripts/tts_jobs.py`
 - `scripts/unify_frames.py`
 - `scripts/voice_meta.py`
+- `SKILL.md`
 - `templates/dispatch_context.md`
 - `templates/shared-asset.example.svg`
 - `templates/shots.example.json`
@@ -79,6 +79,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 ---
 
 ## 技能完整說明檔 (SKILL.md)
+
 
 # Motion explainer — 從一句話到一支解說動畫
 
@@ -209,3 +210,4 @@ hyperframes lint && hyperframes check
 ## 9. 交付
 
 交出 MP4 路徑、片長、一張總覽 contact sheet，並列出：用了哪些來源、哪些數字是宣稱、哪些是估算、哪些地方和需求不一樣（例如片長超出）、哪些沒做（例如沒有配樂）。
+

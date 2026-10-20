@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const matter = require("gray-matter");
 
 const rootDir = path.resolve(__dirname, "..");
 const skillsDir = path.join(rootDir, "skills");
@@ -12,42 +13,60 @@ fs.mkdirSync(publicDir, { recursive: true });
 fs.mkdirSync(skillsDocsDir, { recursive: true });
 fs.mkdirSync(path.join(docsDir, ".vitepress"), { recursive: true });
 
-function parseFrontmatter(content) {
-  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  if (!match) return { data: {}, content };
-  
-  const yamlBlock = match[1];
-  const body = content.slice(match[0].length).trim();
-  const data = {};
-  
-  yamlBlock.split(/\r?\n/).forEach((line) => {
-    const colonIdx = line.indexOf(":");
-    if (colonIdx !== -1) {
-      const key = line.slice(0, colonIdx).trim();
-      let val = line.slice(colonIdx + 1).trim();
-      // Remove surrounding quotes if any
-      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-        val = val.slice(1, -1);
+function parseFrontmatter(rawContent) {
+  try {
+    const parsed = matter(rawContent);
+    return { data: parsed.data || {}, content: parsed.content || "" };
+  } catch (err) {
+    // Fallback simple regex parser
+    const match = rawContent.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    if (!match) return { data: {}, content: rawContent };
+    
+    const yamlBlock = match[1];
+    const body = rawContent.slice(match[0].length).trim();
+    const data = {};
+    
+    yamlBlock.split(/\r?\n/).forEach((line) => {
+      const colonIdx = line.indexOf(":");
+      if (colonIdx !== -1) {
+        const key = line.slice(0, colonIdx).trim();
+        let val = line.slice(colonIdx + 1).trim();
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        data[key] = val;
       }
-      data[key] = val;
-    }
-  });
+    });
 
-  return { data, content: body };
+    return { data, content: body };
+  }
 }
 
 function getSkillCategory(id, desc) {
   if (id.startsWith("soil-")) return "教學簡報";
-  if (id === "motion-explainer") return "解說動畫";
-  if (id === "motion-design") return "動態設計";
+  if (id === "motion-explainer" || id === "faceless-explainer") return "解說動畫";
+  if (id === "motion-design" || id === "hyperframes-animation" || id === "hyperframes-keyframes") return "動態設計";
   if (id === "review-loop") return "審查機制";
   if (id.includes("sticker") || id.includes("visual")) return "圖像與貼圖";
+  if (id === "hyperframes-audio") return "聲音工程";
+  if (id === "hyperframes-cli") return "開發工具";
+  if (id === "hyperframes-core") return "核心架構";
+  if (id === "hyperframes-creative") return "視覺創意";
+  if (id === "hyperframes-registry") return "組件模組";
+  if (id === "hyperframes-studio" || id === "hyperframes") return "工作流調度";
+  if (id === "media-use") return "媒體資源";
   return "通用技能";
 }
 
 function getDependencies(id) {
   if (id === "soil-motion-deck") return ["soil-teaching-deck", "motion-explainer"];
   if (id === "motion-explainer") return ["motion-design", "review-loop"];
+  if (id === "faceless-explainer") return ["hyperframes", "hyperframes-creative", "media-use"];
+  if (id === "hyperframes") return ["hyperframes-core", "hyperframes-cli"];
+  if (id === "hyperframes-animation") return ["hyperframes-core"];
+  if (id === "hyperframes-keyframes") return ["hyperframes-animation"];
+  if (id === "hyperframes-audio") return ["hyperframes-core"];
+  if (id === "hyperframes-studio") return ["hyperframes-core"];
   return [];
 }
 
@@ -58,7 +77,18 @@ function getTags(id, desc) {
     "motion-explainer": ["HyperFrames", "edge-tts", "原理解說", "科普影片", "繁體中文"],
     "motion-design": ["HyperFrames", "動態設計", "緩動曲線", "時間軸", "視覺節奏"],
     "review-loop": ["HyperFrames", "Contact Sheet", "多影格審查", "品質驗證"],
-    "visual-line-sticker-production": ["LINE貼圖", "角色設計", "貼圖打包", "Creators Market"]
+    "visual-line-sticker-production": ["LINE貼圖", "角色設計", "貼圖打包", "Creators Market"],
+    "faceless-explainer": ["HyperFrames", "無人解說", "文字轉影片", "知識科普", "分鏡腳本"],
+    "hyperframes": ["HyperFrames", "影片路由", "動畫入口", "動態圖像", "工作流調度"],
+    "hyperframes-animation": ["HyperFrames", "GSAP", "動畫藍圖", "場景轉場", "Three.js", "Lottie"],
+    "hyperframes-audio": ["HyperFrames", "音訊混音", "BGM Ducking", "音效處理", "聲音包絡"],
+    "hyperframes-cli": ["HyperFrames", "CLI工具", "開發循環", "渲染發佈", "代碼除錯"],
+    "hyperframes-core": ["HyperFrames", "核心合約", "確定性時間軸", "子合成", "DOM架構"],
+    "hyperframes-creative": ["HyperFrames", "視覺風格", "色彩搭配", "字體設計", "創意指引"],
+    "hyperframes-keyframes": ["HyperFrames", "關鍵影格", "運鏡鏡頭", "Ken Burns", "SVG動畫"],
+    "hyperframes-registry": ["HyperFrames", "Registry", "預置模組", "視覺組件", "Block安裝"],
+    "hyperframes-studio": ["HyperFrames", "Studio", "時間軸規範", "安全區域", "協同製作"],
+    "media-use": ["HyperFrames", "多媒體OS", "音效BGM", "語音合成", "Logo圖像", "資產解析"]
   };
   return tagMap[id] || ["Agent Skill", "Antigravity"];
 }
@@ -98,7 +128,9 @@ for (const id of skillDirs) {
   const { data, content } = parseFrontmatter(rawContent);
   
   const name = data.name || id;
-  const description = data.description || "";
+  let rawDesc = data.description || "";
+  let description = typeof rawDesc === "string" ? rawDesc.replace(/\r?\n/g, " ").replace(/\s+/g, " ").trim() : "";
+  
   const category = getSkillCategory(id, description);
   const dependencies = getDependencies(id);
   const tags = getTags(id, description);
@@ -122,9 +154,10 @@ for (const id of skillDirs) {
   skills.push(skillInfo);
 
   // Generate markdown page for this skill in docs/skills/<id>.md
+  const escapedDesc = description.replace(/"/g, '\\"');
   const docMd = `---
 title: "${name}"
-description: "${description.replace(/"/g, '\\"')}"
+description: "${escapedDesc}"
 ---
 
 # ${name}

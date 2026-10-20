@@ -56,6 +56,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 ## 技能完整說明檔 (SKILL.md)
 
+
 # Motion design（HyperFrames 版）
 
 HyperFrames 文件教你 API，這份檔案管的是品味。底下的數字來自一支實際上線的作品，請把它們當成預設值：要偏離可以，但必須是刻意的，而不是剛好沒注意。
@@ -206,3 +207,4 @@ CustomEase.create("land",  "0.55,0,0.2,1.12"); // overshoot
 2. 用 `npx hyperframes init <專案資料夾>` 建專案；每個場景是 `compositions/` 裡的一個 composition，共用元件和跨場景物件放在 `index.html`。
 3. 每次有意義的修改後，都跑 `review-loop` 技能。
 4. 畫面時間鎖定後再處理聲音：音效和配樂用 `<audio data-start>` 對上 `TL` 的節拍。中文旁白的口音和情緒交給使用者用耳朵判斷，不要拿 ASR 或相似度分數代替（本版新增）。
+

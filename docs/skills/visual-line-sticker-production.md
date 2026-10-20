@@ -48,22 +48,23 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 
 ::: info 包含的檔案 (11 個檔案)
+- `agents/openai.yaml`
 - `LICENSE`
 - `README.md`
-- `SKILL.md`
-- `visual-line-sticker-production.zip`
-- `使用說明.md`
-- `agents/openai.yaml`
 - `references/line-static-spec.md`
 - `references/manifests.md`
 - `references/workflow-and-prompts.md`
 - `scripts/prepare_line_assets.py`
 - `scripts/verify_line_static_stickers.py`
+- `SKILL.md`
+- `visual-line-sticker-production.zip`
+- `使用說明.md`
 :::
 
 ---
 
 ## 技能完整說明檔 (SKILL.md)
+
 
 # LINE Sticker Production
 
@@ -119,3 +120,4 @@ python3 scripts/verify_line_static_stickers.py --input-dir ready --manifest coll
 ```
 
 They only prepare and verify already-approved PNGs. If scripts cannot run in the current host, provide the same manual checklist from `references/line-static-spec.md` and do not claim technical validation passed.
+

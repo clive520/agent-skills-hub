@@ -52,12 +52,12 @@ git clone https://github.com/clive520/agent-skills-hub.git
 :::
 
 ::: info 包含的檔案 (9 個檔案)
-- `SKILL.md`
 - `references/lessons.md`
 - `scripts/cut_clips.py`
 - `scripts/export_thumbs.ps1`
 - `scripts/make_silent.py`
 - `scripts/thumbs.py`
+- `SKILL.md`
 - `templates/deck_helpers.js`
 - `templates/example_pythagoras.js`
 - `templates/package.json`
@@ -66,6 +66,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 ---
 
 ## 技能完整說明檔 (SKILL.md)
+
 
 # SOIL 動畫教學簡報：一次製作，兩份成品
 
@@ -254,3 +255,4 @@ SOIL 文件裡提到的 `thumbnail.py`（pptx 技能）不必另外找，用這�
 - 旁白發音請使用者用耳朵聽一遍（ASR 聽不出聲調）。唸錯的字用 motion-explainer 的 `fix_voice.py` 修；修完要重剪片段、重建簡報。
 
 `references/lessons.md` 是第一次實作（〈畢氏定理〉，13 頁、3 段動畫、110 秒影片）時踩過的坑。
+

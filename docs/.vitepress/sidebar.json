@@ -1,8 +1,44 @@
 [
   {
+    "text": "解說動畫",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "faceless-explainer",
+        "link": "/skills/faceless-explainer"
+      },
+      {
+        "text": "motion-explainer",
+        "link": "/skills/motion-explainer"
+      }
+    ]
+  },
+  {
+    "text": "工作流調度",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes",
+        "link": "/skills/hyperframes"
+      },
+      {
+        "text": "hyperframes-studio",
+        "link": "/skills/hyperframes-studio"
+      }
+    ]
+  },
+  {
     "text": "動態設計",
     "collapsed": false,
     "items": [
+      {
+        "text": "hyperframes-animation",
+        "link": "/skills/hyperframes-animation"
+      },
+      {
+        "text": "hyperframes-keyframes",
+        "link": "/skills/hyperframes-keyframes"
+      },
       {
         "text": "motion-design",
         "link": "/skills/motion-design"
@@ -10,12 +46,62 @@
     ]
   },
   {
-    "text": "解說動畫",
+    "text": "聲音工程",
     "collapsed": false,
     "items": [
       {
-        "text": "motion-explainer",
-        "link": "/skills/motion-explainer"
+        "text": "hyperframes-audio",
+        "link": "/skills/hyperframes-audio"
+      }
+    ]
+  },
+  {
+    "text": "開發工具",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes-cli",
+        "link": "/skills/hyperframes-cli"
+      }
+    ]
+  },
+  {
+    "text": "核心架構",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes-core",
+        "link": "/skills/hyperframes-core"
+      }
+    ]
+  },
+  {
+    "text": "視覺創意",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes-creative",
+        "link": "/skills/hyperframes-creative"
+      }
+    ]
+  },
+  {
+    "text": "組件模組",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hyperframes-registry",
+        "link": "/skills/hyperframes-registry"
+      }
+    ]
+  },
+  {
+    "text": "媒體資源",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "media-use",
+        "link": "/skills/media-use"
       }
     ]
   },
