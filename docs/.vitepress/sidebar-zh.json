@@ -1,5 +1,35 @@
 [
   {
+    "text": "移動端開發",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "android-cli · Android CLI 開發與虛擬設備專員",
+        "link": "/skills/android-cli"
+      }
+    ]
+  },
+  {
+    "text": "平台指南",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "antigravity-guide · Google Antigravity 2.0 完整開發指南",
+        "link": "/skills/antigravity-guide"
+      }
+    ]
+  },
+  {
+    "text": "背景自動化",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "automation · 背景排程與自動化工作流",
+        "link": "/skills/automation"
+      }
+    ]
+  },
+  {
     "text": "解說動畫",
     "collapsed": false,
     "items": [
@@ -10,6 +40,36 @@
       {
         "text": "motion-explainer · HyperFrames 原理解說動畫影片",
         "link": "/skills/motion-explainer"
+      }
+    ]
+  },
+  {
+    "text": "生成式 UI",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "generative-ui · 生成式互動介面與 HTML 小部件",
+        "link": "/skills/generative-ui"
+      }
+    ]
+  },
+  {
+    "text": "Agent 開發框架",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "google-antigravity-sdk · Google Antigravity SDK 自主代理開發",
+        "link": "/skills/google-antigravity-sdk"
+      }
+    ]
+  },
+  {
+    "text": "瀏覽器自動化",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hitl-browser · 人機協同瀏覽器操作流程 (HITL)",
+        "link": "/skills/hitl-browser"
       }
     ]
   },
@@ -102,6 +162,26 @@
       {
         "text": "media-use · 多媒體資產 OS (語音/音效/圖像/標誌)",
         "link": "/skills/media-use"
+      }
+    ]
+  },
+  {
+    "text": "AI 知識庫與筆記",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "nlm-skill · Gemini Notebook (NotebookLM) CLI 與 MCP 專家",
+        "link": "/skills/nlm-skill"
+      }
+    ]
+  },
+  {
+    "text": "需求分析與訪談",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "rdq-method · RDQ 需求探索四象限法",
+        "link": "/skills/rdq-method"
       }
     ]
   },

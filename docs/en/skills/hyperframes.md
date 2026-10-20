@@ -142,7 +142,7 @@ If a fresh request does not identify the subject or input, ask what the video is
 
 ### Keep the project's CLI current
 
-A scaffolded project pins `hyperframes@<version>` in its `package.json` scripts so renders stay reproducible; the pin never advances on its own, and a pinned run of an older CLI prints no warning about it. When resuming a project whose scripts carry a pin, probe once before the first render-affecting command:
+A scaffolded project pins `hyperframes@&lt;version&gt;` in its `package.json` scripts so renders stay reproducible; the pin never advances on its own, and a pinned run of an older CLI prints no warning about it. When resuming a project whose scripts carry a pin, probe once before the first render-affecting command:
 
 ```bash
 npx hyperframes@latest upgrade --project . --check
@@ -167,7 +167,7 @@ Use the first matching row. Match the requested **deliverable**, not a word or f
 | 9        | Explain a topic, article, or notes with invented visuals and no product or site capture                            | `/faceless-explainer`      |
 | 10       | Any other custom video or composition                                                                              | `/general-video`           |
 
-Before finalizing the route, read `references/routes/<workflow>.md` — one small file per route: the canonical input/output/trigger contract (available before lazy-installed workflow skills are present) plus that route's interview entry. If the candidate does not satisfy its contract, continue routing instead of forcing the match. Read only the matched route's file.
+Before finalizing the route, read `references/routes/&lt;workflow&gt;.md` — one small file per route: the canonical input/output/trigger contract (available before lazy-installed workflow skills are present) plus that route's interview entry. If the candidate does not satisfy its contract, continue routing instead of forcing the match. Read only the matched route's file.
 
 ### Resolve common ambiguities
 

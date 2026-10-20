@@ -205,7 +205,7 @@ Without `HEYGEN_API_BASE`, before generating a voiceover or an avatar video, tel
 npx hyperframes media-use resolve --type <type> --intent "<description>" --project <dir>
 ```
 
-Returns one line: `resolved <id> → <path> (<type>, <metadata>)`. All search noise stays on disk.
+Returns one line: `resolved &lt;id&gt; → &lt;path&gt; (&lt;type&gt;, &lt;metadata&gt;)`. All search noise stays on disk.
 
 | Type    | One-line intent                                                                  |
 | ------- | -------------------------------------------------------------------------------- |
@@ -224,11 +224,11 @@ Before resolving fresh, list reusable candidates with `--candidates` and judge f
 
 When a user explicitly asks to fix, polish, stylize, obscure, emphasize, or
 reveal photographic media, read `references/media-treatments.md` even if they
-do not name color grading or an effect. Inspect the real `<img>`/`<video>`,
+do not name color grading or an effect. Inspect the real `<img>`/`&lt;video&gt;`,
 choose one primary intent, then use deterministic persistence and verification.
 Use a matching recipe as an optional tested seed, or inspect
 `hyperframes media-treatment --capabilities --json`, then request one relevant
-family/effect with `--capability <id>` and assemble a custom treatment from
+family/effect with `--capability &lt;id&gt;` and assemble a custom treatment from
 canonical controls. Never load `--all` for ordinary authoring. A treatment may
 compose correction, a preset, finishing, compatible shader effects, supported
 keyframes, and optional Registry overlays. Add only source-justified bounded

@@ -151,7 +151,7 @@ Group by kind so each row is one thing the user can select, mute or drag as a se
 | Audio (voiceover, music, sound effects) | `audio` (from the tag) |
 
 Put `data-track-kind` on sub-composition hosts. Video and audio kinds come from the tag, so
-`<video>` and `<audio>` need no attribute. Give each kind its own `data-track-index`; the number
+`&lt;video&gt;` and `&lt;audio&gt;` need no attribute. Give each kind its own `data-track-index`; the number
 is display only; it never changes what renders on top. Use CSS for
 layering.
 

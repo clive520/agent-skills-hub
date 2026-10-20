@@ -93,7 +93,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 | **Ken Burns 平移與相機運動** | 同時對包裝層的位移（translation）與縮放（scale）進行關鍵影格補間。 |
 | **匹配剪輯 / 快速搖攝 (Match cut / Whip pan)** | 由 `/hyperframes-animation` 提供銜接邏輯，關鍵影格確保位移方向與加速度曲線連貫。 |
 | **遮罩動態重構 (Crop & Mask Reframe)** | 對內部視覺包裝層的 `clip-path` 或遮罩進行關鍵影格插值，不改動原始素材播放時間。 |
-| **速度曲線 (Speed Ramps)** | 在 `<video>`/`<audio>` 上使用 `data-automation` 的 `rate` 軌道，實現對數曲線插值的加速與減速。 |
+| **速度曲線 (Speed Ramps)** | 在 `&lt;video&gt;`/`&lt;audio&gt;` 上使用 `data-automation` 的 `rate` 軌道，實現對數曲線插值的加速與減速。 |
 | **定格畫面 (Freeze / Hold)** | 將靜態畫面或最後影格獨立置放為單獨的 clip，隨後再恢復原始影片區段播放。 |
 
 ---

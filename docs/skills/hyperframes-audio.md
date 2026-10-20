@@ -127,6 +127,6 @@ git clone https://github.com/clive520/agent-skills-hub.git
 </audio>
 ```
 
-### 3. 多音軌分組匯流排 (`<hf-audio-group>`)
+### 3. 多音軌分組匯流排 (`&lt;hf-audio-group&gt;`)
 將多條音效（SFX）或多個樂器軌包裹在同一個群組內，統一進行整體增益、壓縮或總體音量自動化控制。
 

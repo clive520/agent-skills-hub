@@ -233,7 +233,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 | 需求 | 查閱檔案 |
 |---|---|
 | 依觸發標籤挑選原子運動規則 | `rules-index.md` |
-| 查閱單一規則完整 HTML / CSS / GSAP 寫法 | `rules/<name>.md` |
+| 查閱單一規則完整 HTML / CSS / GSAP 寫法 | `rules/&lt;name&gt;.md` |
 | 挑選多階段場景模板 | `blueprints-index.md` |
 | 場景與場景之間的轉場效果 | `transitions/overview.md` 與 `transitions/catalog.md` |
 | 動態模糊（Motion Blur）規範 | `references/motion-blur.md` |

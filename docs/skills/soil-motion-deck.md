@@ -105,9 +105,9 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 | 代號 | 是什麼 | 常見位置 |
 |---|---|---|
-| `<smd>` | 本技能資料夾 | `~/.claude/skills/soil-motion-deck`（Claude Code）、`~/.agents/skills/soil-motion-deck`（Codex） |
-| `<me>` | motion-explainer 技能資料夾 | 同上，資料夾名 `motion-explainer` |
-| `<soil>` | SOIL 技能資料夾 | 同上，資料夾名 `soil-teaching-deck` |
+| `&lt;smd&gt;` | 本技能資料夾 | `~/.claude/skills/soil-motion-deck`（Claude Code）、`~/.agents/skills/soil-motion-deck`（Codex） |
+| `&lt;me&gt;` | motion-explainer 技能資料夾 | 同上，資料夾名 `motion-explainer` |
+| `&lt;soil&gt;` | SOIL 技能資料夾 | 同上，資料夾名 `soil-teaching-deck` |
 
 ```bash
 ls -d ~/.claude/skills/{soil-motion-deck,motion-explainer,soil-teaching-deck,review-loop} ~/.agents/skills/{soil-motion-deck,motion-explainer,soil-teaching-deck,review-loop} 2>/dev/null
@@ -121,7 +121,7 @@ Get-ChildItem "$HOME\.claude\skills","$HOME\.agents\skills" -Directory -ErrorAct
 
 其他 agent（例如 Gemini CLI）：在它的 skills 資料夾裡找同名資料夾。
 
-少了哪一個，就請使用者照該 repo 的 README 安裝（每個 repo 都是把 `skills/` 或 `skill/` 底下的資料夾複製到 agent 的 skills 資料夾）。SOIL 的 `install.py` 只會裝到它找到的第一個資料夾，而且會等使用者按 Enter。agent 自己裝的話，直接複製：`cp -r soil-teaching-deck/skill <skills 資料夾>/soil-teaching-deck`。
+少了哪一個，就請使用者照該 repo 的 README 安裝（每個 repo 都是把 `skills/` 或 `skill/` 底下的資料夾複製到 agent 的 skills 資料夾）。SOIL 的 `install.py` 只會裝到它找到的第一個資料夾，而且會等使用者按 Enter。agent 自己裝的話，直接複製：`cp -r soil-teaching-deck/skill &lt;skills 資料夾&gt;/soil-teaching-deck`。
 
 其他需求：
 

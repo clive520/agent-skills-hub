@@ -81,7 +81,7 @@ You cannot watch a video in real-time, but you can inspect static frames. Never 
 
 > Adapted from whaleyxbt/claude-motion's `review-loop` skill (MIT, see `LICENSE` in this folder). Original `npm run …` commands replaced with HyperFrames CLI, ffmpeg, and local `scripts/sheet.py`. Paragraphs marked with "(Hub Edition)" are added in this edition.
 
-`SHEET` below refers to `python "<skill-dir>/scripts/sheet.py"`. This skill directory is usually at `~/.claude/skills/review-loop` (Claude Code) or `~/.agents/skills/review-loop` (Codex). Use absolute paths for all commands. Requires Python + Pillow and ffmpeg.
+`SHEET` below refers to `python "&lt;skill-dir&gt;/scripts/sheet.py"`. This skill directory is usually at `~/.claude/skills/review-loop` (Claude Code) or `~/.agents/skills/review-loop` (Codex). Use absolute paths for all commands. Requires Python + Pillow and ffmpeg.
 
 ## The Review Cycle
 
@@ -90,15 +90,15 @@ You cannot watch a video in real-time, but you can inspect static frames. Never 
 1. **Draft Export**: In the project folder, run `npx hyperframes render --quality draft --output renders/draft.mp4`.
 2. **Contact Sheet**: Capture the exact moment each beat "settles", tiled 4×2 into `beats-N.png`, labeled with timestamps. Each thumbnail defaults to 360 px width (simulating phone screen width). Beat timing depends on project type:
    - **motion-explainer series** (with `audio_meta.json`): 0.15s before each voiceover clause ends.
-     `SHEET --video <project>/renders/draft.mp4 --at "$(python <motion-explainer-dir>/scripts/review_times.py --project <project>)" --out <project>/review --name draft`
+     `SHEET --video &lt;project&gt;/renders/draft.mp4 --at "$(python &lt;motion-explainer-dir&gt;/scripts/review_times.py --project &lt;project&gt;)" --out &lt;project&gt;/review --name draft`
    - **timeline.js projects** (`motion-design` Section 1): 0.3s after each beat.
-     `SHEET --video <project>/renders/draft.mp4 --timeline <project>/timeline.js --out <project>/review`
+     `SHEET --video &lt;project&gt;/renders/draft.mp4 --timeline &lt;project&gt;/timeline.js --out &lt;project&gt;/review`
 3. **Open and Inspect Every Sheet** (using image viewing tools), cross-referencing against the checklist below. Simply glancing at file names or terminal logs does NOT count.
 4. Zoom in on suspicious areas:
    - Scrub a transition: `SHEET --video … --from 3 --to 5 --every 0.2 --name scrub`
    - Inspect specific timestamp: `SHEET --video … --at 3.7,3.75,3.8 --name exact`
-   - Single frame full resolution: `ffmpeg -v error -ss <seconds> -i <project>/renders/draft.mp4 -frames:v 1 frame.png`
-   - To snapshot directly from composition without re-rendering: `npx hyperframes snapshot --at 3.7,5.2 --no-end --describe false -o <folder>`, then tile with `SHEET --images … --labels …`.
+   - Single frame full resolution: `ffmpeg -v error -ss &lt;seconds&gt; -i &lt;project&gt;/renders/draft.mp4 -frames:v 1 frame.png`
+   - To snapshot directly from composition without re-rendering: `npx hyperframes snapshot --at 3.7,5.2 --no-end --describe false -o &lt;folder&gt;`, then tile with `SHEET --images … --labels …`.
 5. Fix issues and return to Step 0. Repeat until a complete cycle reveals zero defects.
 6. **Final Render**: Export high quality final video (for motion-explainer projects, follow Section 8), re-run Step 2 on final video, then perform audio check (see below).
 
@@ -126,8 +126,8 @@ You cannot watch a video in real-time, but you can inspect static frames. Never 
 - Reoccurring elements must look identical across scenes.
 
 ### Audio (When applicable)
-- Waveform check: `ffmpeg -v error -i <video> -filter_complex "showwavespic=s=1600x240" -frames:v 1 wave.png`. Confirm audio peaks align with visual beats.
-- Loudness (Hub Edition): `ffmpeg -hide_banner -nostats -i <video> -af ebur128=peak=true -f null -`. Target: −14 LUFS ±1, true peak ≤ −1 dBFS.
+- Waveform check: `ffmpeg -v error -i &lt;video&gt; -filter_complex "showwavespic=s=1600x240" -frames:v 1 wave.png`. Confirm audio peaks align with visual beats.
+- Loudness (Hub Edition): `ffmpeg -hide_banner -nostats -i &lt;video&gt; -af ebur128=peak=true -f null -`. Target: −14 LUFS ±1, true peak ≤ −1 dBFS.
 - For Chinese voiceover accent and emotional tone: listen with human ears rather than relying solely on automated scores.
 
 ## Reporting

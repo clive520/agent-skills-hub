@@ -197,7 +197,7 @@ HyperFrames 的多媒體引擎：解析（Resolve）· 生成（Generate）· �
 npx hyperframes media-use resolve --type <type> --intent "<描述需求>" --project <專案目錄>
 ```
 
-執行後返回簡潔的一行結果：`resolved <id> → <path> (<type>, <metadata>)`，所有搜尋與下載細節均持久化於本地磁碟。
+執行後返回簡潔的一行結果：`resolved &lt;id&gt; → &lt;path&gt; (&lt;type&gt;, &lt;metadata&gt;)`，所有搜尋與下載細節均持久化於本地磁碟。
 
 | 類型 (Type) | 意圖與來源 |
 |---|---|

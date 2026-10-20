@@ -10,7 +10,7 @@
 
 ---
 
-## 📦 收錄技能一覽 / Available Skills Directory (共 17 項 / 17 Skills)
+## 📦 收錄技能一覽 / Available Skills Directory (共 25 項 / 25 Skills)
 
 點擊技能名稱可直接前往對應的繁中或英文詳細文檔頁面，頁面頂端皆提供一鍵雙語切換按鈕。
 Click any skill link to view its full documentation. You can toggle between Chinese and English with one click at the top of any page.
@@ -34,6 +34,14 @@ Click any skill link to view its full documentation. You can toggle between Chin
 | [`motion-design`](https://clive520.github.io/agent-skills-hub/skills/motion-design) | 動態設計品味與節奏規則 | Motion Design Principles | 動態設計<br>Motion Design | 動態設計品味與節奏規則（時間軸、緩動曲線、彈簧手感、字體、三色配色）<br>*Motion design taste and pacing rules: timeline, easing, typography, and palettes.* |
 | [`review-loop`](https://clive520.github.io/agent-skills-hub/skills/review-loop) | 動畫多影格視覺自我審查循環 | Animation Visual Review Loop | 審查機制<br>Review & QA | 動畫視覺自我審查循環：輸出草稿、在每個節拍截圖拼成 Contact Sheet 對照檢查<br>*Visual self-review loop: snapshot contact sheets at each beat and verify QA.* |
 | [`visual-line-sticker-production`](https://clive520.github.io/agent-skills-hub/skills/visual-line-sticker-production) | LINE 靜態貼圖生產與打包工作流 | LINE Static Sticker Production | 圖像與貼圖<br>Graphics & Stickers | LINE 靜態貼圖全套生產、角色設計一致性保持、審核規範驗證與 ZIP 打包<br>*Create, iterate, validate, and package upload-ready static LINE sticker sets.* |
+| [`hitl-browser`](https://clive520.github.io/agent-skills-hub/skills/hitl-browser) | 人機協同瀏覽器操作流程 (HITL) | Human-in-the-Loop Browser Automation | 瀏覽器自動化<br>Browser Automation | 人機協同瀏覽器操作：有頭可視化、持久化 UserDataDir、驗證碼/2FA人工介入與無縫接手<br>*Human-in-the-loop browser automation: visible browser, persistent profile, manual login handoff.* |
+| [`rdq-method`](https://clive520.github.io/agent-skills-hub/skills/rdq-method) | RDQ 需求探索四象限法 | RDQ Method (Requirements Discovery) | 需求分析與訪談<br>Requirements Discovery | 動工前以四象限結構化訪談產出一頁需求規格卡，徹底防止返工<br>*Pre-execution 4-quadrant requirement elicitation to produce a 1-page spec card.* |
+| [`nlm-skill`](https://clive520.github.io/agent-skills-hub/skills/nlm-skill) | Gemini Notebook CLI 與 MCP 專家 | Gemini Notebook (NotebookLM) CLI & MCP Expert | AI 知識庫與筆記<br>AI Knowledge & Notebooks | NotebookLM 的 CLI (`nlm`) 與 MCP 工具完整指南，支援語音播客、報告與測驗卡片<br>*Expert guide for Gemini Notebook (NotebookLM) CLI and MCP server operations.* |
+| [`android-cli`](https://clive520.github.io/agent-skills-hub/skills/android-cli) | Android CLI 開發與虛擬設備專員 | Android CLI & Virtual Device Specialist | 移動端開發<br>Mobile Development | Android CLI 命令列工具操作指南：專案建立、AVD 模擬器管理、UI 截圖與 Journey 測試<br>*Android CLI operations: project creation, emulator management, UI screenshots, and testing.* |
+| [`google-antigravity-sdk`](https://clive520.github.io/agent-skills-hub/skills/google-antigravity-sdk) | Google Antigravity SDK 自主代理開發 | Google Antigravity SDK Agent Architecture | Agent 開發框架<br>Agent Frameworks | 使用 Google Antigravity (AGY) SDK 設計與實作自主 AI Agent 與多 Agent 協同架構<br>*Design and implement autonomous AI agents and multi-agent systems using Google Antigravity SDK.* |
+| [`generative-ui`](https://clive520.github.io/agent-skills-hub/skills/generative-ui) | 生成式互動介面與 HTML 小部件 | Generative UI & Interactive HTML Widgets | 生成式 UI<br>Generative UI | 在 Agent 對話中或作為獨立 Artifact 渲染豐富且具互動性的 HTML 介面與動態圖表<br>*Render custom, rich, interactive HTML widgets and visual controls inline in chat or artifacts.* |
+| [`automation`](https://clive520.github.io/agent-skills-hub/skills/automation) | 背景排程與自動化工作流 | Scheduled Background Automations | 背景自動化<br>Scheduled Automations | 設計與建立後台定時排程自動化任務：Cron 表達式、定時觸發全新 Agent 對話<br>*Design and create scheduled background automations using cron expressions and sidecars.* |
+| [`antigravity-guide`](https://clive520.github.io/agent-skills-hub/skills/antigravity-guide) | Google Antigravity 2.0 完整開發指南 | Google Antigravity 2.0 Comprehensive Guide | 平台指南<br>Platform Guides | Google Antigravity (AGY) 綜合指南與功能地圖：CLI、IDE 介面、斜線指令、Skills 與 MCP<br>*Comprehensive guide and sitemap for Google Antigravity, CLI, IDE, slash commands, and skills.* |
 
 ---
 

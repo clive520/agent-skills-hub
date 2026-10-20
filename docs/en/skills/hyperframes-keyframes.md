@@ -106,7 +106,7 @@ fades use `/hyperframes-audio`.
 | Directional wipe cut or iris/reveal cut | Animate a mask/clip boundary across overlapping visual clips; `/hyperframes-animation` owns the handoff choreography.                                                                                                       |
 | Split-screen handoff                    | Keep both visual clips placed by core, then keyframe their inner crop/mask wrappers and divider geometry.                                                                                                                   |
 | Constant source retime                  | `/hyperframes-core` owns normalized `data-playback-rate` (`0.1..10`) for render-safe picture and pitch-preserved sound. It is constant for the whole media element.                                                         |
-| Source speed ramps                      | A `rate` lane in `data-automation` on the `<video>`/`<audio>` (`t` in clip seconds, `v` 0.1..10, log interpolation); it wins over the constant rate.                                                                        |
+| Source speed ramps                      | A `rate` lane in `data-automation` on the `&lt;video&gt;`/`&lt;audio&gt;` (`t` in clip seconds, `v` 0.1..10, log interpolation); it wins over the constant rate.                                                                        |
 | Freeze / hold                           | A visual pose, final source frame, or finished sub-composition can hold. Arbitrary mid-source freeze is not supported; preprocess a still/derived segment, place it as its own clip, then resume with another source range. |
 
 When editing picture and sound together, load `/hyperframes-core`, this skill for
@@ -290,7 +290,7 @@ npx hyperframes keyframes . --shot "<file>" --ghost --angle <angle>
 npx hyperframes snapshot . --at <times>
 ```
 
-Choose `<selector>` for the real animated subject. Choose `<times>` for first frame, proof poses, final-minus-hold, and exact final. Choose `<angle>` only when depth must be proven.
+Choose `&lt;selector&gt;` for the real animated subject. Choose `&lt;times&gt;` for first frame, proof poses, final-minus-hold, and exact final. Choose `&lt;angle&gt;` only when depth must be proven.
 
 | Tool             | Proves                                                                                              |
 | ---------------- | --------------------------------------------------------------------------------------------------- |

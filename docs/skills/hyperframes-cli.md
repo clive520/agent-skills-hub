@@ -91,10 +91,10 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 ## 典型開發循環 (Development Loop)
 
-1. **專案鷹架 (Scaffold)**：`npx hyperframes init <project>` 初始化空白專案（或加 `--example=<name>` 從範例啟動）。
+1. **專案鷹架 (Scaffold)**：`npx hyperframes init &lt;project&gt;` 初始化空白專案（或加 `--example=&lt;name&gt;` 從範例啟動）。
 2. **尋找現成模組**：手動編寫動畫前，先檢索模組庫：
    `npx hyperframes catalog --query "reveal a headline one line at a time"`
-   安裝模組：`npx hyperframes add <name>`（詳見 `/hyperframes-registry`）。
+   安裝模組：`npx hyperframes add &lt;name&gt;`（詳見 `/hyperframes-registry`）。
 3. **合成編寫與時間軸檢視**：使用 `/hyperframes-core` 編寫 HTML。執行 `npx hyperframes timeline --json` 檢視軌道與片段時間軸。
 4. **即時語法與靜態檢查**：編輯時執行 `npx hyperframes lint` 快速獲得反饋。
 5. **最終品質閥門 (Gate)**：執行 `npx hyperframes check`。它會在開啟無頭瀏覽器驗證前自動重新執行 lint。加上 `--snapshots` 可產出總覽快照。

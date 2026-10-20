@@ -90,7 +90,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 1. **草稿**：在專案資料夾執行 `npx hyperframes render --quality draft --output renders/draft.mp4`。
 2. **Contact sheet**：取每個節拍「落定」的那一刻，4×2 拼成 `beats-N.png`，每格標上時間。每格預設 360 px 寬，也就是手機動態上的實際寬度。節拍時間依專案種類而定：
    - **motion-explainer 系列的專案**（有 `audio_meta.json`）：每個旁白子句結束前 0.15 秒。
-     `SHEET --video <專案>/renders/draft.mp4 --at "$(python <motion-explainer 系列技能資料夾>/scripts/review_times.py --project <專案>)" --out <專案>/review --name draft`
+     `SHEET --video <專案>/renders/draft.mp4 --at "$(python &lt;motion-explainer 系列技能資料夾&gt;/scripts/review_times.py --project <專案>)" --out <專案>/review --name draft`
    - **用 `timeline.js` 管理節拍的專案**（`motion-design` 第 1 節）：每個節拍後 0.3 秒。
      `SHEET --video <專案>/renders/draft.mp4 --timeline <專案>/timeline.js --out <專案>/review`
 3. **每一張 sheet 都要打開來看**（用你讀取圖片檔的工具），逐項對照下面的檢查表。只看檔名或 log 不算看過。

@@ -102,9 +102,9 @@ Both deliverables share identical animation assets: video B is authored first, t
 ## 0. Prerequisites & Environment
 
 Key path aliases:
-- `<smd>`: `soil-motion-deck` skill directory.
-- `<me>`: `motion-explainer` skill directory.
-- `<soil>`: `soil-teaching-deck` skill directory.
+- `&lt;smd&gt;`: `soil-motion-deck` skill directory.
+- `&lt;me&gt;`: `motion-explainer` skill directory.
+- `&lt;soil&gt;`: `soil-teaching-deck` skill directory.
 
 Requirements:
 - Node.js 22+, ffmpeg, Python 3, HyperFrames CLI.
@@ -140,9 +140,9 @@ Plan slide progression (typically 12–18 slides total):
 
 ## 4. Extracting Silent Clips for Slides
 
-1. Run `python <smd>/scripts/make_silent.py --video renders/video.mp4 --out renders/silent.mp4` to strip narration and captions.
+1. Run `python &lt;smd&gt;/scripts/make_silent.py --video renders/video.mp4 --out renders/silent.mp4` to strip narration and captions.
 2. Cut exact frame ranges for each animation slide:
-   `python <smd>/scripts/cut_clips.py --video renders/silent.mp4 --cuts "<slide1_start>:<slide1_end>,<slide2_start>:<slide2_end>" --out assets/clips`
+   `python &lt;smd&gt;/scripts/cut_clips.py --video renders/silent.mp4 --cuts "&lt;slide1_start&gt;:&lt;slide1_end&gt;,&lt;slide2_start&gt;:&lt;slide2_end&gt;" --out assets/clips`
 3. Export video poster frame thumbnails for PowerPoint placeholder preview.
 
 ## 5. Generating PowerPoint Deck A via PptxGenJS
@@ -153,7 +153,7 @@ Plan slide progression (typically 12–18 slides total):
 
 ## 6. Verification & Delivery
 
-1. Verify PPTX thumbnails on Windows via PowerPoint or LibreOffice (`python <smd>/scripts/thumbs.py`).
+1. Verify PPTX thumbnails on Windows via PowerPoint or LibreOffice (`python &lt;smd&gt;/scripts/thumbs.py`).
 2. Deliver:
    - Presentation `.pptx` with embedded animation clips.
    - Master MP4 video file.

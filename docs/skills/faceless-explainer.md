@@ -128,7 +128,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 ## Step 0: 專案初始化 (Setup)
 
 **目標：** 進入確認好的簡報合約，建立 HyperFrames 專案並保持耐久性。
-- 初始化專案：`npx hyperframes init "videos/<project>" --non-interactive --example=blank --skill=faceless-explainer`
+- 初始化專案：`npx hyperframes init "videos/&lt;project&gt;" --non-interactive --example=blank --skill=faceless-explainer`
 - 專案名稱採 kebab-case（例如 `compound-interest-explained`），避免使用時間戳記。
 - 檢查登入與引擎狀態：`npx hyperframes auth status`，確認語音與渲染引擎設定。
 
@@ -147,7 +147,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 ## Step 2: 設計系統 (Design System)
 
 **目標：** 為影片建立視覺外觀規格。
-- 執行 `node <fe>/scripts/build-frame.mjs`，自預設主題複製並混合設計權杖至 `frame.md`。
+- 執行 `node &lt;fe&gt;/scripts/build-frame.mjs`，自預設主題複製並混合設計權杖至 `frame.md`。
 - 複製字幕樣式外觀至 `.hyperframes/caption-skin.html`。
 
 ---
@@ -165,7 +165,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 **目標：** 生成旁白音訊，並將分鏡的真實秒數精確對齊。
 - 呼叫語音引擎產生各句音訊。
-- 執行 `node <fe>/scripts/audio.mjs sync-durations` 將音訊秒數同步回寫至 `STORYBOARD.md`。
+- 執行 `node &lt;fe&gt;/scripts/audio.mjs sync-durations` 將音訊秒數同步回寫至 `STORYBOARD.md`。
 
 ---
 
@@ -180,17 +180,17 @@ git clone https://github.com/clive520/agent-skills-hub.git
 ## Step 5: 影格生成 (Frames)
 
 **目標：** 實作每一格獨立的 HTML 合成組件。
-- 產生 frame packets：`node <fe>/scripts/frame-packets.mjs`。
+- 產生 frame packets：`node &lt;fe&gt;/scripts/frame-packets.mjs`。
 - 平行派遣 sub-agent（或循序執行）製作每格 `compositions/frames/NN-*.html`。
-- 組合並建構 `index.html`：`node <fe>/scripts/assemble-index.mjs`。
+- 組合並建構 `index.html`：`node &lt;fe&gt;/scripts/assemble-index.mjs`。
 
 ---
 
 ## Step 6: 最終渲染與審查 (Final Render)
 
 **目標：** 渲染完整影片並進行品質驗收。
-- 產生字幕群組：`node <fe>/scripts/captions.mjs build`。
-- 注入轉場效果並驗證：`node <fe>/scripts/transitions.mjs inject`。
+- 產生字幕群組：`node &lt;fe&gt;/scripts/captions.mjs build`。
+- 注入轉場效果並驗證：`node &lt;fe&gt;/scripts/transitions.mjs inject`。
 - 執行靜態診斷：`hyperframes check`。
 - 輸出最終影片：`npx hyperframes render --quality high --output renders/video.mp4`。
 - 透過 `review-loop` 產生 contact sheet 進行逐格視覺品質審查。

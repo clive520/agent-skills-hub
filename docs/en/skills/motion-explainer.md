@@ -112,15 +112,15 @@ This skill streamlines the entire pipeline: "Research topic → Draft script →
 
 | Alias | Description | Typical Location |
 |---|---|---|
-| `<me>` | This skill directory | `~/.claude/skills/motion-explainer` or `~/.agents/skills/motion-explainer` |
-| `<fe>` | Official `faceless-explainer` skill | Installed via `hyperframes skills update faceless-explainer` |
-| `<review-loop>` | `review-loop` QA skill | Installed alongside `<me>` in skills directory |
+| `&lt;me&gt;` | This skill directory | `~/.claude/skills/motion-explainer` or `~/.agents/skills/motion-explainer` |
+| `&lt;fe&gt;` | Official `faceless-explainer` skill | Installed via `hyperframes skills update faceless-explainer` |
+| `&lt;review-loop&gt;` | `review-loop` QA skill | Installed alongside `&lt;me&gt;` in skills directory |
 
 Agents without sub-agent support can execute the sequence linearly: replace Section 6's "one sub-agent per frame" with sequential execution.
 
 ## 0. Environment Setup (First Run)
 
-- **Run hardware check**: `python <me>/scripts/hw_check.py --project <project>`. Recommends voice engine, `--workers` concurrency, and sub-agent batching.
+- **Run hardware check**: `python &lt;me&gt;/scripts/hw_check.py --project &lt;project&gt;`. Recommends voice engine, `--workers` concurrency, and sub-agent batching.
 - Node.js 22+, ffmpeg/ffprobe, Python 3 + Pillow + fonttools (`pip install pillow fonttools brotli`).
 - HyperFrames CLI: `npm install -g hyperframes` followed by `hyperframes doctor`.
 - TTS Options:
@@ -146,31 +146,31 @@ Confirm aspect ratio (16:9 standard), duration (60–90s recommended), voiceover
 
 ## 3. Project Scaffolding & Storyboard
 
-1. `hyperframes init videos/<kebab-name> --non-interactive --example=blank --skill=faceless-explainer`. Write `BRIEF.md`, select a clean line-art preset (e.g. `cobalt-grid`).
+1. `hyperframes init videos/&lt;kebab-name&gt; --non-interactive --example=blank --skill=faceless-explainer`. Write `BRIEF.md`, select a clean line-art preset (e.g. `cobalt-grid`).
 2. Add Traditional Chinese overrides in `frame.md`.
-3. Run `bash <me>/scripts/fetch_fonts.sh <project>` to bundle local web fonts into `assets/fonts/`.
+3. Run `bash &lt;me&gt;/scripts/fetch_fonts.sh &lt;project&gt;` to bundle local web fonts into `assets/fonts/`.
 4. Write `STORYBOARD.md` and `SCRIPT.md`. Segment narration strictly by grammatical clauses (each comma marks a visual reveal). Spell out numbers as words for accurate TTS.
 
 ## 4. Voiceover & Audio Timing
 
 1. Generate audio clips:
-   - `python <me>/scripts/edge_tts_voice.py --project <p> --voice zh-TW-HsiaoChenNeural`
+   - `python &lt;me&gt;/scripts/edge_tts_voice.py --project <p> --voice zh-TW-HsiaoChenNeural`
 2. Let user audition opening sentences. If pronunciation errors occur, generate localized candidate patches using `scripts/fix_voice.py` rather than re-recording the entire script.
-3. Quantify clause timings: `python <me>/scripts/voice_meta.py --project <p>`
-4. Synchronize durations: `node <fe>/scripts/audio.mjs sync-durations --audio-meta ./audio_meta.json --storyboard ./STORYBOARD.md`
+3. Quantify clause timings: `python &lt;me&gt;/scripts/voice_meta.py --project <p>`
+4. Synchronize durations: `node &lt;fe&gt;/scripts/audio.mjs sync-durations --audio-meta ./audio_meta.json --storyboard ./STORYBOARD.md`
 5. Normalize loudness to −14 LUFS ±1, true peak ≤ −1 dBFS.
 
 ## 5. Shot Planning
 
-- Structure visual cues in `shots.json`. Convert to timestamps via `python <me>/scripts/apply_shots.py --project <p>`.
+- Structure visual cues in `shots.json`. Convert to timestamps via `python &lt;me&gt;/scripts/apply_shots.py --project <p>`.
 - Recurring hero elements (vehicles, characters, gauges) must be authored as shared SVGs with fixed coordinates before frame dispatch.
 
 ## 6. Parallel Frame Production
 
-1. Generate packets: `node <fe>/scripts/frame-packets.mjs --project <p> --storyboard <p>/STORYBOARD.md`
+1. Generate packets: `node &lt;fe&gt;/scripts/frame-packets.mjs --project <p> --storyboard <p>/STORYBOARD.md`
 2. Populate `.hyperframes/frame-packets/_dispatch_context.md`.
 3. Dispatch workers across frames. Ensure adjacent frames receive geometry handoffs.
-4. Harmonize typography and stroke alignments: `python <me>/scripts/unify_frames.py --project <p>`.
+4. Harmonize typography and stroke alignments: `python &lt;me&gt;/scripts/unify_frames.py --project <p>`.
 
 ## 7. Assembly, Captions, Theming
 
@@ -184,12 +184,12 @@ node <fe>/scripts/transitions.mjs verify --storyboard ./STORYBOARD.md --index ./
 hyperframes lint && hyperframes check
 ```
 
-Subset fonts as the final optimization: `python <me>/scripts/subset_fonts.py --project .` (drops CJK font weight from 15MB down to ~300KB).
+Subset fonts as the final optimization: `python &lt;me&gt;/scripts/subset_fonts.py --project .` (drops CJK font weight from 15MB down to ~300KB).
 
 ## 8. Review & Visual QA (`review-loop`)
 
 - Render draft: `hyperframes render --quality draft --output renders/draft.mp4`.
-- Generate contact sheet: `python <review-loop>/scripts/sheet.py --video renders/draft.mp4 --at "$(python <me>/scripts/review_times.py --project .)" --out review --name draft`.
+- Generate contact sheet: `python &lt;review-loop&gt;/scripts/sheet.py --video renders/draft.mp4 --at "$(python &lt;me&gt;/scripts/review_times.py --project .)" --out review --name draft`.
 - Inspect every frame against the checklist before final master render: `hyperframes render --skill=faceless-explainer --quality high --output renders/video.mp4`.
 
 ## 9. Deliverables

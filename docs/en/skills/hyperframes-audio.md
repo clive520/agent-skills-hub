@@ -113,7 +113,7 @@ provide automatic waveform sync or drift correction.
 For copyable cut/crossfade/retime recipes, use `/hyperframes-core` → `references/creator-editing-recipes.md`.
 
 Three attributes carry everything, on the audio/video element itself — or, for
-the first two, on an `<hf-audio-group>` bus (see "One bus for many tracks"):
+the first two, on an `&lt;hf-audio-group&gt;` bus (see "One bus for many tracks"):
 
 | Attribute         | Holds                                                     |
 | ----------------- | --------------------------------------------------------- |
@@ -365,7 +365,7 @@ reason to name the group.
 ### One bus for many tracks
 
 Membership alone is enough to carve against, as above — but add an
-`<hf-audio-group>` element with that id and the group becomes a real submix bus:
+`&lt;hf-audio-group&gt;` element with that id and the group becomes a real submix bus:
 one chain, one fader, one automation clock for every member.
 
 ```html
@@ -518,7 +518,7 @@ than guessed from the filters.
 
 A lane is a set of breakpoints on one parameter: `{t, v}` in clip-local seconds
 and the parameter's own units. Targets are `volume` for the track's level, or
-`fx.<nodeId>.<param>` for an effect's knob.
+`fx.&lt;nodeId&gt;.&lt;param&gt;` for an effect's knob.
 
 **Only some parameters can be automated, and a lane on the others is silently
 inert.** A knob is automatable when a Web Audio `AudioParam` backs it. The

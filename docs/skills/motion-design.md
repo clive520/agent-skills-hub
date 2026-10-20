@@ -103,7 +103,7 @@ HyperFrames 文件教你 API，這份檔案管的是品味。底下的數字來�
 違反這些，畫面會在輸出時閃爍、錯位或每次結果不同：
 
 - 時間由 HTML 決定：每個場景是 `class="clip"` 的元素，用 `data-start`、`data-duration` 放上時間軸。根元素要有 `data-composition-id` 和明確的 `data-duration`。
-- 動作由 GSAP 負責：`gsap.timeline({ paused: true })`，註冊到 `window.__timelines["<composition-id>"]`，鍵名必須等於 `data-composition-id`。
+- 動作由 GSAP 負責：`gsap.timeline({ paused: true })`，註冊到 `window.__timelines["&lt;composition-id&gt;"]`，鍵名必須等於 `data-composition-id`。
 - 每個重要的 tween 都給明確位置（第三個參數），兩端都重要時用 `fromTo()`，因為輸出時會跳著 seek。
 - 只動 `transform` 和 `opacity`，不要反覆動 `top/left/width/height`。
 - 禁止：CSS `transition`／`@keyframes`、`Date.now()`、`requestAnimationFrame`、`setTimeout`、沒有種子的 `Math.random()`、輸出途中才 fetch 的資源。
@@ -125,10 +125,10 @@ HyperFrames 文件教你 API，這份檔案管的是品味。底下的數字來�
   };
   ```
 
-  在 `index.html` 裡，所有 composition script 之前先用 `<script src="timeline.js"></script>` 載入。
+  在 `index.html` 裡，所有 composition script 之前先用 `&lt;script src="timeline.js"&gt;&lt;/script&gt;` 載入。
 - GSAP 的位置參數一律從 `TL` 取（`TL.s1.title`、`TL.s1.exit + 0.05` 這種相對寫法可以），不要在場景裡寫死秒數。
 - 場景外框的 `data-start`／`data-duration` 必須和 `TL` 的場景邊界一致。重新計時時，先改 `timeline.js`，再同步改這兩個屬性。
-- 音效和旁白用 `<audio data-start="…">` 放在同一批節拍上。review-loop 的截圖時間也從 `TL` 取，所以畫面、聲音和檢查會一起跟著動。
+- 音效和旁白用 `&lt;audio data-start="…"&gt;` 放在同一批節拍上。review-loop 的截圖時間也從 `TL` 取，所以畫面、聲音和檢查會一起跟著動。
 - 所有畫面都只能由時間決定，見第 0 節。
 
 ## 2. 緩動
@@ -223,5 +223,5 @@ CustomEase.create("land",  "0.55,0,0.2,1.12"); // overshoot
 1. 先把節拍寫進 `timeline.js`（用數字寫的分鏡），向使用者確認節奏再動手。
 2. 用 `npx hyperframes init <專案資料夾>` 建專案；每個場景是 `compositions/` 裡的一個 composition，共用元件和跨場景物件放在 `index.html`。
 3. 每次有意義的修改後，都跑 `review-loop` 技能。
-4. 畫面時間鎖定後再處理聲音：音效和配樂用 `<audio data-start>` 對上 `TL` 的節拍。中文旁白的口音和情緒交給使用者用耳朵判斷，不要拿 ASR 或相似度分數代替（本版新增）。
+4. 畫面時間鎖定後再處理聲音：音效和配樂用 `&lt;audio data-start&gt;` 對上 `TL` 的節拍。中文旁白的口音和情緒交給使用者用耳朵判斷，不要拿 ASR 或相似度分數代替（本版新增）。
 

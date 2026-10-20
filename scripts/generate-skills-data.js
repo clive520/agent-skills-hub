@@ -203,8 +203,123 @@ const SKILLS_DICT = {
     tagsZh: ["LINE貼圖", "角色設計", "貼圖打包", "Creators Market"],
     tagsEn: ["LINE Stickers", "Character Design", "Asset Packaging", "Creators Market"],
     dependencies: []
+  },
+  "hitl-browser": {
+    titleZh: "人機協同瀏覽器操作流程 (HITL)",
+    titleEn: "Human-in-the-Loop Browser Automation (HITL)",
+    categoryZh: "瀏覽器自動化",
+    categoryEn: "Browser Automation",
+    descZh: "人機協同瀏覽器操作流程：有頭可視化、持久化 UserDataDir、人工登入/2FA/CAPTCHA 驗證暫停交接、接手後續自動化並保持瀏覽器視窗供審閱。",
+    descEn: "Human-in-the-loop browser automation: visible browser, persistent UserDataDir, manual login/2FA/CAPTCHA handoff, seamless resumption, and window preservation for review.",
+    tagsZh: ["Playwright", "瀏覽器自動化", "人機協同", "2FA驗證", "CAPTCHA", "持久化Cookie"],
+    tagsEn: ["Playwright", "Browser Automation", "HITL", "2FA Auth", "CAPTCHA", "Persistent Session"],
+    dependencies: []
+  },
+  "rdq-method": {
+    titleZh: "RDQ 需求探索四象限法",
+    titleEn: "RDQ Method (Requirements Discovery Quadrant)",
+    categoryZh: "需求分析與訪談",
+    categoryEn: "Requirements Discovery",
+    descZh: "RDQ 需求探索四象限法：在動工之前用四象限（Ⅰ已知明說/Ⅱ想問解答/Ⅲ追問補全/Ⅳ菜單建議）結構化訪談，產出一頁需求規格卡，徹底防止返工。",
+    descEn: "Requirements Discovery Quadrant Method: pre-execution structured elicitation using 4 quadrants to produce a 1-page requirement spec card and eliminate rework.",
+    tagsZh: ["RDQ方法", "需求工程", "結構化訪談", "規格卡", "防返工", "OpenCode"],
+    tagsEn: ["RDQ Method", "Requirements Engineering", "Structured Interview", "Spec Card", "Anti-Rework", "OpenCode"],
+    dependencies: []
+  },
+  "nlm-skill": {
+    titleZh: "Gemini Notebook (NotebookLM) CLI 與 MCP 專家",
+    titleEn: "Gemini Notebook (NotebookLM) CLI & MCP Expert",
+    categoryZh: "AI 知識庫與筆記",
+    categoryEn: "AI Knowledge & Notebooks",
+    descZh: "Gemini Notebook（原 Google NotebookLM）CLI 工具 (nlm) 與 MCP 伺服器專家指南：筆記本管理、Podcast 語音對談、深入報告、心智圖與研究工作流。",
+    descEn: "Expert guide for Gemini Notebook (NotebookLM) CLI (nlm) and MCP server: notebook management, Audio Overviews (Podcasts), reports, mind maps, quizzes, and research pipelines.",
+    tagsZh: ["NotebookLM", "Gemini", "nlm-cli", "MCP", "AI播客", "知識庫"],
+    tagsEn: ["NotebookLM", "Gemini", "nlm-cli", "MCP", "Audio Overviews", "Knowledge Base"],
+    dependencies: []
+  },
+  "android-cli": {
+    titleZh: "Android CLI 開發與虛擬設備專員",
+    titleEn: "Android CLI & Virtual Device Specialist",
+    categoryZh: "移動端開發",
+    categoryEn: "Mobile Development",
+    descZh: "Android CLI 命令列工具操作指南：專案建立、實體與虛擬設備 (AVD) 運行、UI 截圖檢視、SDK 元件管理與 Journey 流程自動化測試。",
+    descEn: "Android CLI operations: project creation, physical/virtual device execution, UI screenshots, SDK component management, and automated journey tests.",
+    tagsZh: ["Android", "CLI工具", "AVD模擬器", "移動開發", "UI檢視", "SDK管理"],
+    tagsEn: ["Android", "CLI Tool", "AVD Emulator", "Mobile Dev", "UI Inspection", "SDK Management"],
+    dependencies: []
+  },
+  "google-antigravity-sdk": {
+    titleZh: "Google Antigravity SDK 自主代理開發",
+    titleEn: "Google Antigravity SDK Agent Architecture",
+    categoryZh: "Agent 開發框架",
+    categoryEn: "Agent Frameworks",
+    descZh: "使用 Google Antigravity (AGY) SDK 設計、實作與除錯自主 AI Agent 以及多 Agent 協同系統，涵蓋生命週期、工具掛載與跨代理編排。",
+    descEn: "Design, implement, and debug autonomous AI agents and multi-agent systems using the Google Antigravity (AGY) SDK with lifecycle and tool orchestration.",
+    tagsZh: ["Antigravity", "Python SDK", "多代理系統", "自主Agent", "協同編排"],
+    tagsEn: ["Antigravity", "Python SDK", "Multi-Agent", "Autonomous Agents", "Orchestration"],
+    dependencies: []
+  },
+  "generative-ui": {
+    titleZh: "生成式互動介面與 HTML 小部件",
+    titleEn: "Generative UI & Interactive HTML Widgets",
+    categoryZh: "生成式 UI",
+    categoryEn: "Generative UI",
+    descZh: "在 Agent 對話中或作為獨立 Artifact 渲染豐富且具互動性的 HTML 介面、動態圖表、數據視覺化小部件與控制面板。",
+    descEn: "Render custom, rich, interactive HTML widgets and visual controls inline in chat or as standalone artifacts for diagrams, charts, and interactive walkthroughs.",
+    tagsZh: ["生成式UI", "HTML部件", "數據視覺化", "互動式介面", "Artifacts"],
+    tagsEn: ["Generative UI", "HTML Widgets", "Data Viz", "Interactive UI", "Artifacts"],
+    dependencies: []
+  },
+  "automation": {
+    titleZh: "背景排程與自動化工作流",
+    titleEn: "Scheduled Background Automations",
+    categoryZh: "背景自動化",
+    categoryEn: "Scheduled Automations",
+    descZh: "設計與建立後台定時排程自動化任務（Scheduled Automations）：Cron 表達式、定時觸發全新 Agent 對話與常態性維護任務執行。",
+    descEn: "Design and create scheduled background automations using cron expressions and sidecars to start fresh agent conversations for recurring tasks.",
+    tagsZh: ["Cron排程", "背景自動化", "定時任務", "Sidecar", "Agent自動化"],
+    tagsEn: ["Cron Schedule", "Background Automation", "Recurring Tasks", "Sidecar", "Agent Automation"],
+    dependencies: []
+  },
+  "antigravity-guide": {
+    titleZh: "Google Antigravity 2.0 完整開發指南",
+    titleEn: "Google Antigravity 2.0 Comprehensive Guide",
+    categoryZh: "平台指南",
+    categoryEn: "Platform Guides",
+    descZh: "Google Antigravity (AGY) 綜合指南與功能地圖：Antigravity CLI (agy)、IDE 介面、斜線指令、快捷鍵、Skills 與 MCP 客製化系統。",
+    descEn: "Comprehensive guide, quick reference, and sitemap for Google Antigravity (AGY), CLI (agy), 2.0 architecture, IDE, slash commands, and customizations.",
+    tagsZh: ["Antigravity", "AGY指南", "CLI工具", "快捷鍵", "客製化", "技能生態"],
+    tagsEn: ["Antigravity", "AGY Guide", "CLI Tool", "Keybindings", "Customizations", "Skills Eco"],
+    dependencies: []
   }
 };
+
+
+const VALID_HTML_TAGS = new Set([
+  'div', 'span', 'details', 'summary', 'a', 'p', 'br', 'hr', 'strong', 'em', 'b', 'i',
+  'code', 'pre', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'img',
+  'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'section', 'article', 'skillshub'
+]);
+
+function sanitizeForVitePress(markdown) {
+  if (!markdown) return '';
+  const lines = markdown.split(/\r?\n/);
+  let inCodeBlock = false;
+  return lines.map((line) => {
+    if (line.trim().startsWith('```')) {
+      inCodeBlock = !inCodeBlock;
+      return line;
+    }
+    if (inCodeBlock) return line;
+    // Replace unescaped <tag> that is not a recognized HTML tag
+    return line.replace(/<(\/?)([a-zA-Z][a-zA-Z0-9_\-:]*)([^>]*)>/g, (match, slash, tag, rest) => {
+      if (VALID_HTML_TAGS.has(tag.toLowerCase())) {
+        return match;
+      }
+      return `&lt;${slash}${tag}${rest}&gt;`;
+    });
+  }).join('\n');
+}
 
 function parseFrontmatter(rawContent) {
   try {
@@ -374,7 +489,7 @@ ${files.map((f) => `- \`${f}\``).join("\n")}
 
 ## 繁體中文完整說明檔 (SKILL.md)
 
-${parsedZh.content}
+${sanitizeForVitePress(parsedZh.content)}
 `;
 
   fs.writeFileSync(path.join(skillsZhDocsDir, `${id}.md`), docZhMd, "utf-8");
@@ -459,7 +574,7 @@ ${files.map((f) => `- \`${f}\``).join("\n")}
 
 ## Full Skill Documentation (SKILL.md)
 
-${parsedEn.content}
+${sanitizeForVitePress(parsedEn.content)}
 `;
 
   fs.writeFileSync(path.join(skillsEnDocsDir, `${id}.md`), docEnMd, "utf-8");

@@ -1,5 +1,35 @@
 [
   {
+    "text": "Mobile Development",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "android-cli · Android CLI & Virtual Device Specialist",
+        "link": "/en/skills/android-cli"
+      }
+    ]
+  },
+  {
+    "text": "Platform Guides",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "antigravity-guide · Google Antigravity 2.0 Comprehensive Guide",
+        "link": "/en/skills/antigravity-guide"
+      }
+    ]
+  },
+  {
+    "text": "Scheduled Automations",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "automation · Scheduled Background Automations",
+        "link": "/en/skills/automation"
+      }
+    ]
+  },
+  {
     "text": "Explainer Videos",
     "collapsed": false,
     "items": [
@@ -10,6 +40,36 @@
       {
         "text": "motion-explainer · HyperFrames Motion Explainer Video",
         "link": "/en/skills/motion-explainer"
+      }
+    ]
+  },
+  {
+    "text": "Generative UI",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "generative-ui · Generative UI & Interactive HTML Widgets",
+        "link": "/en/skills/generative-ui"
+      }
+    ]
+  },
+  {
+    "text": "Agent Frameworks",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "google-antigravity-sdk · Google Antigravity SDK Agent Architecture",
+        "link": "/en/skills/google-antigravity-sdk"
+      }
+    ]
+  },
+  {
+    "text": "Browser Automation",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "hitl-browser · Human-in-the-Loop Browser Automation (HITL)",
+        "link": "/en/skills/hitl-browser"
       }
     ]
   },
@@ -102,6 +162,26 @@
       {
         "text": "media-use · Agent Media OS (TTS / SFX / Images / Logos)",
         "link": "/en/skills/media-use"
+      }
+    ]
+  },
+  {
+    "text": "AI Knowledge & Notebooks",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "nlm-skill · Gemini Notebook (NotebookLM) CLI & MCP Expert",
+        "link": "/en/skills/nlm-skill"
+      }
+    ]
+  },
+  {
+    "text": "Requirements Discovery",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "rdq-method · RDQ Method (Requirements Discovery Quadrant)",
+        "link": "/en/skills/rdq-method"
       }
     ]
   },

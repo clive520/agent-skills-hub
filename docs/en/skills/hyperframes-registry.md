@@ -88,7 +88,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 # HyperFrames Registry
 
-The registry provides reusable blocks and components installable via `hyperframes add <name>`.
+The registry provides reusable blocks and components installable via `hyperframes add &lt;name&gt;`.
 
 - **Blocks** — standalone sub-compositions (own dimensions, duration, timeline). Included via `data-composition-src` in a host composition.
 - **Components** — effect snippets (no own dimensions). Pasted directly into a host composition's HTML.
@@ -106,11 +106,11 @@ hyperframes add data-chart --no-clipboard  # skip clipboard (CI/headless)
 
 After install, the CLI prints which files were written and a snippet to paste into your host composition. The snippet is a starting point — you'll need to add `data-composition-id` (must match the block's internal composition ID), `data-start`, and `data-track-index` attributes when wiring blocks.
 
-The positional value is resolved as an exact item name first. If no item matches and the value is a tag, the command installs every block with that tag. Registry dependencies are installed before the requested item. `hyperframes add` works only for blocks and components; for examples, use `hyperframes init <dir> --example <name>` instead.
+The positional value is resolved as an exact item name first. If no item matches and the value is a tag, the command installs every block with that tag. Registry dependencies are installed before the requested item. `hyperframes add` works only for blocks and components; for examples, use `hyperframes init &lt;dir&gt; --example &lt;name&gt;` instead.
 
 ## Install locations
 
-Blocks install to `compositions/<name>.html` by default. Components install to `compositions/components/<name>.html` by default.
+Blocks install to `compositions/&lt;name&gt;.html` by default. Components install to `compositions/components/&lt;name&gt;.html` by default.
 
 These paths are configurable in `hyperframes.json`:
 
@@ -160,8 +160,8 @@ Components are snippets — paste their HTML into your composition's markup, the
 
 1. Read the installed file (e.g., `compositions/components/grain-overlay.html`)
 2. Copy the HTML elements into your composition's `<div data-composition-id="...">`
-3. Copy the `<style>` block into your composition's styles
-4. Copy any `<script>` content into your composition's script (before your timeline code)
+3. Copy the `&lt;style&gt;` block into your composition's styles
+4. Copy any `&lt;script&gt;` content into your composition's script (before your timeline code)
 5. If the component exposes GSAP timeline integration (see the comment block in the snippet), add those calls to your timeline
 
 See [wiring-components.md](./references/wiring-components.md) for full details.
@@ -193,7 +193,7 @@ npx hyperframes catalog --json
 npx hyperframes catalog --human-friendly
 ```
 
-The normal table and `--json` modes only list matches; install a selected name with `hyperframes add <name>`. `--human-friendly` opens an interactive picker and installs the selected item immediately. In CI or agent workflows, prefer `--json` followed by an explicit `add`.
+The normal table and `--json` modes only list matches; install a selected name with `hyperframes add &lt;name&gt;`. `--human-friendly` opens an interactive picker and installs the selected item immediately. In CI or agent workflows, prefer `--json` followed by an explicit `add`.
 
 ### Report what the catalog does not have
 

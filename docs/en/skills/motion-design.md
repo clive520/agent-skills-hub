@@ -99,7 +99,7 @@ Aesthetic rules (easing, springs, reading pauses, composition, typography) remai
 
 Violating these causes frame flicker, misalignment, or non-deterministic exports:
 - Time is governed by HTML: Each scene is a `.clip` element positioned on the timeline via `data-start` and `data-duration`. Root elements must have `data-composition-id` and explicit `data-duration`.
-- Motion is governed by GSAP: `gsap.timeline({ paused: true })` registered to `window.__timelines["<composition-id>"]`.
+- Motion is governed by GSAP: `gsap.timeline({ paused: true })` registered to `window.__timelines["&lt;composition-id&gt;"]`.
 - Supply explicit position parameters for critical tweens. Use `fromTo()` when both states are essential for seek safety.
 - Animate only `transform` and `opacity`; avoid repeated tweening of `top`/`left`/`width`/`height`.
 - Forbidden: CSS `transition`/`@keyframes`, unseeded `Math.random()`, `Date.now()`, `requestAnimationFrame`, `setTimeout`, and runtime remote fetches.

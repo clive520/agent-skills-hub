@@ -214,16 +214,16 @@ Pick 2-4 rules from `rules-index.md`, glue them together with a single paused GS
 - The scene matches an existing pre-designed multi-phase template (brand-reveal, social-proof, etc.) and reusing its phase pipeline saves real authoring time
 - You want runnable ground-truth code for a complex 4-5 phase choreography
 
-Blueprints live in `blueprints-index.md`. Each entry points to `blueprints/<id>.md` (recipe). Do not read it speculatively; load it when you've already decided you need scene-level orchestration.
+Blueprints live in `blueprints-index.md`. Each entry points to `blueprints/&lt;id&gt;.md` (recipe). Do not read it speculatively; load it when you've already decided you need scene-level orchestration.
 
 ## Routing
 
 | Want to…                                                                       | Read                                                |
 | ------------------------------------------------------------------------------ | --------------------------------------------------- |
 | Pick an atomic motion pattern by trigger / tag                                 | `rules-index.md`                                    |
-| Read one rule's full HTML / CSS / GSAP recipe                                  | `rules/<name>.md`                                   |
+| Read one rule's full HTML / CSS / GSAP recipe                                  | `rules/&lt;name&gt;.md`                                   |
 | Pick a multi-phase scene template                                              | `blueprints-index.md`                               |
-| Read one blueprint's full recipe                                               | `blueprints/<id>.md`                                |
+| Read one blueprint's full recipe                                               | `blueprints/&lt;id&gt;.md`                                |
 | Author a scene transition (CSS-driven, between two clips)                      | `transitions/overview.md`, `transitions/catalog.md` |
 | Look up a broader motion-design technique                                      | `techniques.md`                                     |
 | Motion blur — shutter smear on an element, and when not to use it              | `references/motion-blur.md`                         |
@@ -273,7 +273,7 @@ node <SKILL_DIR>/scripts/animation-map.mjs <composition-dir> \
 
 Reads every GSAP timeline registered on `window.__timelines`, enumerates tweens, samples bboxes, computes flags, outputs `animation-map.json`. Use it to audit choreography (dead zones, stagger consistency, lifecycle warnings) after authoring.
 
-`animation-map.mjs` resolves helper packages from the current project first, then can bootstrap the bundled HyperFrames package version. Set `HYPERFRAMES_SKILL_PKG_VERSION=<version>` only when running the skill outside the bundled CLI/skill install and you need to pin that bootstrap version explicitly.
+`animation-map.mjs` resolves helper packages from the current project first, then can bootstrap the bundled HyperFrames package version. Set `HYPERFRAMES_SKILL_PKG_VERSION=&lt;version&gt;` only when running the skill outside the bundled CLI/skill install and you need to pin that bootstrap version explicitly.
 
 ## See Also
 

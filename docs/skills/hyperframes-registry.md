@@ -86,7 +86,7 @@ git clone https://github.com/clive520/agent-skills-hub.git
 
 # HyperFrames 模組庫 (Registry) 檢索與安裝
 
-HyperFrames Registry 提供了可透過 `hyperframes add <name>` 一鍵安裝的複用模組：
+HyperFrames Registry 提供了可透過 `hyperframes add &lt;name&gt;` 一鍵安裝的複用模組：
 
 - **Blocks（獨立區塊模組）**：具備自身尺寸、時長與時間軸的獨立子合成，透過 `data-composition-src` 引入。
 - **Components（特效組件）**：輕量代碼片段（無自身獨立尺寸），直接嵌入合成的 HTML 結構中。
@@ -132,7 +132,7 @@ npx hyperframes catalog --query "terminal code window"
 ## 目錄結構配置
 
 預設安裝路徑可於 `hyperframes.json` 中配置：
-- Blocks 預設存放於 `compositions/<name>.html`
-- Components 預設存放於 `compositions/components/<name>.html`
+- Blocks 預設存放於 `compositions/&lt;name&gt;.html`
+- Components 預設存放於 `compositions/components/&lt;name&gt;.html`
 - 靜態資產存放於 `assets/`
 
